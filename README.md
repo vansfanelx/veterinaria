@@ -1,518 +1,1032 @@
-# Sistema de Gestion Veterinaria VetiVet 🐾# Sistema de Gestión Veterinaria VetiVet 🐾
+# Sistema de Gestion Veterinaria VetiVet 🐾# Sistema de Gestion Veterinaria VetiVet 🐾# Sistema de Gestión Veterinaria VetiVet 🐾
 
 
 
-Sistema completo de gestion para clinica veterinaria con arquitectura moderna de tres capas:<<<<<<< HEAD
+Sistema completo de gestion para clinica veterinaria con arquitectura moderna de tres capas:
+
+- **API Backend** (Laravel 12 + MySQL)
+
+- **Panel Administrativo** (Angular 20 - Gestion Interna)Sistema completo de gestion para clinica veterinaria con arquitectura moderna de tres capas:<<<<<<< HEAD
+
+- **Portal Web para Clientes** (Angular 20 - Autogestion)
 
 - **API Backend** (Laravel 12 + MySQL)Sistema completo de gestion para clinica veterinaria con arquitectura moderna de tres capas:Sistema completo de gestiÃ³n para clÃ­nica veterinaria con arquitectura moderna de tres capas:
 
+## 📚 Documentacion Adicional
+
 - **Panel Administrativo** (Angular 18 - Gestion Interna)
 
-- **Portal Web para Clientes** (Angular 18 - Autogestion)- **API Backend** (Laravel 12 + MySQL)- **API Backend** (Laravel 12 + MySQL)
+- **[Roles y Permisos](ROLES_Y_PERMISOS.md)** - Guia completa del sistema de control de acceso basado en roles
 
-
-
-## 📚 Documentacion Adicional- **Panel Administrativo** (Angular 18 - Gestion Interna)- **Panel Administrativo** (Angular 20 - GestiÃ³n Interna)
-
-
-
-- **[Roles y Permisos](ROLES_Y_PERMISOS.md)** - Guia completa del sistema de control de acceso basado en roles- **Portal Web para Clientes** (Angular 18 - Autogestion)- **Portal Web para Clientes** (Angular 20 - AutogestiÃ³n)
-
-- **[Beneficios y Mejoras](BENEFICIOS_Y_MEJORAS.md)** - Como VetiVet mejora los procesos de la clinica veterinaria
+- **[Beneficios y Mejoras](BENEFICIOS_Y_MEJORAS.md)** - Como VetiVet mejora los procesos de la clinica veterinaria- **Portal Web para Clientes** (Angular 18 - Autogestion)- **API Backend** (Laravel 12 + MySQL)- **API Backend** (Laravel 12 + MySQL)
 
 - **[Datos de Prueba](DATOS_DE_PRUEBA.md)** - Usuarios y datos precargados para testing
 
-## 📚 Documentacion Adicional## ðŸ“š DocumentaciÃ³n Adicional
+
 
 ## 🌟 Caracteristicas Principales
 
-
+## 📚 Documentacion Adicional- **Panel Administrativo** (Angular 18 - Gestion Interna)- **Panel Administrativo** (Angular 20 - GestiÃ³n Interna)
 
 ### 🔐 Sistema de Autenticacion y Roles
 
-- Sistema completo de roles (Admin, Veterinario, Cliente)- **[Roles y Permisos](ROLES_Y_PERMISOS.md)** - Guia completa del sistema de control de acceso basado en roles- **[Roles y Permisos](ROLES_Y_PERMISOS.md)** - GuÃ­a completa del sistema de control de acceso basado en roles
+- Sistema completo de roles (Admin, Veterinario, Cliente)
 
 - Control de acceso basado en roles (RBAC)
 
-- Login con validacion de rol requerido- **[Beneficios y Mejoras](BENEFICIOS_Y_MEJORAS.md)** - Como VetiVet mejora los procesos de la clinica veterinaria- **[Beneficios y Mejoras](BENEFICIOS_Y_MEJORAS.md)** - CÃ³mo VetiVet mejora los procesos de la clÃ­nica veterinaria
+- Login con validacion de rol requerido- **[Roles y Permisos](ROLES_Y_PERMISOS.md)** - Guia completa del sistema de control de acceso basado en roles- **Portal Web para Clientes** (Angular 20 - Autogestion)- **Portal Web para Clientes** (Angular 20 - AutogestiÃ³n)
 
 - Registro de usuarios con verificacion de email
 
-- Recuperacion de contraseña- **[Datos de Prueba](DATOS_DE_PRUEBA.md)** - Usuarios y datos precargados para testing- **[Datos de Prueba](DATOS_DE_PRUEBA.md)** - Usuarios y datos precargados para testing
+- Recuperacion de contraseña- **[Beneficios y Mejoras](BENEFICIOS_Y_MEJORAS.md)** - Como VetiVet mejora los procesos de la clinica veterinaria
 
 - Guards de autenticacion en backend y frontend
 
-- CAPTCHA personalizado para registro
+- CAPTCHA personalizado para registro- **[Datos de Prueba](DATOS_DE_PRUEBA.md)** - Usuarios y datos precargados para testing
 
 
 
-### 💼 Backend API (Laravel 12)## 🌟 Caracteristicas Principales## ðŸŒŸ CaracterÃ­sticas Principales
+### 💼 Backend API (Laravel 12)## 📚 Documentacion Adicional## ðŸ“š DocumentaciÃ³n Adicional
 
 
 
-#### Autenticacion y Seguridad
+#### Autenticacion y Seguridad## 🌟 Caracteristicas Principales
 
 - ✅ Sistema de autenticacion con Laravel Sanctum
 
-- ✅ Verificacion de email con notificaciones personalizadas### 🔐 Sistema de Autenticacion y Roles### ðŸ” Sistema de AutenticaciÃ³n y Roles
+- ✅ Verificacion de email con notificaciones personalizadas
 
 - ✅ Recuperacion de contraseña
 
-- ✅ CAPTCHA propio para prevenir bots- Sistema completo de roles (Admin, Veterinario, Cliente)- Sistema completo de roles (Admin, Veterinario, Cliente)
+- ✅ CAPTCHA propio para prevenir bots### 🔐 Sistema de Autenticacion y Roles
 
 - ✅ Middleware de autenticacion y verificacion de email
 
-- ✅ Gestion de roles (admin, veterinarian, user)- Control de acceso basado en roles (RBAC)- Control de acceso basado en roles (RBAC)
+- ✅ Gestion de roles (admin, veterinarian, user)- Sistema completo de roles (Admin, Veterinario, Cliente)- **[Roles y Permisos](ROLES_Y_PERMISOS.md)** - Guia completa del sistema de control de acceso basado en roles- **[Roles y Permisos](ROLES_Y_PERMISOS.md)** - GuÃ­a completa del sistema de control de acceso basado en roles
 
 
 
-#### Gestion de Datos- Login con validacion de rol requerido- Login con validaciÃ³n de rol requerido
+#### Gestion de Datos- Control de acceso basado en roles (RBAC)
 
 - ✅ CRUD completo de usuarios con roles
 
-- ✅ Gestion de mascotas con propietarios- Registro de usuarios con verificacion de email- Registro de usuarios con verificaciÃ³n de email
+- ✅ Gestion de mascotas con propietarios- Login con validacion de rol requerido- **[Beneficios y Mejoras](BENEFICIOS_Y_MEJORAS.md)** - Como VetiVet mejora los procesos de la clinica veterinaria- **[Beneficios y Mejoras](BENEFICIOS_Y_MEJORAS.md)** - CÃ³mo VetiVet mejora los procesos de la clÃ­nica veterinaria
 
 - ✅ Sistema de citas con veterinarios asignados
 
-- ✅ Historial medico detallado- Recuperacion de contraseña- RecuperaciÃ³n de contraseÃ±a
+- ✅ Historial medico detallado- Registro de usuarios con verificacion de email
 
 - ✅ Calendario de disponibilidad
 
-- ✅ Filtros por estado, fecha y usuario- Guards de autenticacion en backend y frontend- Guards de autenticaciÃ³n en backend y frontend
+- ✅ Filtros por estado, fecha y usuario- Recuperacion de contraseña- **[Datos de Prueba](DATOS_DE_PRUEBA.md)** - Usuarios y datos precargados para testing- **[Datos de Prueba](DATOS_DE_PRUEBA.md)** - Usuarios y datos precargados para testing
 
 
 
-#### Caracteristicas Tecnicas- CAPTCHA personalizado para registro- CAPTCHA personalizado para registro
+#### Caracteristicas Tecnicas- Guards de autenticacion en backend y frontend
 
-- ✅ API RESTful con relaciones Eloquent=======
+- ✅ API RESTful con relaciones Eloquent
 
-- ✅ Validaciones exhaustivas de datosSistema completo de gestión para clínica veterinaria con arquitectura moderna de tres capas:
+- ✅ Validaciones exhaustivas de datos- CAPTCHA personalizado para registro
 
-- ✅ CORS configurado para desarrollo- **API Backend** (Laravel 12 + MySQL)
-
-- ✅ Base de datos MySQL- **Panel Administrativo** (Angular 20 - Gestión Interna)
-
-- ✅ Migraciones y seeders- **Portal Web para Clientes** (Angular 20 - Autogestión)
-
-- ✅ Emails HTML personalizados
-
-## 📚 Documentación Adicional
-
-### 🎨 Panel Administrativo (Angular 18)
-
-- **[Roles y Permisos](ROLES_Y_PERMISOS.md)** - Guía completa del sistema de control de acceso basado en roles
-
-#### Gestion de Usuarios- **[Beneficios y Mejoras](BENEFICIOS_Y_MEJORAS.md)** - Cómo VetiVet mejora los procesos de la clínica veterinaria
-
-- ✅ CRUD completo de usuarios- **[Datos de Prueba](DATOS_DE_PRUEBA.md)** - Usuarios y datos precargados para testing
-
-- ✅ Busqueda por nombre, email, telefono
-
-- ✅ Filtrado por rol## 🌟 Características Principales
-
-- ✅ Gestion de permisos>>>>>>> ab1d725 (final)
-
-- ✅ Cambio de contraseñas
-
-- ✅ Activacion/desactivacion de cuentas### 🔐 Sistema de Autenticación y Roles
-
-- Sistema completo de roles (Admin, Veterinario, Cliente)
-
-#### Gestion de Mascotas- Control de acceso basado en roles (RBAC)
-
-- ✅ Registro completo con foto- Login con validación de rol requerido
-
-- ✅ Historial medico integrado- Registro de usuarios con verificación de email
-
-- ✅ Busqueda y filtros avanzados- Recuperación de contraseña
-
-- ✅ Vista de detalles completa- Guards de autenticación en backend y frontend
-
-- ✅ Edicion y eliminacion- CAPTCHA personalizado para registro
-
-- **Ver detalles en [ROLES_Y_PERMISOS.md](ROLES_Y_PERMISOS.md)**
-
-#### Gestion de Citas
-
-- ✅ Calendario mensual interactivo### 💼 Backend API (Laravel 12)
-
-- ✅ Asignacion de veterinarios
-
-- ✅ Control de estados (pendiente, confirmada, completada, cancelada)#### Autenticación y Seguridad
-
-- ✅ Filtros por fecha y estado- ✅ Sistema de autenticación con Laravel Sanctum
-
-- ✅ Vista de disponibilidad- ✅ Verificación de email con notificaciones personalizadas
-
-- ✅ Recuperación de contraseña
-
-#### Historial Medico- ✅ CAPTCHA propio para prevenir bots
-
-- ✅ Registro de consultas- ✅ Middleware de autenticación y verificación de email
-
-- ✅ Diagnosticos y tratamientos- ✅ Gestión de roles (admin, veterinarian, user)
-
-- ✅ Prescripciones medicas
-
-- ✅ Notas del veterinario#### Gestión de Datos
-
-- ✅ Historial completo por mascota- ✅ CRUD completo de usuarios con roles
-
-- ✅ Gestión de mascotas con propietarios
-
-#### Caracteristicas Tecnicas- ✅ Sistema de citas con veterinarios asignados
-
-- ✅ Componentes standalone- ✅ Historial médico detallado
-
-- ✅ Signals API para estado reactivo- ✅ Calendario de disponibilidad
-
-- ✅ Reactive Forms con validaciones- ✅ Filtros por estado, fecha y usuario
-
-- ✅ Interceptores HTTP
-
-- ✅ Guards de autenticacion#### Características Técnicas
-
-- ✅ Diseño responsive- ✅ API RESTful con relaciones Eloquent
-
-- ✅ Validaciones exhaustivas de datos
-
-### 🌐 Portal Web para Clientes (Angular 18)- ✅ CORS configurado para desarrollo
+- ✅ CORS configurado para desarrollo
 
 - ✅ Base de datos MySQL
 
-#### Funcionalidades de Usuario- ✅ Migraciones y seeders
+- ✅ Migraciones y seeders
 
-- ✅ Registro y login de clientes- ✅ Emails HTML personalizados
+- ✅ Emails HTML personalizados### 💼 Backend API (Laravel 12)## 🌟 Caracteristicas Principales## ðŸŒŸ CaracterÃ­sticas Principales
 
-- ✅ Verificacion de email
 
-- ✅ Recuperacion de contraseña### 🎨 Panel Administrativo (Angular 18)
 
-- ✅ Perfil editable
+### 🎨 Panel Administrativo (Angular 20)
 
-- ✅ Cambio de contraseña#### Gestión de Usuarios
+
+
+#### Gestion de Usuarios#### Autenticacion y Seguridad
 
 - ✅ CRUD completo de usuarios
 
-#### Gestion de Mascotas- ✅ Búsqueda por nombre, email, teléfono
+- ✅ Busqueda por nombre, email, telefono- ✅ Sistema de autenticacion con Laravel Sanctum
 
-- ✅ Registro de mascotas propias- ✅ Filtrado por rol
+- ✅ Filtrado por rol
 
-- ✅ Vista de mascotas registradas- ✅ Gestión de permisos
+- ✅ Gestion de permisos- ✅ Verificacion de email con notificaciones personalizadas### 🔐 Sistema de Autenticacion y Roles### ðŸ” Sistema de AutenticaciÃ³n y Roles
 
-- ✅ Edicion de informacion de mascotas- ✅ Cambio de contraseñas
+- ✅ Cambio de contraseñas
 
-- ✅ Acceso al historial medico- ✅ Activación/desactivación de cuentas
-
-
-
-#### Sistema de Citas#### Gestión de Mascotas
-
-- ✅ Solicitud de citas online- ✅ Registro completo con foto
-
-- ✅ Seleccion de mascota y veterinario- ✅ Historial médico integrado
-
-- ✅ Vista de citas programadas- ✅ Búsqueda y filtros avanzados
-
-- ✅ Cancelacion de citas- ✅ Vista de detalles completa
-
-- ✅ Historial de citas- ✅ Edición y eliminación
+- ✅ Activacion/desactivacion de cuentas- ✅ Recuperacion de contraseña
 
 
 
-#### Caracteristicas Tecnicas#### Gestión de Citas
+#### Gestion de Mascotas- ✅ CAPTCHA propio para prevenir bots- Sistema completo de roles (Admin, Veterinario, Cliente)- Sistema completo de roles (Admin, Veterinario, Cliente)
 
-- ✅ Interfaz diferente del panel admin- ✅ Calendario mensual interactivo
+- ✅ Registro completo con foto
 
-- ✅ Diseño enfocado en clientes- ✅ Asignación de veterinarios
+- ✅ Historial medico integrado- ✅ Middleware de autenticacion y verificacion de email
 
-- ✅ Navegacion simplificada- ✅ Control de estados (pendiente, confirmada, completada, cancelada)
+- ✅ Busqueda y filtros avanzados
 
-- ✅ Responsive design- ✅ Filtros por fecha y estado
+- ✅ Vista de detalles completa- ✅ Gestion de roles (admin, veterinarian, user)- Control de acceso basado en roles (RBAC)- Control de acceso basado en roles (RBAC)
 
-- ✅ Validaciones de usuario- ✅ Vista de disponibilidad
+- ✅ Edicion y eliminacion
 
 
 
-## 🚀 Tecnologias Utilizadas#### Historial Médico
+#### Gestion de Citas
+
+- ✅ Calendario mensual interactivo#### Gestion de Datos- Login con validacion de rol requerido- Login con validaciÃ³n de rol requerido
+
+- ✅ Asignacion de veterinarios
+
+- ✅ Control de estados (pendiente, confirmada, completada, cancelada)- ✅ CRUD completo de usuarios con roles
+
+- ✅ Filtros por fecha y estado
+
+- ✅ Vista de disponibilidad- ✅ Gestion de mascotas con propietarios- Registro de usuarios con verificacion de email- Registro de usuarios con verificaciÃ³n de email
+
+
+
+#### Historial Medico- ✅ Sistema de citas con veterinarios asignados
 
 - ✅ Registro de consultas
 
-### Backend- ✅ Diagnósticos y tratamientos
+- ✅ Diagnosticos y tratamientos- ✅ Historial medico detallado- Recuperacion de contraseña- RecuperaciÃ³n de contraseÃ±a
 
-- **Laravel 12** - Framework PHP moderno- ✅ Prescripciones médicas
+- ✅ Prescripciones medicas
 
-- **MySQL** - Base de datos relacional- ✅ Notas del veterinario
+- ✅ Notas del veterinario- ✅ Calendario de disponibilidad
 
-- **Laravel Sanctum** - Autenticacion API- ✅ Historial completo por mascota
+- ✅ Historial completo por mascota
 
-- **Eloquent ORM** - Mapeo objeto-relacional
+- ✅ Filtros por estado, fecha y usuario- Guards de autenticacion en backend y frontend- Guards de autenticaciÃ³n en backend y frontend
 
-- **Laravel Mail** - Sistema de notificaciones#### Características Técnicas
+#### Caracteristicas Tecnicas Angular 20
 
-- ✅ Componentes standalone
+- ✅ **Componentes Standalone** - Nueva arquitectura sin modulos
 
-### Frontend- ✅ Signals API para estado reactivo
+- ✅ **Control Flow Syntax** - @if, @for, @switch nativo
 
-- **Angular 18** - Framework TypeScript- ✅ Reactive Forms con validaciones
+- ✅ **Signals API** - Estado reactivo moderno#### Caracteristicas Tecnicas- CAPTCHA personalizado para registro- CAPTCHA personalizado para registro
 
-- **TypeScript** - Lenguaje tipado fuerte- ✅ Interceptores HTTP
+- ✅ **Reactive Forms** con validaciones avanzadas
 
-- **RxJS** - Programacion reactiva- ✅ Guards de autenticación
+- ✅ **Interceptores HTTP** - Manejo centralizado- ✅ API RESTful con relaciones Eloquent=======
 
-- **Angular Signals** - Estado reactivo- ✅ Diseño responsive
+- ✅ **Guards funcionales** - Proteccion de rutas
 
-- **Bootstrap 5** - Framework CSS
-
-- **Angular Material** - Componentes UI### 🌐 Portal Web para Clientes (Angular 18)
+- ✅ **Diseño responsive** con CSS Grid y Flexbox- ✅ Validaciones exhaustivas de datosSistema completo de gestión para clínica veterinaria con arquitectura moderna de tres capas:
 
 
 
-### Herramientas de Desarrollo#### Funcionalidades de Usuario
-
-- **Vite** - Build tool rapido- ✅ Registro y login de clientes
-
-- **PHPUnit** - Testing backend- ✅ Verificación de email
-
-- **Jasmine/Karma** - Testing frontend- ✅ Recuperación de contraseña
-
-- **Git** - Control de versiones- ✅ Perfil editable
-
-- **VS Code** - Editor de codigo- ✅ Cambio de contraseña
+### 🌐 Portal Web para Clientes (Angular 20)- ✅ CORS configurado para desarrollo- **API Backend** (Laravel 12 + MySQL)
 
 
 
-## 🛠️ Instalacion y Configuracion#### Gestión de Mascotas
+#### Funcionalidades de Usuario- ✅ Base de datos MySQL- **Panel Administrativo** (Angular 20 - Gestión Interna)
 
-- ✅ Registro de mascotas propias
+- ✅ Registro y login de clientes
 
-### Prerrequisitos- ✅ Vista de mascotas registradas
+- ✅ Verificacion de email- ✅ Migraciones y seeders- **Portal Web para Clientes** (Angular 20 - Autogestión)
 
-- **Node.js** (v18 o superior)- ✅ Historial médico de sus mascotas
+- ✅ Recuperacion de contraseña
 
-- **PHP** (v8.2 o superior)- ✅ Actualización de datos
+- ✅ Perfil editable- ✅ Emails HTML personalizados
 
-- **Composer** (Gestor de dependencias PHP)
+- ✅ Cambio de contraseña
 
-- **MySQL** (v8.0 o superior)#### Sistema de Citas
+## 📚 Documentación Adicional
 
-- **Git** (Control de versiones)- ✅ Calendario interactivo para agendar
+#### Gestion de Mascotas
 
-- ✅ Selección de fecha y hora disponible
+- ✅ Registro de mascotas propias### 🎨 Panel Administrativo (Angular 18)
 
-### 1. Clonar el Repositorio- ✅ Selección de veterinario
+- ✅ Vista de mascotas registradas
 
-- ✅ Selección o registro de mascota
+- ✅ Edicion de informacion de mascotas- **[Roles y Permisos](ROLES_Y_PERMISOS.md)** - Guía completa del sistema de control de acceso basado en roles
 
-```bash- ✅ Motivo de consulta
+- ✅ Acceso al historial medico
 
-git clone https://github.com/vansfanelx/veterinaria.git- ✅ Observaciones adicionales
+#### Gestion de Usuarios- **[Beneficios y Mejoras](BENEFICIOS_Y_MEJORAS.md)** - Cómo VetiVet mejora los procesos de la clínica veterinaria
+
+#### Sistema de Citas
+
+- ✅ Solicitud de citas online- ✅ CRUD completo de usuarios- **[Datos de Prueba](DATOS_DE_PRUEBA.md)** - Usuarios y datos precargados para testing
+
+- ✅ Seleccion de mascota y veterinario
+
+- ✅ Vista de citas programadas- ✅ Busqueda por nombre, email, telefono
+
+- ✅ Cancelacion de citas
+
+- ✅ Historial de citas- ✅ Filtrado por rol## 🌟 Características Principales
+
+
+
+#### Caracteristicas Tecnicas Angular 20- ✅ Gestion de permisos>>>>>>> ab1d725 (final)
+
+- ✅ **Nueva sintaxis de control** - @if/@else, @for con track
+
+- ✅ **Standalone components** - Sin necesidad de NgModules- ✅ Cambio de contraseñas
+
+- ✅ **Signals** para estado reactivo
+
+- ✅ **Nueva API de formularios** - Mejor tipado- ✅ Activacion/desactivacion de cuentas### 🔐 Sistema de Autenticación y Roles
+
+- ✅ **SSR mejorado** - Server-side rendering optimizado
+
+- ✅ **Hydration** - Mejor rendimiento inicial- Sistema completo de roles (Admin, Veterinario, Cliente)
+
+
+
+## 🚀 Tecnologias Angular 20 Utilizadas#### Gestion de Mascotas- Control de acceso basado en roles (RBAC)
+
+
+
+### Frontend Moderno- ✅ Registro completo con foto- Login con validación de rol requerido
+
+- **Angular 20** - Framework TypeScript de ultima generacion
+
+- **TypeScript 5.3+** - Lenguaje tipado con nuevas features- ✅ Historial medico integrado- Registro de usuarios con verificación de email
+
+- **RxJS 7.8+** - Programacion reactiva avanzada
+
+- **Angular Signals** - Estado reactivo nativo- ✅ Busqueda y filtros avanzados- Recuperación de contraseña
+
+- **Control Flow** - Sintaxis @if, @for, @switch
+
+- **Standalone Components** - Arquitectura sin NgModules- ✅ Vista de detalles completa- Guards de autenticación en backend y frontend
+
+
+
+### Nuevas Caracteristicas Angular 20- ✅ Edicion y eliminacion- CAPTCHA personalizado para registro
+
+- **📝 Nueva sintaxis de plantillas** - @if/@else mas legible
+
+- **🔄 Signals nativos** - Reactividad sin RxJS en templates  - **Ver detalles en [ROLES_Y_PERMISOS.md](ROLES_Y_PERMISOS.md)**
+
+- **⚡ SSR optimizado** - Server-side rendering mejorado
+
+- **🎯 Tree-shaking mejorado** - Bundles mas pequeños#### Gestion de Citas
+
+- **🛡️ Guards funcionales** - Proteccion de rutas simplificada
+
+- **📱 Nueva API de formularios** - Mejor experiencia de desarrollo- ✅ Calendario mensual interactivo### 💼 Backend API (Laravel 12)
+
+
+
+### Backend Robusto- ✅ Asignacion de veterinarios
+
+- **Laravel 12** - Framework PHP moderno
+
+- **MySQL 8.0+** - Base de datos relacional- ✅ Control de estados (pendiente, confirmada, completada, cancelada)#### Autenticación y Seguridad
+
+- **Laravel Sanctum** - Autenticacion API segura
+
+- **Eloquent ORM** - Mapeo objeto-relacional- ✅ Filtros por fecha y estado- ✅ Sistema de autenticación con Laravel Sanctum
+
+- **Laravel Mail** - Sistema de notificaciones
+
+- ✅ Vista de disponibilidad- ✅ Verificación de email con notificaciones personalizadas
+
+## 🛠️ Instalacion y Configuracion
+
+- ✅ Recuperación de contraseña
+
+### Prerrequisitos
+
+- **Node.js** (v20 o superior) - Requerido para Angular 20#### Historial Medico- ✅ CAPTCHA propio para prevenir bots
+
+- **npm** (v10 o superior) - Gestor de paquetes actualizado
+
+- **PHP** (v8.3 o superior) - Compatible con Laravel 12- ✅ Registro de consultas- ✅ Middleware de autenticación y verificación de email
+
+- **Composer** (v2.6+) - Gestor de dependencias PHP
+
+- **MySQL** (v8.0 o superior)- ✅ Diagnosticos y tratamientos- ✅ Gestión de roles (admin, veterinarian, user)
+
+- **Git** (v2.40+)
+
+- ✅ Prescripciones medicas
+
+### 1. Clonar el Repositorio
+
+- ✅ Notas del veterinario#### Gestión de Datos
+
+```bash
+
+git clone https://github.com/vansfanelx/veterinaria.git- ✅ Historial completo por mascota- ✅ CRUD completo de usuarios con roles
 
 cd veterinaria
 
-```#### Mis Citas
+```- ✅ Gestión de mascotas con propietarios
 
-- ✅ Vista de todas las citas
 
-### 2. Backend (Laravel API)- ✅ Filtro por estado (Todas, Próximas, Pasadas)
 
-- ✅ Detalles de cada cita
+### 2. Backend (Laravel 12)#### Caracteristicas Tecnicas- ✅ Sistema de citas con veterinarios asignados
 
-```bash- ✅ Cancelación de citas (con restricciones)
 
-# Navegar al directorio del API- ✅ Estados visuales por color
 
-cd api
+```bash- ✅ Componentes standalone- ✅ Historial médico detallado
 
-#### Características de UI/UX
+# Navegar al directorio del API
 
-# Instalar dependencias de PHP- ✅ Diseño moderno con gradientes
+cd api- ✅ Signals API para estado reactivo- ✅ Calendario de disponibilidad
 
-composer install- ✅ Navegación intuitiva
 
-- ✅ Notificaciones toast
 
-# Copiar archivo de configuracion- ✅ Modales de confirmación
+# Instalar dependencias de PHP- ✅ Reactive Forms con validaciones- ✅ Filtros por estado, fecha y usuario
 
-copy .env.example .env- ✅ Loader states
+composer install
 
-- ✅ Responsive design
+- ✅ Interceptores HTTP
 
-# Generar key de aplicacion- ✅ Animaciones suaves
+# Copiar archivo de configuracion
+
+copy .env.example .env- ✅ Guards de autenticacion#### Características Técnicas
+
+
+
+# Generar key de aplicacion- ✅ Diseño responsive- ✅ API RESTful con relaciones Eloquent
 
 php artisan key:generate
 
-## 🛠️ Stack Tecnológico
+- ✅ Validaciones exhaustivas de datos
 
 # Configurar base de datos en .env
 
-# DB_DATABASE=veterinaria_db### Backend
+# DB_DATABASE=veterinaria_db### 🌐 Portal Web para Clientes (Angular 18)- ✅ CORS configurado para desarrollo
 
-# DB_USERNAME=tu_usuario- **Framework**: Laravel 12
+# DB_USERNAME=tu_usuario
 
-# DB_PASSWORD=tu_password- **PHP**: 8.3+
+# DB_PASSWORD=tu_password- ✅ Base de datos MySQL
 
-- **Base de Datos**: MySQL
 
-# Ejecutar migraciones y seeders- **Autenticación**: Laravel Sanctum
 
-php artisan migrate --seed- **Email**: Laravel Mail con templates personalizados
+# Ejecutar migraciones y seeders#### Funcionalidades de Usuario- ✅ Migraciones y seeders
 
-- **Validación**: Form Requests
+php artisan migrate --seed
+
+- ✅ Registro y login de clientes- ✅ Emails HTML personalizados
 
 # Iniciar servidor de desarrollo
 
-php artisan serve --port=8000### Frontend (Admin & Web)
+php artisan serve --port=8000- ✅ Verificacion de email
 
-```- **Framework**: Angular 20
+```
 
-- **Lenguaje**: TypeScript 5.x
+- ✅ Recuperacion de contraseña### 🎨 Panel Administrativo (Angular 18)
 
-### 3. Frontend Administrativo (Angular)- **Estado**: Signals API
+### 3. Frontend Administrativo (Angular 20)
 
-- **Formularios**: Reactive Forms
+- ✅ Perfil editable
 
-```bash- **HTTP**: HttpClient con RxJS
+```bash
 
-# Abrir nueva terminal y navegar al directorio admin- **Routing**: Angular Router
+# Abrir nueva terminal y navegar al directorio admin- ✅ Cambio de contraseña#### Gestión de Usuarios
 
-cd admin- **Estilos**: SCSS con variables CSS
+cd admin
 
-- **Arquitectura**: Standalone Components
+- ✅ CRUD completo de usuarios
 
-# Instalar dependencias de Node.js
+# Verificar version de Node.js (debe ser v20+)
 
-npm install## 📁 Estructura del Proyecto
+node --version#### Gestion de Mascotas- ✅ Búsqueda por nombre, email, teléfono
 
 
+
+# Instalar dependencias Angular 20- ✅ Registro de mascotas propias- ✅ Filtrado por rol
+
+npm install
+
+- ✅ Vista de mascotas registradas- ✅ Gestión de permisos
+
+# Iniciar servidor de desarrollo
+
+npm run dev- ✅ Edicion de informacion de mascotas- ✅ Cambio de contraseñas
+
+
+
+# Acceso: http://localhost:55286- ✅ Acceso al historial medico- ✅ Activación/desactivación de cuentas
+
+```
+
+
+
+### 4. Frontend Web Clientes (Angular 20)
+
+#### Sistema de Citas#### Gestión de Mascotas
+
+```bash
+
+# Abrir otra terminal y navegar al directorio web- ✅ Solicitud de citas online- ✅ Registro completo con foto
+
+cd web
+
+- ✅ Seleccion de mascota y veterinario- ✅ Historial médico integrado
+
+# Instalar dependencias Angular 20
+
+npm install- ✅ Vista de citas programadas- ✅ Búsqueda y filtros avanzados
+
+
+
+# Iniciar servidor de desarrollo con Vite- ✅ Cancelacion de citas- ✅ Vista de detalles completa
+
+npm run dev
+
+- ✅ Historial de citas- ✅ Edición y eliminación
+
+# Acceso: http://localhost:8003
+
+```
+
+
+
+## 🔑 Credenciales de Prueba#### Caracteristicas Tecnicas#### Gestión de Citas
+
+
+
+### 👨‍💼 Administrador Principal- ✅ Interfaz diferente del panel admin- ✅ Calendario mensual interactivo
+
+```
+
+Email: admin@vetivet.com- ✅ Diseño enfocado en clientes- ✅ Asignación de veterinarios
+
+Password: Admin123
+
+Panel: http://localhost:55286- ✅ Navegacion simplificada- ✅ Control de estados (pendiente, confirmada, completada, cancelada)
+
+```
+
+- ✅ Responsive design- ✅ Filtros por fecha y estado
+
+### 👨‍⚕️ Veterinarios (4 disponibles)
+
+```- ✅ Validaciones de usuario- ✅ Vista de disponibilidad
+
+Email: carlos.mendoza@vetivet.com
+
+Email: ana.martinez@vetivet.com
+
+Email: luis.ramirez@vetivet.com
+
+Email: maria.garcia@vetivet.com## 🚀 Tecnologias Utilizadas#### Historial Médico
+
+Password: Vet123
+
+Panel: http://localhost:55286- ✅ Registro de consultas
+
+```
+
+### Backend- ✅ Diagnósticos y tratamientos
+
+### 👤 Clientes (3 disponibles)
+
+```- **Laravel 12** - Framework PHP moderno- ✅ Prescripciones médicas
+
+Email: juan.perez@example.com
+
+Email: maria.gonzalez@example.com- **MySQL** - Base de datos relacional- ✅ Notas del veterinario
+
+Email: pedro.sanchez@example.com
+
+Password: User123- **Laravel Sanctum** - Autenticacion API- ✅ Historial completo por mascota
+
+Panel: http://localhost:8003
+
+```- **Eloquent ORM** - Mapeo objeto-relacional
+
+
+
+## 📋 Funcionalidades por Rol- **Laravel Mail** - Sistema de notificaciones#### Características Técnicas
+
+
+
+### 👨‍💼 Administrador- ✅ Componentes standalone
+
+- ✅ Gestion completa de usuarios (crear, editar, eliminar)
+
+- ✅ Gestion de mascotas y propietarios### Frontend- ✅ Signals API para estado reactivo
+
+- ✅ Gestion de citas y horarios
+
+- ✅ Gestion de historiales medicos- **Angular 18** - Framework TypeScript- ✅ Reactive Forms con validaciones
+
+- ✅ Acceso a reportes y estadisticas
+
+- ✅ Configuracion del sistema- **TypeScript** - Lenguaje tipado fuerte- ✅ Interceptores HTTP
+
+
+
+### 👨‍⚕️ Veterinario- **RxJS** - Programacion reactiva- ✅ Guards de autenticación
+
+- ✅ Gestion de sus citas asignadas
+
+- ✅ Acceso a historiales medicos completos- **Angular Signals** - Estado reactivo- ✅ Diseño responsive
+
+- ✅ Registro de consultas y tratamientos
+
+- ✅ Gestion de mascotas- **Bootstrap 5** - Framework CSS
+
+- ✅ Calendario personal de citas
+
+- ❌ NO puede gestionar usuarios- **Angular Material** - Componentes UI### 🌐 Portal Web para Clientes (Angular 18)
+
+
+
+### 👤 Cliente
+
+- ✅ Registro y gestion de sus mascotas
+
+- ✅ Solicitud de citas online### Herramientas de Desarrollo#### Funcionalidades de Usuario
+
+- ✅ Consulta de historiales medicos de sus mascotas
+
+- ✅ Gestion de perfil personal- **Vite** - Build tool rapido- ✅ Registro y login de clientes
+
+- ✅ Ver estado de citas programadas
+
+- ❌ NO puede acceder al panel administrativo- **PHPUnit** - Testing backend- ✅ Verificación de email
+
+
+
+## 🏗️ Arquitectura del Sistema- **Jasmine/Karma** - Testing frontend- ✅ Recuperación de contraseña
+
+
+
+```- **Git** - Control de versiones- ✅ Perfil editable
+
+┌─────────────────────┐    ┌─────────────────────┐    ┌─────────────────────┐
+
+│    Admin Panel      │    │    Client Web       │    │    Mobile App       │- **VS Code** - Editor de codigo- ✅ Cambio de contraseña
+
+│   (Angular 20)      │    │   (Angular 20)      │    │    (Futuro)         │
+
+│  Port: 55286        │    │  Port: 8003         │    │                     │
+
+└─────────────────────┘    └─────────────────────┘    └─────────────────────┘
+
+         │                           │                           │## 🛠️ Instalacion y Configuracion#### Gestión de Mascotas
+
+         └───────────────────────────┼───────────────────────────┘
+
+                                     │- ✅ Registro de mascotas propias
+
+                        ┌─────────────────────┐
+
+                        │    Laravel 12 API   │### Prerrequisitos- ✅ Vista de mascotas registradas
+
+                        │   (Backend Core)    │
+
+                        │   Port: 8000        │- **Node.js** (v18 o superior)- ✅ Historial médico de sus mascotas
+
+                        └─────────────────────┘
+
+                                     │- **PHP** (v8.2 o superior)- ✅ Actualización de datos
+
+                        ┌─────────────────────┐
+
+                        │     MySQL 8.0       │- **Composer** (Gestor de dependencias PHP)
+
+                        │   (Data Storage)    │
+
+                        └─────────────────────┘- **MySQL** (v8.0 o superior)#### Sistema de Citas
+
+```
+
+- **Git** (Control de versiones)- ✅ Calendario interactivo para agendar
+
+## 🔒 Seguridad Implementada
+
+- ✅ Selección de fecha y hora disponible
+
+### Autenticacion Moderna
+
+- **Laravel Sanctum 4.x** - Tokens de acceso seguros### 1. Clonar el Repositorio- ✅ Selección de veterinario
+
+- **Verificacion de email** obligatoria para activar cuenta
+
+- **Recuperacion de contraseña** con tokens temporales- ✅ Selección o registro de mascota
+
+- **CAPTCHA personalizado** anti-bots en registro
+
+```bash- ✅ Motivo de consulta
+
+### Control de Acceso Avanzado
+
+- **RBAC (Role-Based Access Control)** - Control basado en rolesgit clone https://github.com/vansfanelx/veterinaria.git- ✅ Observaciones adicionales
+
+- **Guards funcionales** en Angular 20 - Sintaxis simplificada
+
+- **Middleware de roles** en todas las rutas protegidascd veterinaria
+
+- **Validacion de permisos** en cada operacion
+
+```#### Mis Citas
+
+### Proteccion de Datos
+
+- **Encriptacion bcrypt** para contraseñas- ✅ Vista de todas las citas
+
+- **Sanitizacion de datos** de entrada
+
+- **CORS configurado** correctamente### 2. Backend (Laravel API)- ✅ Filtro por estado (Todas, Próximas, Pasadas)
+
+- **Validaciones exhaustivas** con Angular 20 forms
+
+- **SQL Injection** prevenido con Eloquent ORM- ✅ Detalles de cada cita
+
+
+
+## 🆕 Caracteristicas Avanzadas de Angular 20```bash- ✅ Cancelación de citas (con restricciones)
+
+
+
+### Nueva Sintaxis de Control Flow# Navegar al directorio del API- ✅ Estados visuales por color
+
+```typescript
+
+<!-- Antes (Angular 18 y anteriores) -->cd api
+
+<div *ngIf="user; else loading">
+
+  <div *ngFor="let pet of pets; trackBy: trackPet">#### Características de UI/UX
+
+    {{ pet.name }}
+
+  </div># Instalar dependencias de PHP- ✅ Diseño moderno con gradientes
+
+</div>
+
+composer install- ✅ Navegación intuitiva
+
+<!-- Ahora (Angular 20) -->
+
+@if (user) {- ✅ Notificaciones toast
+
+  @for (pet of pets; track pet.id) {
+
+    <div>{{ pet.name }}</div># Copiar archivo de configuracion- ✅ Modales de confirmación
+
+  }
+
+} @else {copy .env.example .env- ✅ Loader states
+
+  <div>Cargando...</div>
+
+}- ✅ Responsive design
+
+```
+
+# Generar key de aplicacion- ✅ Animaciones suaves
+
+### Signals Reactivos Nativos
+
+```typescriptphp artisan key:generate
+
+// Estado reactivo sin RxJS
+
+export class PetComponent {## 🛠️ Stack Tecnológico
+
+  pets = signal<Pet[]>([]);
+
+  loading = signal(false);# Configurar base de datos en .env
+
+  
+
+  // Computed signals# DB_DATABASE=veterinaria_db### Backend
+
+  totalPets = computed(() => this.pets().length);
+
+  activePets = computed(() => # DB_USERNAME=tu_usuario- **Framework**: Laravel 12
+
+    this.pets().filter(pet => pet.active)
+
+  );# DB_PASSWORD=tu_password- **PHP**: 8.3+
+
+}
+
+```- **Base de Datos**: MySQL
+
+
+
+### Componentes Standalone Mejorados# Ejecutar migraciones y seeders- **Autenticación**: Laravel Sanctum
+
+```typescript
+
+@Component({php artisan migrate --seed- **Email**: Laravel Mail con templates personalizados
+
+  selector: 'app-pet-form',
+
+  standalone: true,- **Validación**: Form Requests
+
+  imports: [ReactiveFormsModule, CommonModule],
+
+  template: `...`,# Iniciar servidor de desarrollo
+
+  // Nueva sintaxis de providers
+
+  providers: [PetService]php artisan serve --port=8000### Frontend (Admin & Web)
+
+})
+
+export class PetFormComponent {```- **Framework**: Angular 20
+
+  // Inyeccion de dependencias simplificada
+
+  private petService = inject(PetService);- **Lenguaje**: TypeScript 5.x
+
+}
+
+```### 3. Frontend Administrativo (Angular)- **Estado**: Signals API
+
+
+
+### Guards Funcionales- **Formularios**: Reactive Forms
+
+```typescript
+
+// Antes (Angular 18)```bash- **HTTP**: HttpClient con RxJS
+
+@Injectable()
+
+export class AuthGuard implements CanActivate {# Abrir nueva terminal y navegar al directorio admin- **Routing**: Angular Router
+
+  canActivate(): boolean {
+
+    return this.authService.isAuthenticated();cd admin- **Estilos**: SCSS con variables CSS
+
+  }
+
+}- **Arquitectura**: Standalone Components
+
+
+
+// Ahora (Angular 20)# Instalar dependencias de Node.js
+
+export const authGuard: CanActivateFn = () => {
+
+  const authService = inject(AuthService);npm install## 📁 Estructura del Proyecto
+
+  return authService.isAuthenticated();
+
+};
+
+```
 
 # Iniciar servidor de desarrollo```
 
+## 🚀 Mejoras de Rendimiento Angular 20
+
 npm run devsystema-veterinaria/
 
-├── api/                              # Backend Laravel
+### Optimizaciones Automaticas
 
-# Acceso: http://localhost:55286│   ├── app/
+- **Tree-shaking mejorado** - Bundles 30% mas pequeños├── api/                              # Backend Laravel
+
+- **Hydration optimizada** - Carga inicial 50% mas rapida
+
+- **Change detection mejorada** - Menos re-renders innecesarios# Acceso: http://localhost:55286│   ├── app/
+
+- **Bundle splitting inteligente** - Carga bajo demanda
 
 ```│   │   ├── Http/
 
-│   │   │   ├── Controllers/API/
+### Nuevas APIs de Rendimiento
 
-### 4. Frontend Web Clientes (Angular)│   │   │   │   ├── AuthController.php       # Autenticación
+- **OnPush por defecto** en componentes standalone│   │   │   ├── Controllers/API/
+
+- **Lazy loading mejorado** de rutas y componentes
+
+- **Preloading strategies** mas eficientes### 4. Frontend Web Clientes (Angular)│   │   │   │   ├── AuthController.php       # Autenticación
+
+- **Memory management** optimizado
 
 │   │   │   │   ├── WebController.php        # Endpoints web
 
+## 📊 Elementos Angular 20 Implementados
+
 ```bash│   │   │   │   ├── PetController.php        # Mascotas
 
-# Abrir otra terminal y navegar al directorio web│   │   │   │   ├── AppointmentController.php # Citas
+### Formularios Reactivos Avanzados
 
-cd web│   │   │   │   ├── MedicalHistoryController.php
+- **Typed Reactive Forms** - Tipado fuerte automático# Abrir otra terminal y navegar al directorio web│   │   │   │   ├── AppointmentController.php # Citas
+
+- **Validadores asincrónos** con mejor rendimiento  
+
+- **Form arrays dinámicos** para listas complejascd web│   │   │   │   ├── MedicalHistoryController.php
+
+- **Validaciones condicionales** basadas en estado
 
 │   │   │   │   ├── UserController.php       # Usuarios
 
-# Instalar dependencias de Node.js│   │   │   │   └── CaptchaController.php    # CAPTCHA
+### Pipes Personalizados
 
-npm install│   │   ├── Models/
+- **DateFormat pipe** - Formateo de fechas localizado# Instalar dependencias de Node.js│   │   │   │   └── CaptchaController.php    # CAPTCHA
+
+- **PetAge pipe** - Cálculo automático de edad
+
+- **StatusColor pipe** - Colores dinámicos por estadonpm install│   │   ├── Models/
+
+- **Search filter pipe** - Filtrado en tiempo real
 
 │   │   │   ├── User.php
 
-# Iniciar servidor de desarrollo│   │   │   ├── Pet.php
+### Directivas Especializadas
 
-npm run dev│   │   │   ├── Appointment.php
+- **AutoFocus directive** - Foco automático en campos# Iniciar servidor de desarrollo│   │   │   ├── Pet.php
+
+- **HighlightAppointment directive** - Resaltar citas próximas
+
+- **LoadingSpinner directive** - Estados de carganpm run dev│   │   │   ├── Appointment.php
+
+- **PermissionCheck directive** - Mostrar/ocultar por rol
 
 │   │   │   └── MedicalHistory.php
 
+## 📈 Beneficios de Angular 20
+
 # Acceso: http://localhost:8003│   │   └── Notifications/
 
-```│   │       └── VerifyEmailNotification.php  # Email verificación
+### Para Desarrolladores
 
-│   ├── database/
+- **Sintaxis más limpia** con nueva control flow```│   │       └── VerifyEmailNotification.php  # Email verificación
 
-## 🔑 Credenciales de Prueba│   │   ├── migrations/
+- **Mejor DX** (Developer Experience) con signals
 
-│   │   └── seeders/
+- **Menos boilerplate** código más conciso│   ├── database/
 
-### 👨‍💼 Administrador Principal│   │       └── VeterinarianSeeder.php
+- **Mejor tipado** con TypeScript 5.3+
 
-```│   ├── routes/
+- **Debugging mejorado** con Angular DevTools## 🔑 Credenciales de Prueba│   │   ├── migrations/
 
-Email: admin@vetivet.com│   │   └── api.php                  # Rutas API
 
-Password: Admin123│   └── resources/
 
-Panel: http://localhost:55286│       └── views/vendor/mail/       # Templates email
+### Para Usuarios Finales│   │   └── seeders/
 
-```│
+- **Carga más rápida** - Aplicación optimizada
+
+- **Mejor responsividad** - UI más fluida### 👨‍💼 Administrador Principal│   │       └── VeterinarianSeeder.php
+
+- **Menor uso de memoria** - Mejor rendimiento
+
+- **Experiencia consistente** - Interfaces modernas```│   ├── routes/
+
+
+
+## 🔮 Roadmap con Angular 20Email: admin@vetivet.com│   │   └── api.php                  # Rutas API
+
+
+
+### Próximas ImplementacionesPassword: Admin123│   └── resources/
+
+- 📱 **PWA completa** con service workers optimizados
+
+- 🔄 **Estado global** con signals para reemplazar NgRxPanel: http://localhost:55286│       └── views/vendor/mail/       # Templates email
+
+- 🎨 **Theming dinámico** con CSS custom properties
+
+- 📊 **Micro-frontends** preparados para escalabilidad```│
+
+- 🚀 **Web Workers** para procesamiento pesado
 
 ├── admin/                            # Panel Admin Angular
 
-### 👨‍⚕️ Veterinarios (4 disponibles)│   ├── src/
+### Migraciones Futuras
 
-```│   │   ├── app/
+- **Angular 21** cuando esté disponible### 👨‍⚕️ Veterinarios (4 disponibles)│   ├── src/
+
+- **Ivy renderer optimizations** continuas
+
+- **Nueva arquitectura de signals** completa```│   │   ├── app/
+
+- **SSR universal** para mejor SEO
 
 Email: carlos.mendoza@vetivet.com│   │   │   ├── core/
 
+## 🤝 Contribucion al Proyecto
+
 Email: ana.martinez@vetivet.com│   │   │   │   ├── guards/         # Auth & Login guards
 
-Email: luis.ramirez@vetivet.com│   │   │   │   ├── interceptors/   # HTTP interceptor
+### Requisitos de Desarrollo
 
-Email: maria.garcia@vetivet.com│   │   │   │   ├── models/         # Interfaces TypeScript
+- **Node.js 20+** - Para compatibilidad Angular 20Email: luis.ramirez@vetivet.com│   │   │   │   ├── interceptors/   # HTTP interceptor
+
+- **Angular CLI 20** - Herramientas de desarrollo
+
+- **VS Code** con extensiones Angular recomendadasEmail: maria.garcia@vetivet.com│   │   │   │   ├── models/         # Interfaces TypeScript
+
+- **Git 2.40+** para control de versiones
 
 Password: Vet123│   │   │   │   └── services/       # Servicios HTTP
 
-Panel: http://localhost:55286│   │   │   ├── features/
+### Comandos de Desarrollo Angular 20
 
-```│   │   │   │   ├── pets/
+```bashPanel: http://localhost:55286│   │   │   ├── features/
 
-│   │   │   │   ├── appointments/
+# Crear componente standalone
+
+ng generate component pet-form --standalone```│   │   │   │   ├── pets/
+
+
+
+# Crear guard funcional│   │   │   │   ├── appointments/
+
+ng generate guard auth --functional
 
 ### 👤 Clientes (3 disponibles)│   │   │   │   └── medical-histories/
 
-```│   │   │   └── shared/
+# Ejecutar tests con nuevas features
 
-Email: juan.perez@example.com│   │   │       └── components/
+ng test --browsers=ChromeHeadless```│   │   │   └── shared/
 
-Email: maria.gonzalez@example.com│   │   └── styles.scss
 
-Email: pedro.sanchez@example.com│
 
-Password: User123└── web/                              # Portal Web Angular
+# Build optimizado para produccionEmail: juan.perez@example.com│   │   │       └── components/
 
-Panel: http://localhost:8003    ├── src/
+ng build --configuration=production
 
-```    │   ├── app/
+```Email: maria.gonzalez@example.com│   │   └── styles.scss
 
-    │   │   ├── core/
 
-## 📋 Funcionalidades por Rol    │   │   │   ├── guards/
 
-    │   │   │   ├── interceptors/
+## 📄 Licencia y CompatibilidadEmail: pedro.sanchez@example.com│
 
-### 👨‍💼 Administrador    │   │   │   ├── models/
 
-- ✅ Gestion completa de usuarios (crear, editar, eliminar)    │   │   │   └── services/
 
-- ✅ Gestion de mascotas y propietarios    │   │   │       ├── auth.service.ts
+### Tecnologías CompatiblesPassword: User123└── web/                              # Portal Web Angular
 
-- ✅ Gestion de citas y horarios    │   │   │       ├── web.service.ts
+- **Angular 20.x** - Última versión estable
+
+- **TypeScript 5.3+** - Tipado avanzadoPanel: http://localhost:8003    ├── src/
+
+- **Node.js 20 LTS** - Entorno de ejecución
+
+- **npm 10+** o **yarn 4+** - Gestores de paquetes```    │   ├── app/
+
+
+
+### Navegadores Soportados    │   │   ├── core/
+
+- **Chrome 120+**
+
+- **Firefox 121+**## 📋 Funcionalidades por Rol    │   │   │   ├── guards/
+
+- **Safari 17+**
+
+- **Edge 120+**    │   │   │   ├── interceptors/
+
+
+
+## 👨‍💻 Informacion del Desarrollador### 👨‍💼 Administrador    │   │   │   ├── models/
+
+
+
+### Tecnologías Especializadas- ✅ Gestion completa de usuarios (crear, editar, eliminar)    │   │   │   └── services/
+
+- ⚡ **Angular 20** - Arquitectura moderna
+
+- 🔷 **TypeScript 5.3** - Tipado avanzado  - ✅ Gestion de mascotas y propietarios    │   │   │       ├── auth.service.ts
+
+- 🎯 **Signals API** - Estado reactivo
+
+- 🚀 **Standalone Components** - Sin NgModules- ✅ Gestion de citas y horarios    │   │   │       ├── web.service.ts
+
+- 📱 **Responsive Design** - Mobile-first
 
 - ✅ Gestion de historiales medicos    │   │   │       └── notification.service.ts
 
+---
+
 - ✅ Acceso a reportes y estadisticas    │   │   ├── pages/
+
+## 🌟 Características Destacadas de Angular 20
 
 - ✅ Configuracion del sistema    │   │   │   ├── home/
 
+> **Nueva Era de Angular**: Este proyecto aprovecha las últimas innovaciones de Angular 20, ofreciendo una experiencia de desarrollo moderna y un rendimiento excepcional para la gestión veterinaria digital.
+
     │   │   │   ├── login/
 
-### 👨‍⚕️ Veterinario    │   │   │   ├── register/
+### ✨ Lo que hace especial a esta implementación:
 
-- ✅ Gestion de sus citas asignadas    │   │   │   ├── verify-email/
+- 🔥 **Sintaxis moderna** con @if/@for nativo### 👨‍⚕️ Veterinario    │   │   │   ├── register/
 
-- ✅ Acceso a historiales medicos completos    │   │   │   ├── forgot-password/
+- ⚡ **Rendimiento optimizado** con signals
 
-- ✅ Registro de consultas y tratamientos    │   │   │   ├── reset-password/
+- 🎯 **Código más limpio** sin decoradores complejos- ✅ Gestion de sus citas asignadas    │   │   │   ├── verify-email/
 
-- ✅ Gestion de mascotas    │   │   │   ├── appointments/      # Agendar citas
+- 🚀 **Carga ultra-rápida** con hydration mejorada
+
+- 💎 **Tipado perfecto** con TypeScript 5.3+- ✅ Acceso a historiales medicos completos    │   │   │   ├── forgot-password/
+
+
+
+---- ✅ Registro de consultas y tratamientos    │   │   │   ├── reset-password/
+
+
+
+**Desarrollado con Angular 20 para el futuro de la veterinaria digital** 🐾✨- ✅ Gestion de mascotas    │   │   │   ├── appointments/      # Agendar citas
 
 - ✅ Calendario personal de citas    │   │   │   ├── my-appointments/   # Mis citas
 
