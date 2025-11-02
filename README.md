@@ -1,245 +1,486 @@
-# Sistema de Gestión Veterinaria VetiVet 🐾
+﻿# Sistema de Gestion Veterinaria VetiVet 🐾# Sistema de GestiÃ³n Veterinaria VetiVet ðŸ¾
 
-Sistema completo de gestión para clínica veterinaria con arquitectura moderna de tres capas:
-- **API Backend** (Laravel 12 + MySQL)
-- **Panel Administrativo** (Angular 20 - Gestión Interna)
-- **Portal Web para Clientes** (Angular 20 - Autogestión)
 
-## 📚 Documentación Adicional
 
-- **[Roles y Permisos](ROLES_Y_PERMISOS.md)** - Guía completa del sistema de control de acceso basado en roles
-- **[Beneficios y Mejoras](BENEFICIOS_Y_MEJORAS.md)** - Cómo VetiVet mejora los procesos de la clínica veterinaria
-- **[Datos de Prueba](DATOS_DE_PRUEBA.md)** - Usuarios y datos precargados para testing
+Sistema completo de gestion para clinica veterinaria con arquitectura moderna de tres capas:Sistema completo de gestiÃ³n para clÃ­nica veterinaria con arquitectura moderna de tres capas:
 
-## 🌟 Características Principales
+- **API Backend** (Laravel 12 + MySQL)- **API Backend** (Laravel 12 + MySQL)
 
-### 🔐 Sistema de Autenticación y Roles
-- Sistema completo de roles (Admin, Veterinario, Cliente)
-- Control de acceso basado en roles (RBAC)
-- Login con validación de rol requerido
-- Registro de usuarios con verificación de email
-- Recuperación de contraseña
-- Guards de autenticación en backend y frontend
-- CAPTCHA personalizado para registro
+- **Panel Administrativo** (Angular 18 - Gestion Interna)- **Panel Administrativo** (Angular 20 - GestiÃ³n Interna)
+
+- **Portal Web para Clientes** (Angular 18 - Autogestion)- **Portal Web para Clientes** (Angular 20 - AutogestiÃ³n)
+
+
+
+## 📚 Documentacion Adicional## ðŸ“š DocumentaciÃ³n Adicional
+
+
+
+- **[Roles y Permisos](ROLES_Y_PERMISOS.md)** - Guia completa del sistema de control de acceso basado en roles- **[Roles y Permisos](ROLES_Y_PERMISOS.md)** - GuÃ­a completa del sistema de control de acceso basado en roles
+
+- **[Beneficios y Mejoras](BENEFICIOS_Y_MEJORAS.md)** - Como VetiVet mejora los procesos de la clinica veterinaria- **[Beneficios y Mejoras](BENEFICIOS_Y_MEJORAS.md)** - CÃ³mo VetiVet mejora los procesos de la clÃ­nica veterinaria
+
+- **[Datos de Prueba](DATOS_DE_PRUEBA.md)** - Usuarios y datos precargados para testing- **[Datos de Prueba](DATOS_DE_PRUEBA.md)** - Usuarios y datos precargados para testing
+
+
+
+## 🌟 Caracteristicas Principales## ðŸŒŸ CaracterÃ­sticas Principales
+
+
+
+### 🔐 Sistema de Autenticacion y Roles### ðŸ” Sistema de AutenticaciÃ³n y Roles
+
+- Sistema completo de roles (Admin, Veterinario, Cliente)- Sistema completo de roles (Admin, Veterinario, Cliente)
+
+- Control de acceso basado en roles (RBAC)- Control de acceso basado en roles (RBAC)
+
+- Login con validacion de rol requerido- Login con validaciÃ³n de rol requerido
+
+- Registro de usuarios con verificacion de email- Registro de usuarios con verificaciÃ³n de email
+
+- Recuperacion de contraseña- RecuperaciÃ³n de contraseÃ±a
+
+- Guards de autenticacion en backend y frontend- Guards de autenticaciÃ³n en backend y frontend
+
+- CAPTCHA personalizado para registro- CAPTCHA personalizado para registro
+
 - **Ver detalles en [ROLES_Y_PERMISOS.md](ROLES_Y_PERMISOS.md)**
 
 ### 💼 Backend API (Laravel 12)
 
-#### Autenticación y Seguridad
-- ✅ Sistema de autenticación con Laravel Sanctum
-- ✅ Verificación de email con notificaciones personalizadas
-- ✅ Recuperación de contraseña
-- ✅ CAPTCHA propio para prevenir bots
-- ✅ Middleware de autenticación y verificación de email
-- ✅ Gestión de roles (admin, veterinarian, user)
+### ðŸ’¼ Backend API (Laravel 12)
 
-#### Gestión de Datos
-- ✅ CRUD completo de usuarios con roles
-- ✅ Gestión de mascotas con propietarios
-- ✅ Sistema de citas con veterinarios asignados
-- ✅ Historial médico detallado
-- ✅ Calendario de disponibilidad
-- ✅ Filtros por estado, fecha y usuario
+#### Autenticacion y Seguridad
 
-#### Características Técnicas
-- ✅ API RESTful con relaciones Eloquent
-- ✅ Validaciones exhaustivas de datos
-- ✅ CORS configurado para desarrollo
-- ✅ Base de datos MySQL
-- ✅ Migraciones y seeders
-- ✅ Emails HTML personalizados
+- ✅ Sistema de autenticacion con Laravel Sanctum#### AutenticaciÃ³n y Seguridad
+
+- ✅ Verificacion de email con notificaciones personalizadas- âœ… Sistema de autenticaciÃ³n con Laravel Sanctum
+
+- ✅ Recuperacion de contraseña- âœ… VerificaciÃ³n de email con notificaciones personalizadas
+
+- ✅ CAPTCHA propio para prevenir bots- âœ… RecuperaciÃ³n de contraseÃ±a
+
+- ✅ Middleware de autenticacion y verificacion de email- âœ… CAPTCHA propio para prevenir bots
+
+- ✅ Gestion de roles (admin, veterinarian, user)- âœ… Middleware de autenticaciÃ³n y verificaciÃ³n de email
+
+- âœ… GestiÃ³n de roles (admin, veterinarian, user)
+
+#### Gestion de Datos
+
+- ✅ CRUD completo de usuarios con roles#### GestiÃ³n de Datos
+
+- ✅ Gestion de mascotas con propietarios- âœ… CRUD completo de usuarios con roles
+
+- ✅ Sistema de citas con veterinarios asignados- âœ… GestiÃ³n de mascotas con propietarios
+
+- ✅ Historial medico detallado- âœ… Sistema de citas con veterinarios asignados
+
+- ✅ Calendario de disponibilidad- âœ… Historial mÃ©dico detallado
+
+- ✅ Filtros por estado, fecha y usuario- âœ… Calendario de disponibilidad
+
+- âœ… Filtros por estado, fecha y usuario
 
 ### 🎨 Panel Administrativo (Angular 18)
 
-#### Gestión de Usuarios
-- ✅ CRUD completo de usuarios
-- ✅ Búsqueda por nombre, email, teléfono
-- ✅ Filtrado por rol
-- ✅ Gestión de permisos
-- ✅ Cambio de contraseñas
-- ✅ Activación/desactivación de cuentas
+#### CaracterÃ­sticas TÃ©cnicas
 
-#### Gestión de Mascotas
-- ✅ Registro completo con foto
-- ✅ Historial médico integrado
-- ✅ Búsqueda y filtros avanzados
-- ✅ Vista de detalles completa
-- ✅ Edición y eliminación
+#### Gestion de Usuarios- âœ… API RESTful con relaciones Eloquent
 
-#### Gestión de Citas
-- ✅ Calendario mensual interactivo
-- ✅ Asignación de veterinarios
-- ✅ Control de estados (pendiente, confirmada, completada, cancelada)
+- ✅ CRUD completo de usuarios- âœ… Validaciones exhaustivas de datos
+
+- ✅ Busqueda por nombre, email, telefono- âœ… CORS configurado para desarrollo
+
+- ✅ Filtrado por rol- âœ… Base de datos MySQL
+
+- ✅ Gestion de permisos- âœ… Migraciones y seeders
+
+- âœ… Emails HTML personalizados
+
+#### Gestion de Mascotas
+
+- ✅ Registro completo con foto### ðŸŽ¨ Panel Administrativo (Angular 18)
+
+- ✅ Historial medico integrado
+
+- ✅ Busqueda y filtros avanzados#### GestiÃ³n de Usuarios
+
+- ✅ Vista de detalles completa- âœ… CRUD completo de usuarios
+
+- âœ… BÃºsqueda por nombre, email, telÃ©fono
+
+#### Gestion de Citas- âœ… Filtrado por rol
+
+- ✅ Calendario mensual interactivo- âœ… GestiÃ³n de permisos
+
+- ✅ Asignacion de veterinarios- âœ… Cambio de contraseÃ±as
+
+- ✅ Control de estados (pendiente, confirmada, completada, cancelada)- âœ… ActivaciÃ³n/desactivaciÃ³n de cuentas
+
 - ✅ Filtros por fecha y estado
-- ✅ Vista de disponibilidad
 
-#### Historial Médico
-- ✅ Registro de consultas
-- ✅ Diagnósticos y tratamientos
-- ✅ Prescripciones médicas
-- ✅ Notas del veterinario
-- ✅ Historial completo por mascota
+#### GestiÃ³n de Mascotas
 
-#### Características Técnicas
-- ✅ Componentes standalone
-- ✅ Signals API para estado reactivo
-- ✅ Reactive Forms con validaciones
-- ✅ Interceptores HTTP
-- ✅ Guards de autenticación
-- ✅ Diseño responsive
+### 🌐 Portal Web para Clientes (Angular 18)- âœ… Registro completo con foto
 
-### 🌐 Portal Web para Clientes (Angular 18)
+- âœ… Historial mÃ©dico integrado
 
-#### Funcionalidades de Usuario
-- ✅ Registro y login de clientes
-- ✅ Verificación de email
-- ✅ Recuperación de contraseña
-- ✅ Perfil editable
-- ✅ Cambio de contraseña
+#### Funcionalidades de Usuario- âœ… BÃºsqueda y filtros avanzados
 
-#### Gestión de Mascotas
-- ✅ Registro de mascotas propias
-- ✅ Vista de mascotas registradas
-- ✅ Historial médico de sus mascotas
-- ✅ Actualización de datos
+- ✅ Registro y login de clientes- âœ… Vista de detalles completa
 
-#### Sistema de Citas
-- ✅ Calendario interactivo para agendar
-- ✅ Selección de fecha y hora disponible
-- ✅ Selección de veterinario
-- ✅ Selección o registro de mascota
-- ✅ Motivo de consulta
-- ✅ Observaciones adicionales
+- ✅ Verificacion de email- âœ… EdiciÃ³n y eliminaciÃ³n
 
-#### Mis Citas
-- ✅ Vista de todas las citas
-- ✅ Filtro por estado (Todas, Próximas, Pasadas)
-- ✅ Detalles de cada cita
-- ✅ Cancelación de citas (con restricciones)
-- ✅ Estados visuales por color
+- ✅ Recuperacion de contraseña
 
-#### Características de UI/UX
-- ✅ Diseño moderno con gradientes
-- ✅ Navegación intuitiva
-- ✅ Notificaciones toast
-- ✅ Modales de confirmación
-- ✅ Loader states
-- ✅ Responsive design
-- ✅ Animaciones suaves
+- ✅ Perfil editable#### GestiÃ³n de Citas
 
-## 🛠️ Stack Tecnológico
+- âœ… Calendario mensual interactivo
 
-### Backend
-- **Framework**: Laravel 12
+#### Gestion de Mascotas- âœ… AsignaciÃ³n de veterinarios
+
+- ✅ Registro de mascotas propias- âœ… Control de estados (pendiente, confirmada, completada, cancelada)
+
+- ✅ Vista de mascotas registradas- âœ… Filtros por fecha y estado
+
+- ✅ Acceso al historial medico- âœ… Vista de disponibilidad
+
+
+
+#### Sistema de Citas#### Historial MÃ©dico
+
+- ✅ Solicitud de citas online- âœ… Registro de consultas
+
+- ✅ Seleccion de mascota y veterinario- âœ… DiagnÃ³sticos y tratamientos
+
+- ✅ Vista de citas programadas- âœ… Prescripciones mÃ©dicas
+
+- ✅ Cancelacion de citas- âœ… Notas del veterinario
+
+- âœ… Historial completo por mascota
+
+## 🚀 Tecnologias Utilizadas
+
+#### CaracterÃ­sticas TÃ©cnicas
+
+### Backend- âœ… Componentes standalone
+
+- **Laravel 12** - Framework PHP- âœ… Signals API para estado reactivo
+
+- **MySQL** - Base de datos- âœ… Reactive Forms con validaciones
+
+- **Laravel Sanctum** - Autenticacion API- âœ… Interceptores HTTP
+
+- **Eloquent ORM** - Mapeo objeto-relacional- âœ… Guards de autenticaciÃ³n
+
+- âœ… DiseÃ±o responsive
+
+### Frontend
+
+- **Angular 18** - Framework TypeScript### ðŸŒ Portal Web para Clientes (Angular 18)
+
+- **TypeScript** - Lenguaje tipado
+
+- **RxJS** - Programacion reactiva#### Funcionalidades de Usuario
+
+- **Angular Signals** - Estado reactivo- âœ… Registro y login de clientes
+
+- **Bootstrap 5** - Framework CSS- âœ… VerificaciÃ³n de email
+
+- âœ… RecuperaciÃ³n de contraseÃ±a
+
+## 🛠️ Instalacion y Configuracion- âœ… Perfil editable
+
+- âœ… Cambio de contraseÃ±a
+
+### Prerrequisitos
+
+- Node.js (v18 o superior)#### GestiÃ³n de Mascotas
+
+- PHP (v8.2 o superior)- âœ… Registro de mascotas propias
+
+- Composer- âœ… Vista de mascotas registradas
+
+- MySQL- âœ… Historial mÃ©dico de sus mascotas
+
+- Git- âœ… ActualizaciÃ³n de datos
+
+
+
+### Backend (Laravel API)#### Sistema de Citas
+
+- âœ… Calendario interactivo para agendar
+
+```bash- âœ… SelecciÃ³n de fecha y hora disponible
+
+cd api- âœ… SelecciÃ³n de veterinario
+
+composer install- âœ… SelecciÃ³n o registro de mascota
+
+copy .env.example .env- âœ… Motivo de consulta
+
+php artisan key:generate- âœ… Observaciones adicionales
+
+php artisan migrate --seed
+
+php artisan serve --port=8000#### Mis Citas
+
+```- âœ… Vista de todas las citas
+
+- âœ… Filtro por estado (Todas, PrÃ³ximas, Pasadas)
+
+### Frontend Administrativo- âœ… Detalles de cada cita
+
+- âœ… CancelaciÃ³n de citas (con restricciones)
+
+```bash- âœ… Estados visuales por color
+
+cd admin
+
+npm install#### CaracterÃ­sticas de UI/UX
+
+npm run dev- âœ… DiseÃ±o moderno con gradientes
+
+# Acceso: http://localhost:55286- âœ… NavegaciÃ³n intuitiva
+
+```- âœ… Notificaciones toast
+
+- âœ… Modales de confirmaciÃ³n
+
+### Frontend Web Clientes- âœ… Loader states
+
+- âœ… Responsive design
+
+```bash- âœ… Animaciones suaves
+
+cd web
+
+npm install## ðŸ› ï¸ Stack TecnolÃ³gico
+
+npm run dev
+
+# Acceso: http://localhost:8003### Backend
+
+```- **Framework**: Laravel 12
+
 - **PHP**: 8.3+
-- **Base de Datos**: MySQL
-- **Autenticación**: Laravel Sanctum
-- **Email**: Laravel Mail con templates personalizados
-- **Validación**: Form Requests
 
-### Frontend (Admin & Web)
+## 🔑 Credenciales de Prueba- **Base de Datos**: MySQL
+
+- **AutenticaciÃ³n**: Laravel Sanctum
+
+### Administrador- **Email**: Laravel Mail con templates personalizados
+
+- Email: admin@vetivet.com- **ValidaciÃ³n**: Form Requests
+
+- Password: Admin123
+
+- Panel: http://localhost:55286### Frontend (Admin & Web)
+
 - **Framework**: Angular 18
-- **Lenguaje**: TypeScript 5.x
-- **Estado**: Signals API
-- **Formularios**: Reactive Forms
-- **HTTP**: HttpClient con RxJS
+
+### Veterinario- **Lenguaje**: TypeScript 5.x
+
+- Email: carlos.mendoza@vetivet.com- **Estado**: Signals API
+
+- Password: Vet123- **Formularios**: Reactive Forms
+
+- Panel: http://localhost:55286- **HTTP**: HttpClient con RxJS
+
 - **Routing**: Angular Router
-- **Estilos**: SCSS con variables CSS
-- **Arquitectura**: Standalone Components
 
-## 📁 Estructura del Proyecto
+### Cliente- **Estilos**: SCSS con variables CSS
 
-```
+- Email: juan.perez@example.com- **Arquitectura**: Standalone Components
+
+- Password: User123
+
+- Panel: http://localhost:8003## ðŸ“ Estructura del Proyecto
+
+
+
+## 📋 Funcionalidades por Rol```
+
 systema-veterinaria/
-├── api/                              # Backend Laravel
-│   ├── app/
-│   │   ├── Http/
-│   │   │   ├── Controllers/API/
-│   │   │   │   ├── AuthController.php       # Autenticación
-│   │   │   │   ├── WebController.php        # Endpoints web
-│   │   │   │   ├── PetController.php        # Mascotas
-│   │   │   │   ├── AppointmentController.php # Citas
-│   │   │   │   ├── MedicalHistoryController.php
-│   │   │   │   ├── UserController.php       # Usuarios
-│   │   │   │   └── CaptchaController.php    # CAPTCHA
-│   │   ├── Models/
-│   │   │   ├── User.php
-│   │   │   ├── Pet.php
-│   │   │   ├── Appointment.php
-│   │   │   └── MedicalHistory.php
-│   │   └── Notifications/
-│   │       └── VerifyEmailNotification.php  # Email verificación
-│   ├── database/
-│   │   ├── migrations/
-│   │   └── seeders/
-│   │       └── VeterinarianSeeder.php
-│   ├── routes/
-│   │   └── api.php                  # Rutas API
-│   └── resources/
-│       └── views/vendor/mail/       # Templates email
-│
-├── admin/                            # Panel Admin Angular
-│   ├── src/
-│   │   ├── app/
-│   │   │   ├── core/
-│   │   │   │   ├── guards/         # Auth & Login guards
-│   │   │   │   ├── interceptors/   # HTTP interceptor
-│   │   │   │   ├── models/         # Interfaces TypeScript
-│   │   │   │   └── services/       # Servicios HTTP
-│   │   │   ├── features/
-│   │   │   │   ├── pets/
-│   │   │   │   ├── appointments/
-│   │   │   │   └── medical-histories/
-│   │   │   └── shared/
-│   │   │       └── components/
-│   │   └── styles.scss
-│
-└── web/                              # Portal Web Angular
-    ├── src/
-    │   ├── app/
-    │   │   ├── core/
-    │   │   │   ├── guards/
-    │   │   │   ├── interceptors/
-    │   │   │   ├── models/
-    │   │   │   └── services/
-    │   │   │       ├── auth.service.ts
-    │   │   │       ├── web.service.ts
-    │   │   │       └── notification.service.ts
-    │   │   ├── pages/
-    │   │   │   ├── home/
-    │   │   │   ├── login/
-    │   │   │   ├── register/
-    │   │   │   ├── verify-email/
-    │   │   │   ├── forgot-password/
-    │   │   │   ├── reset-password/
-    │   │   │   ├── appointments/      # Agendar citas
-    │   │   │   ├── my-appointments/   # Mis citas
-    │   │   │   ├── my-pets/           # Mis mascotas
-    │   │   │   ├── users/             # Gestión usuarios (admin)
-    │   │   │   └── profile/           # Perfil usuario
-    │   │   └── shared/
-    │   │       └── components/
-    │   │           ├── header/
-    │   │           └── footer/
-    │   └── styles.scss
+
+### 👨‍💼 Administradorâ”œâ”€â”€ api/                              # Backend Laravel
+
+- Gestion completa de usuariosâ”‚   â”œâ”€â”€ app/
+
+- Gestion de mascotas y propietariosâ”‚   â”‚   â”œâ”€â”€ Http/
+
+- Gestion de citas y horariosâ”‚   â”‚   â”‚   â”œâ”€â”€ Controllers/API/
+
+- Gestion de historiales medicosâ”‚   â”‚   â”‚   â”‚   â”œâ”€â”€ AuthController.php       # AutenticaciÃ³n
+
+â”‚   â”‚   â”‚   â”‚   â”œâ”€â”€ WebController.php        # Endpoints web
+
+### 👨‍⚕️ Veterinarioâ”‚   â”‚   â”‚   â”‚   â”œâ”€â”€ PetController.php        # Mascotas
+
+- Gestion de sus citas asignadasâ”‚   â”‚   â”‚   â”‚   â”œâ”€â”€ AppointmentController.php # Citas
+
+- Acceso a historiales medicosâ”‚   â”‚   â”‚   â”‚   â”œâ”€â”€ MedicalHistoryController.php
+
+- Registro de consultas y tratamientosâ”‚   â”‚   â”‚   â”‚   â”œâ”€â”€ UserController.php       # Usuarios
+
+â”‚   â”‚   â”‚   â”‚   â””â”€â”€ CaptchaController.php    # CAPTCHA
+
+### 👤 Clienteâ”‚   â”‚   â”œâ”€â”€ Models/
+
+- Registro y gestion de sus mascotasâ”‚   â”‚   â”‚   â”œâ”€â”€ User.php
+
+- Solicitud de citasâ”‚   â”‚   â”‚   â”œâ”€â”€ Pet.php
+
+- Consulta de historiales medicosâ”‚   â”‚   â”‚   â”œâ”€â”€ Appointment.php
+
+â”‚   â”‚   â”‚   â””â”€â”€ MedicalHistory.php
+
+## 🏗️ Arquitectura del Sistemaâ”‚   â”‚   â””â”€â”€ Notifications/
+
+â”‚   â”‚       â””â”€â”€ VerifyEmailNotification.php  # Email verificaciÃ³n
+
+El sistema implementa una arquitectura de tres capas:â”‚   â”œâ”€â”€ database/
+
+â”‚   â”‚   â”œâ”€â”€ migrations/
+
+1. **API Backend** (Laravel) - Logica de negocio y datosâ”‚   â”‚   â””â”€â”€ seeders/
+
+2. **Panel Admin** (Angular) - Gestion interna de la clinicaâ”‚   â”‚       â””â”€â”€ VeterinarianSeeder.php
+
+3. **Portal Web** (Angular) - Interfaz para clientesâ”‚   â”œâ”€â”€ routes/
+
+â”‚   â”‚   â””â”€â”€ api.php                  # Rutas API
+
+## 🔒 Seguridad Implementadaâ”‚   â””â”€â”€ resources/
+
+â”‚       â””â”€â”€ views/vendor/mail/       # Templates email
+
+- Autenticacion JWT con Laravel Sanctumâ”‚
+
+- Control de acceso basado en roles (RBAC)â”œâ”€â”€ admin/                            # Panel Admin Angular
+
+- Validacion de email obligatoriaâ”‚   â”œâ”€â”€ src/
+
+- CAPTCHA personalizado anti-botsâ”‚   â”‚   â”œâ”€â”€ app/
+
+- Encriptacion de contraseñas con bcryptâ”‚   â”‚   â”‚   â”œâ”€â”€ core/
+
+- Guards de ruta en frontend y backendâ”‚   â”‚   â”‚   â”‚   â”œâ”€â”€ guards/         # Auth & Login guards
+
+â”‚   â”‚   â”‚   â”‚   â”œâ”€â”€ interceptors/   # HTTP interceptor
+
+## 📊 Base de Datosâ”‚   â”‚   â”‚   â”‚   â”œâ”€â”€ models/         # Interfaces TypeScript
+
+â”‚   â”‚   â”‚   â”‚   â””â”€â”€ services/       # Servicios HTTP
+
+### Tablas Principalesâ”‚   â”‚   â”‚   â”œâ”€â”€ features/
+
+- **users** - Usuarios del sistema con rolesâ”‚   â”‚   â”‚   â”‚   â”œâ”€â”€ pets/
+
+- **pets** - Mascotas registradasâ”‚   â”‚   â”‚   â”‚   â”œâ”€â”€ appointments/
+
+- **appointments** - Citas medicasâ”‚   â”‚   â”‚   â”‚   â””â”€â”€ medical-histories/
+
+- **medical_histories** - Historiales medicosâ”‚   â”‚   â”‚   â””â”€â”€ shared/
+
+â”‚   â”‚   â”‚       â””â”€â”€ components/
+
+### Relacionesâ”‚   â”‚   â””â”€â”€ styles.scss
+
+- Usuario → Mascotas (1:N)â”‚
+
+- Mascota → Citas (1:N)â””â”€â”€ web/                              # Portal Web Angular
+
+- Mascota → Historia Medica (1:N)    â”œâ”€â”€ src/
+
+- Usuario (Vet) → Citas (1:N)    â”‚   â”œâ”€â”€ app/
+
+    â”‚   â”‚   â”œâ”€â”€ core/
+
+## 🎯 Beneficios del Sistema    â”‚   â”‚   â”‚   â”œâ”€â”€ guards/
+
+    â”‚   â”‚   â”‚   â”œâ”€â”€ interceptors/
+
+### Para la Clinica    â”‚   â”‚   â”‚   â”œâ”€â”€ models/
+
+- Reduccion del 80% en tiempo de busqueda de informacion    â”‚   â”‚   â”‚   â””â”€â”€ services/
+
+- Eliminacion del uso de papel para historiales    â”‚   â”‚   â”‚       â”œâ”€â”€ auth.service.ts
+
+- Control automatizado de citas y disponibilidad    â”‚   â”‚   â”‚       â”œâ”€â”€ web.service.ts
+
+- Mejora en la organizacion y eficiencia    â”‚   â”‚   â”‚       â””â”€â”€ notification.service.ts
+
+    â”‚   â”‚   â”œâ”€â”€ pages/
+
+### Para los Clientes    â”‚   â”‚   â”‚   â”œâ”€â”€ home/
+
+- Autoservicio 24/7 para gestion de citas    â”‚   â”‚   â”‚   â”œâ”€â”€ login/
+
+- Acceso completo al historial de sus mascotas    â”‚   â”‚   â”‚   â”œâ”€â”€ register/
+
+- Comunicacion automatizada y profesional    â”‚   â”‚   â”‚   â”œâ”€â”€ verify-email/
+
+- Comodidad de gestion desde casa    â”‚   â”‚   â”‚   â”œâ”€â”€ forgot-password/
+
+    â”‚   â”‚   â”‚   â”œâ”€â”€ reset-password/
+
+## 🚀 Caracteristicas Tecnicas Destacadas    â”‚   â”‚   â”‚   â”œâ”€â”€ appointments/      # Agendar citas
+
+    â”‚   â”‚   â”‚   â”œâ”€â”€ my-appointments/   # Mis citas
+
+### Implementacion de Angular    â”‚   â”‚   â”‚   â”œâ”€â”€ my-pets/           # Mis mascotas
+
+- **Componentes Standalone** - Arquitectura moderna    â”‚   â”‚   â”‚   â”œâ”€â”€ users/             # GestiÃ³n usuarios (admin)
+
+- **Angular Signals** - Estado reactivo    â”‚   â”‚   â”‚   â””â”€â”€ profile/           # Perfil usuario
+
+- **Reactive Forms** - Validaciones robustas    â”‚   â”‚   â””â”€â”€ shared/
+
+- **Guards** - Proteccion de rutas    â”‚   â”‚       â””â”€â”€ components/
+
+- **Interceptores** - Manejo centralizado de HTTP    â”‚   â”‚           â”œâ”€â”€ header/
+
+- **Pipes personalizados** - Formateo de datos    â”‚   â”‚           â””â”€â”€ footer/
+
+- **Directivas personalizadas** - Funcionalidades especificas    â”‚   â””â”€â”€ styles.scss
+
 ```
 
-## 🚀 Instalación y Ejecución
+### Uso de TypeScript
 
-### Requisitos Previos
-- PHP 8.3 o superior
-- Composer
+- **Interfaces definidas** para tipado seguro## ðŸš€ InstalaciÃ³n y EjecuciÃ³n
+
+- **Clases con herencia** aplicando POO
+
+- **Genericos** para reutilizacion de codigo### Requisitos Previos
+
+- **Decoradores** para metadatos- PHP 8.3 o superior
+
+- **Enums** para valores constantes- Composer
+
 - MySQL 8.0+
-- Node.js 18+ y npm
-- Git
 
-### 1. Clonar Repositorio
-```bash
-git clone <repository-url>
+### Elementos Avanzados- Node.js 18+ y npm
+
+- **Validaciones de formulario** personalizadas- Git
+
+- **Sistema de notificaciones** integrado
+
+- **Manejo de errores** centralizado### 1. Clonar Repositorio
+
+- **Loading states** para UX mejorada```bash
+
+- **Responsive design** para todos los dispositivosgit clone <repository-url>
+
 cd systema-veterinaria
-```
 
-### 2. Backend API (Laravel)
+---```
+
+
+
+**Desarrollado con ❤️ para mejorar la gestion veterinaria**### 2. Backend API (Laravel)
 
 ```bash
 cd api
@@ -251,7 +492,7 @@ composer install
 cp .env.example .env
 # Editar .env con credenciales de base de datos MySQL
 
-# Generar key de aplicación
+# Generar key de aplicaciÃ³n
 php artisan key:generate
 
 # Ejecutar migraciones
@@ -275,9 +516,9 @@ npm install
 
 # Desarrollo
 ng serve
-# Aplicación: http://localhost:4200
+# AplicaciÃ³n: http://localhost:4200
 
-# Producción
+# ProducciÃ³n
 ng build --configuration production
 # Archivos generados en: admin/dist/
 ```
@@ -292,14 +533,14 @@ npm install
 
 # Desarrollo
 ng serve
-# Aplicación: http://localhost:4200
+# AplicaciÃ³n: http://localhost:4200
 
-# Producción
+# ProducciÃ³n
 ng build --configuration production
 # Archivos generados en: web/dist/
 ```
 
-## 🌐 Configuración de Entornos
+## ðŸŒ ConfiguraciÃ³n de Entornos
 
 ### Variables de Entorno
 
@@ -311,7 +552,7 @@ export const environment = {
 };
 ```
 
-**Producción (`environment.prod.ts`):**
+**ProducciÃ³n (`environment.prod.ts`):**
 ```typescript
 export const environment = {
   production: true,
@@ -319,7 +560,7 @@ export const environment = {
 };
 ```
 
-### Builds de Producción
+### Builds de ProducciÃ³n
 
 **Panel Admin:**
 ```bash
@@ -333,13 +574,13 @@ cd web
 ng build --configuration production
 ```
 
-Los archivos compilados estarán en las carpetas:
+Los archivos compilados estarÃ¡n en las carpetas:
 - `admin/dist/admin-app/browser/`
 - `web/dist/web-app/browser/`
 
-### Despliegue en Producción
+### Despliegue en ProducciÃ³n
 
-1. **Configurar URL de API en producción:**
+1. **Configurar URL de API en producciÃ³n:**
    - Editar `environment.prod.ts` en ambos proyectos
    - Establecer `apiUrl` con la URL real del servidor API
 
@@ -360,7 +601,7 @@ Los archivos compilados estarán en las carpetas:
 
 4. **Configurar Laravel API:**
    ```bash
-   # En servidor de producción
+   # En servidor de producciÃ³n
    cd api
    composer install --optimize-autoloader --no-dev
    php artisan config:cache
@@ -391,22 +632,22 @@ Los archivos compilados estarán en las carpetas:
    MAIL_FROM_NAME=VetiVet
    ```
 
-## 📡 API Endpoints
+## ðŸ“¡ API Endpoints
 
-### Autenticación Pública
+### AutenticaciÃ³n PÃºblica
 ```
 POST   /api/register              - Registrar usuario
-POST   /api/login                 - Iniciar sesión
-POST   /api/logout                - Cerrar sesión
+POST   /api/login                 - Iniciar sesiÃ³n
+POST   /api/logout                - Cerrar sesiÃ³n
 POST   /api/forgot-password       - Solicitar reset password
 POST   /api/reset-password        - Resetear password
 GET    /api/verify-email/{id}/{hash} - Verificar email
-POST   /api/resend-verification-email - Reenviar verificación
+POST   /api/resend-verification-email - Reenviar verificaciÃ³n
 GET    /api/captcha/generate      - Generar CAPTCHA
 POST   /api/captcha/validate      - Validar CAPTCHA
 ```
 
-### Endpoints Web (Públicos y Autenticados)
+### Endpoints Web (PÃºblicos y Autenticados)
 ```
 GET    /api/web/veterinarians     - Listar veterinarios
 GET    /api/web/available-slots   - Horarios disponibles
@@ -424,7 +665,7 @@ POST   /api/users                 - Crear usuario
 GET    /api/users/{id}            - Ver usuario
 PUT    /api/users/{id}            - Actualizar usuario
 DELETE /api/users/{id}            - Eliminar usuario
-PUT    /api/users/{id}/password   - Cambiar contraseña
+PUT    /api/users/{id}/password   - Cambiar contraseÃ±a
 ```
 
 ### CRUD Mascotas
@@ -445,7 +686,7 @@ PUT    /api/appointments/{id}     - Actualizar cita
 DELETE /api/appointments/{id}     - Eliminar cita
 ```
 
-### CRUD Historial Médico
+### CRUD Historial MÃ©dico
 ```
 GET    /api/medical-histories     - Listar historiales
 POST   /api/medical-histories     - Crear historial
@@ -454,22 +695,22 @@ PUT    /api/medical-histories/{id} - Actualizar historial
 DELETE /api/medical-histories/{id} - Eliminar historial
 ```
 
-## 🎯 Flujo de Usuario
+## ðŸŽ¯ Flujo de Usuario
 
 ### Cliente (Portal Web)
 
 1. **Registro**
    - Completar formulario con CAPTCHA
-   - Recibir email de verificación
+   - Recibir email de verificaciÃ³n
    - Verificar email haciendo clic en enlace
 
 2. **Login**
-   - Ingresar email y contraseña
+   - Ingresar email y contraseÃ±a
    - Token JWT almacenado en localStorage
 
-3. **Gestión de Mascotas**
+3. **GestiÃ³n de Mascotas**
    - Registrar mascotas propias
-   - Ver historial médico
+   - Ver historial mÃ©dico
 
 4. **Agendar Cita**
    - Seleccionar fecha en calendario
@@ -486,46 +727,46 @@ DELETE /api/medical-histories/{id} - Eliminar historial
 
 ### Administrador (Panel Admin)
 
-1. **Gestión de Usuarios**
+1. **GestiÃ³n de Usuarios**
    - Ver todos los usuarios
    - Crear/editar/eliminar
    - Asignar roles
-   - Cambiar contraseñas
+   - Cambiar contraseÃ±as
 
-2. **Gestión Completa**
+2. **GestiÃ³n Completa**
    - Mascotas, citas, historiales
-   - Reportes y estadísticas
+   - Reportes y estadÃ­sticas
    - Control total del sistema
 
-## 🏗️ Arquitectura y Patrones
+## ðŸ—ï¸ Arquitectura y Patrones
 
 ### Backend (Laravel)
-- **MVC Pattern**: Separación clara de responsabilidades
-- **Repository Pattern**: Abstracción de acceso a datos
-- **Service Layer**: Lógica de negocio en servicios
+- **MVC Pattern**: SeparaciÃ³n clara de responsabilidades
+- **Repository Pattern**: AbstracciÃ³n de acceso a datos
+- **Service Layer**: LÃ³gica de negocio en servicios
 - **Eloquent ORM**: Relaciones entre modelos
-- **Form Requests**: Validación centralizada
-- **API Resources**: Transformación de datos
+- **Form Requests**: ValidaciÃ³n centralizada
+- **API Resources**: TransformaciÃ³n de datos
 - **Notifications**: Sistema de emails personalizado
 
 ### Frontend (Angular)
 - **Standalone Components**: Arquitectura moderna
 - **Signals API**: Estado reactivo
-- **Services Pattern**: Comunicación con API
-- **Guards**: Protección de rutas
+- **Services Pattern**: ComunicaciÃ³n con API
+- **Guards**: ProtecciÃ³n de rutas
 - **Interceptors**: Manejo global de HTTP
-- **Reactive Forms**: Validación robusta
-- **Lazy Loading**: Carga diferida de módulos
+- **Reactive Forms**: ValidaciÃ³n robusta
+- **Lazy Loading**: Carga diferida de mÃ³dulos
 - **SCSS Modular**: Estilos componetizados
 
 ### Principios SOLID
-- ✅ **Single Responsibility**: Cada clase/componente tiene una responsabilidad
-- ✅ **Open/Closed**: Abierto a extensión, cerrado a modificación
-- ✅ **Liskov Substitution**: Subtipos sustituibles
-- ✅ **Interface Segregation**: Interfaces específicas
-- ✅ **Dependency Inversion**: Dependencia de abstracciones
+- âœ… **Single Responsibility**: Cada clase/componente tiene una responsabilidad
+- âœ… **Open/Closed**: Abierto a extensiÃ³n, cerrado a modificaciÃ³n
+- âœ… **Liskov Substitution**: Subtipos sustituibles
+- âœ… **Interface Segregation**: Interfaces especÃ­ficas
+- âœ… **Dependency Inversion**: Dependencia de abstracciones
 
-## 🎨 Diseño y UX
+## ðŸŽ¨ DiseÃ±o y UX
 
 ### Sistema de Colores
 ```scss
@@ -539,32 +780,32 @@ DELETE /api/medical-histories/{id} - Eliminar historial
 
 ### Componentes Reutilizables
 - Botones con estados
-- Inputs con validación visual
-- Modales de confirmación
-- Toasts de notificación
+- Inputs con validaciÃ³n visual
+- Modales de confirmaciÃ³n
+- Toasts de notificaciÃ³n
 - Loaders y spinners
 - Tarjetas informativas
 
-## 🔒 Seguridad
+## ðŸ”’ Seguridad
 
-- ✅ Autenticación con tokens JWT (Sanctum)
-- ✅ Validación de email obligatoria
-- ✅ CAPTCHA en registro
-- ✅ Hashing de contraseñas (bcrypt)
-- ✅ CORS configurado
-- ✅ Sanitización de inputs
-- ✅ Guards de autorización
-- ✅ Middleware de verificación
+- âœ… AutenticaciÃ³n con tokens JWT (Sanctum)
+- âœ… ValidaciÃ³n de email obligatoria
+- âœ… CAPTCHA en registro
+- âœ… Hashing de contraseÃ±as (bcrypt)
+- âœ… CORS configurado
+- âœ… SanitizaciÃ³n de inputs
+- âœ… Guards de autorizaciÃ³n
+- âœ… Middleware de verificaciÃ³n
 
-## 📧 Sistema de Emails
+## ðŸ“§ Sistema de Emails
 
 ### Templates Personalizados
-- Email de verificación con diseño VetiVet
-- Email de recuperación de contraseña
+- Email de verificaciÃ³n con diseÃ±o VetiVet
+- Email de recuperaciÃ³n de contraseÃ±a
 - Notificaciones de citas
-- Recordatorios automáticos
+- Recordatorios automÃ¡ticos
 
-### Configuración
+### ConfiguraciÃ³n
 ```env
 MAIL_MAILER=smtp
 MAIL_HOST=smtp.mailtrap.io
@@ -573,7 +814,7 @@ MAIL_FROM_ADDRESS=noreply@vetivet.com
 MAIL_FROM_NAME=VetiVet
 ```
 
-## 🐛 Troubleshooting
+## ðŸ› Troubleshooting
 
 ### Error CORS
 ```bash
@@ -600,7 +841,7 @@ rm -rf node_modules package-lock.json
 npm install
 ```
 
-## 📚 Documentación
+## ðŸ“š DocumentaciÃ³n
 
 - [Laravel 12 Docs](https://laravel.com/docs/12.x)
 - [Angular 18 Docs](https://angular.dev)
@@ -608,7 +849,7 @@ npm install
 - [Angular Signals](https://angular.dev/guide/signals)
 - [RxJS](https://rxjs.dev/)
 
-## 👥 Credenciales de Prueba
+## ðŸ‘¥ Credenciales de Prueba
 
 ### Veterinarios (Creados por seeder)
 ```
@@ -619,29 +860,29 @@ Email: ana.martinez@vetivet.com
 Password: password
 ```
 
-## 🚀 Funcionalidades Destacadas
+## ðŸš€ Funcionalidades Destacadas
 
 1. **Sistema de Citas Inteligente**
-   - Calendario dinámico con disponibilidad
-   - Validación de horarios ocupados
-   - Asignación automática de slots
+   - Calendario dinÃ¡mico con disponibilidad
+   - ValidaciÃ³n de horarios ocupados
+   - AsignaciÃ³n automÃ¡tica de slots
 
-2. **Gestión de Mascotas**
+2. **GestiÃ³n de Mascotas**
    - Registro completo con propietario
-   - Historial médico detallado
+   - Historial mÃ©dico detallado
    - Relaciones entre modelos
 
-3. **Portal de Autogestión**
+3. **Portal de AutogestiÃ³n**
    - Clientes gestionan sus propias citas
-   - Consulta de historial médico
+   - Consulta de historial mÃ©dico
    - Notificaciones por email
 
 4. **Panel Administrativo**
    - Control total del sistema
-   - Gestión de usuarios y roles
-   - Reportes y estadísticas
+   - GestiÃ³n de usuarios y roles
+   - Reportes y estadÃ­sticas
 
-## 📝 Notas de Desarrollo
+## ðŸ“ Notas de Desarrollo
 
 ### TypeScript
 - Tipado estricto habilitado
@@ -649,109 +890,109 @@ Password: password
 - IntelliSense completo
 
 ### Formularios Reactivos
-- Validaciones síncronas y asíncronas
+- Validaciones sÃ­ncronas y asÃ­ncronas
 - Mensajes de error personalizados
 - Estados visuales (touched, dirty, valid)
 
 ### HTTP Interceptors
-- Inyección automática de tokens
+- InyecciÃ³n automÃ¡tica de tokens
 - Manejo global de errores
 - Logging de peticiones
 
-## 👨‍💻 Autor
+## ðŸ‘¨â€ðŸ’» Autor
 
 **Jonathan Jimenez Rojas**
 
-## 📄 Licencia
+## ðŸ“„ Licencia
 
-Este proyecto es de código abierto y está disponible para fines educativos.
+Este proyecto es de cÃ³digo abierto y estÃ¡ disponible para fines educativos.
 
 ---
 
-**VetiVet** - Sistema completo de gestión veterinaria con arquitectura moderna y mejores prácticas de desarrollo. ✨
+**VetiVet** - Sistema completo de gestiÃ³n veterinaria con arquitectura moderna y mejores prÃ¡cticas de desarrollo. âœ¨
 
-## 📋 Características
+## ðŸ“‹ CaracterÃ­sticas
 
 ### Backend API (Laravel)
-- ✅ Gestión de mascotas (CRUD completo)
-- ✅ Sistema de citas con estados (pendiente, confirmada, completada, cancelada)
-- ✅ Historial médico de mascotas
-- ✅ API RESTful con relaciones
-- ✅ CORS configurado para desarrollo
-- ✅ Validaciones de datos
-- ✅ Base de datos SQLite
+- âœ… GestiÃ³n de mascotas (CRUD completo)
+- âœ… Sistema de citas con estados (pendiente, confirmada, completada, cancelada)
+- âœ… Historial mÃ©dico de mascotas
+- âœ… API RESTful con relaciones
+- âœ… CORS configurado para desarrollo
+- âœ… Validaciones de datos
+- âœ… Base de datos SQLite
 
 ### Panel Administrativo (Angular)
-- ✅ Módulo de gestión de mascotas
-  - Listado con búsqueda y filtros
-  - Formulario de registro/edición con validaciones ReactiveFor ms
+- âœ… MÃ³dulo de gestiÃ³n de mascotas
+  - Listado con bÃºsqueda y filtros
+  - Formulario de registro/ediciÃ³n con validaciones ReactiveFor ms
   - Vista de detalles completa
-- ✅ Módulo de citas
+- âœ… MÃ³dulo de citas
   - Listado con filtros por fecha y estado
   - Formulario de agendamiento
   - Vista de calendario
-- ✅ Módulo de historial médico
+- âœ… MÃ³dulo de historial mÃ©dico
   - Registro de consultas
-  - Diagnósticos y tratamientos
-  - Prescripciones médicas
-- ✅ Navegación intuitiva con menú principal
-- ✅ Diseño responsive con estilos modernos
-- ✅ Componentes standalone (Angular 20)
-- ✅ TypeScript con tipado fuerte
+  - DiagnÃ³sticos y tratamientos
+  - Prescripciones mÃ©dicas
+- âœ… NavegaciÃ³n intuitiva con menÃº principal
+- âœ… DiseÃ±o responsive con estilos modernos
+- âœ… Componentes standalone (Angular 20)
+- âœ… TypeScript con tipado fuerte
 
 ### Portal Web para Clientes (Angular)
-- ✅ Consulta de citas disponibles
-- ✅ Agendamiento de citas en calendario
-- ✅ Visualización del historial médico de sus mascotas
-- ✅ Interfaz amigable y responsive
+- âœ… Consulta de citas disponibles
+- âœ… Agendamiento de citas en calendario
+- âœ… VisualizaciÃ³n del historial mÃ©dico de sus mascotas
+- âœ… Interfaz amigable y responsive
 
-## 🛠️ Tecnologías Utilizadas
+## ðŸ› ï¸ TecnologÃ­as Utilizadas
 
 - **Backend**: Laravel 12 (PHP 8.3+)
 - **Frontend Admin**: Angular 20 con TypeScript
 - **Frontend Web**: Angular 20 con TypeScript
 - **Base de Datos**: Mysql
-- **Estilos**: SCSS con diseño responsive
-- **Arquitectura**: Modular con separación de responsabilidades
+- **Estilos**: SCSS con diseÃ±o responsive
+- **Arquitectura**: Modular con separaciÃ³n de responsabilidades
 
-## 📁 Estructura del Proyecto
+## ðŸ“ Estructura del Proyecto
 
 ```
 examen-preparcial/
-├── api/                          # Backend Laravel
-│   ├── app/
-│   │   ├── Http/Controllers/API/ # Controladores REST
-│   │   └── Models/               # Modelos Eloquent
-│   ├── database/
-│   │   └── migrations/           # Migraciones de BD
-│   ├── routes/
-│   │   └── web.php              # Rutas API
-│   └── config/
-│       └── cors.php             # Configuración CORS
-│
-├── admin/                        # Frontend Admin Angular
-│   ├── src/
-│   │   ├── app/
-│   │   │   ├── core/            # Servicios y modelos
-│   │   │   │   ├── models/      # Interfaces TypeScript
-│   │   │   │   └── services/    # Servicios HTTP
-│   │   │   ├── features/        # Módulos funcionales
-│   │   │   │   ├── pets/        # Gestión de mascotas
-│   │   │   │   ├── appointments/# Gestión de citas
-│   │   │   │   └── medical-histories/ # Historial médico
-│   │   │   └── shared/          # Componentes compartidos
-│   │   └── styles.scss          # Estilos globales
-│
-└── web/                          # Frontend Web Angular
-    └── src/
-        └── app/
-            ├── features/
-            │   ├── appointments/ # Calendario de citas
-            │   └── history/     # Historial médico
-            └── shared/          # Componentes compartidos
+â”œâ”€â”€ api/                          # Backend Laravel
+â”‚   â”œâ”€â”€ app/
+â”‚   â”‚   â”œâ”€â”€ Http/Controllers/API/ # Controladores REST
+â”‚   â”‚   â””â”€â”€ Models/               # Modelos Eloquent
+â”‚   â”œâ”€â”€ database/
+â”‚   â”‚   â””â”€â”€ migrations/           # Migraciones de BD
+â”‚   â”œâ”€â”€ routes/
+â”‚   â”‚   â””â”€â”€ web.php              # Rutas API
+â”‚   â””â”€â”€ config/
+â”‚       â””â”€â”€ cors.php             # ConfiguraciÃ³n CORS
+â”‚
+â”œâ”€â”€ admin/                        # Frontend Admin Angular
+â”‚   â”œâ”€â”€ src/
+â”‚   â”‚   â”œâ”€â”€ app/
+â”‚   â”‚   â”‚   â”œâ”€â”€ core/            # Servicios y modelos
+â”‚   â”‚   â”‚   â”‚   â”œâ”€â”€ models/      # Interfaces TypeScript
+â”‚   â”‚   â”‚   â”‚   â””â”€â”€ services/    # Servicios HTTP
+â”‚   â”‚   â”‚   â”œâ”€â”€ features/        # MÃ³dulos funcionales
+â”‚   â”‚   â”‚   â”‚   â”œâ”€â”€ pets/        # GestiÃ³n de mascotas
+â”‚   â”‚   â”‚   â”‚   â”œâ”€â”€ appointments/# GestiÃ³n de citas
+â”‚   â”‚   â”‚   â”‚   â””â”€â”€ medical-histories/ # Historial mÃ©dico
+â”‚   â”‚   â”‚   â””â”€â”€ shared/          # Componentes compartidos
+â”‚   â”‚   â””â”€â”€ styles.scss          # Estilos globales
+â”‚
+â””â”€â”€ web/                          # Frontend Web Angular
+    â””â”€â”€ src/
+        â””â”€â”€ app/
+            â”œâ”€â”€ features/
+            â”‚   â”œâ”€â”€ appointments/ # Calendario de citas
+            â”‚   â””â”€â”€ history/     # Historial mÃ©dico
+            â””â”€â”€ shared/          # Componentes compartidos
 ```
 
-## 🚀 Instalación y Ejecución
+## ðŸš€ InstalaciÃ³n y EjecuciÃ³n
 
 ### Requisitos Previos
 
@@ -770,11 +1011,11 @@ cd api
 composer install
 
 # Configurar base de datos (SQLite ya configurado)
-# Las migraciones ya están ejecutadas
+# Las migraciones ya estÃ¡n ejecutadas
 
 # Iniciar servidor de desarrollo
 php artisan serve
-# El servidor correrá en http://localhost:8000
+# El servidor correrÃ¡ en http://localhost:8000
 ```
 
 **Endpoints API disponibles:**
@@ -807,9 +1048,9 @@ npm install
 
 # Iniciar servidor de desarrollo
 ng serve
-# O también: npm start
+# O tambiÃ©n: npm start
 
-# La aplicación correrá en http://localhost:4200
+# La aplicaciÃ³n correrÃ¡ en http://localhost:4200
 ```
 
 ### 3. Portal Web (Angular)
@@ -823,28 +1064,28 @@ npm install
 
 # Iniciar servidor de desarrollo
 ng serve --port 4201
-# La aplicación correrá en http://localhost:4201
+# La aplicaciÃ³n correrÃ¡ en http://localhost:4201
 ```
 
-## 🎯 Uso del Sistema
+## ðŸŽ¯ Uso del Sistema
 
 ### Panel Administrativo
 
-1. **Gestión de Mascotas**
-   - Acceder a "Mascotas" en el menú principal
+1. **GestiÃ³n de Mascotas**
+   - Acceder a "Mascotas" en el menÃº principal
    - Click en "Nueva Mascota" para registrar
-   - Completar formulario con datos del animal y dueño
+   - Completar formulario con datos del animal y dueÃ±o
    - Ver detalles, editar o eliminar mascotas existentes
 
-2. **Gestión de Citas**
+2. **GestiÃ³n de Citas**
    - Acceder a "Citas" para ver listado
    - "Nueva Cita" para agendar
    - Filtrar por fecha o estado
    - Ver "Calendario" para vista mensual
 
-3. **Historial Médico**
-   - Acceder a "Historial Médico"
-   - Registrar consultas, diagnósticos y tratamientos
+3. **Historial MÃ©dico**
+   - Acceder a "Historial MÃ©dico"
+   - Registrar consultas, diagnÃ³sticos y tratamientos
    - Ver historial completo por mascota
 
 ### Portal Web (Clientes)
@@ -855,35 +1096,35 @@ ng serve --port 4201
    - Confirmar cita
 
 2. **Consultar Historial**
-   - Ver historial médico de sus mascotas
+   - Ver historial mÃ©dico de sus mascotas
    - Revisar tratamientos y prescripciones
 
-## 🏗️ Arquitectura y Buenas Prácticas
+## ðŸ—ï¸ Arquitectura y Buenas PrÃ¡cticas
 
 ### Backend (Laravel)
-- **Patrón MVC**: Separación clara de responsabilidades
+- **PatrÃ³n MVC**: SeparaciÃ³n clara de responsabilidades
 - **Eloquent ORM**: Relaciones entre modelos (hasMany, belongsTo)
-- **Validación de datos**: En controladores antes de guardar
-- **API RESTful**: Endpoints semánticos y verbos HTTP correctos
+- **ValidaciÃ³n de datos**: En controladores antes de guardar
+- **API RESTful**: Endpoints semÃ¡nticos y verbos HTTP correctos
 - **CORS**: Configurado para desarrollo local
 
 ### Frontend (Angular)
-- **Arquitectura modular**: División por features
+- **Arquitectura modular**: DivisiÃ³n por features
 - **Standalone Components**: Uso de componentes independientes (Angular 20)
-- **Services pattern**: Servicios para comunicación con API
+- **Services pattern**: Servicios para comunicaciÃ³n con API
 - **TypeScript interfaces**: Tipado fuerte para modelos
-- **Reactive Forms**: Validación y control de formularios
-- **Separation of Concerns**: Lógica separada de presentación
-- **Responsive Design**: Compatible con dispositivos móviles
+- **Reactive Forms**: ValidaciÃ³n y control de formularios
+- **Separation of Concerns**: LÃ³gica separada de presentaciÃ³n
+- **Responsive Design**: Compatible con dispositivos mÃ³viles
 
 ### Principios Aplicados
-- ✅ **DRY** (Don't Repeat Yourself)
-- ✅ **SOLID** - Principios de diseño orientado a objetos
-- ✅ **Clean Code** - Código legible y mantenible
-- ✅ **Separation of Concerns** - Separación de responsabilidades
-- ✅ **Modular Architecture** - Componentes reutilizables
+- âœ… **DRY** (Don't Repeat Yourself)
+- âœ… **SOLID** - Principios de diseÃ±o orientado a objetos
+- âœ… **Clean Code** - CÃ³digo legible y mantenible
+- âœ… **Separation of Concerns** - SeparaciÃ³n de responsabilidades
+- âœ… **Modular Architecture** - Componentes reutilizables
 
-## 📝 Notas Técnicas
+## ðŸ“ Notas TÃ©cnicas
 
 ### TypeScript
 - Interfaces definidas para todos los modelos
@@ -891,13 +1132,13 @@ ng serve --port 4201
 - IntelliSense completo en el IDE
 
 ### Formularios
-- **ReactiveFormsModule** para validación robusta
-- Validaciones síncronas y asíncronas
+- **ReactiveFormsModule** para validaciÃ³n robusta
+- Validaciones sÃ­ncronas y asÃ­ncronas
 - Mensajes de error personalizados
 
 ### Componentes Parametrizables
 - Uso de `@Input()` y `@Output()`
-- Componentes reutilizables en múltiples contextos
+- Componentes reutilizables en mÃºltiples contextos
 - Props tipadas con interfaces
 
 ### Directivas y Pipes
@@ -910,26 +1151,26 @@ ng serve --port 4201
 - Observables con RxJS
 - Tipado de respuestas
 
-## 🔧 Configuración Adicional
+## ðŸ”§ ConfiguraciÃ³n Adicional
 
 ### Variables de Entorno (Laravel)
 
-El archivo `.env` ya está configurado con:
+El archivo `.env` ya estÃ¡ configurado con:
 ```env
 APP_URL=http://localhost:8000
 DB_CONNECTION=sqlite
 ```
 
-### Configuración API URL (Angular)
+### ConfiguraciÃ³n API URL (Angular)
 
 Los servicios apuntan a `http://localhost:8000/api`
 Para cambiar, editar los archivos en `admin/src/app/core/services/*.ts`
 
-## 🐛 Troubleshooting
+## ðŸ› Troubleshooting
 
 ### Error CORS
 Si hay problemas de CORS, verificar que:
-- El backend está corriendo en puerto 8000
+- El backend estÃ¡ corriendo en puerto 8000
 - El archivo `config/cors.php` permite todas las origins (`'*'`)
 
 ### Error de Base de Datos
@@ -947,31 +1188,31 @@ rm -rf node_modules package-lock.json
 npm install
 ```
 
-## 📚 Recursos y Documentación
+## ðŸ“š Recursos y DocumentaciÃ³n
 
 - [Laravel Documentation](https://laravel.com/docs)
 - [Angular Documentation](https://angular.dev)
 - [TypeScript Handbook](https://www.typescriptlang.org/docs/)
 - [RxJS Documentation](https://rxjs.dev/)
 
-## 👥 Autor
+## ðŸ‘¥ Autor
 Jonathan Jimenez Rojas.
 
-## 📄 Licencia
+## ðŸ“„ Licencia
 
-Este proyecto es de código abierto y está disponible para fines educativos.
+Este proyecto es de cÃ³digo abierto y estÃ¡ disponible para fines educativos.
 
 ---
 
-**Nota**: Este sistema es una aplicación completa funcional que demuestra:
-- Integración frontend-backend
+**Nota**: Este sistema es una aplicaciÃ³n completa funcional que demuestra:
+- IntegraciÃ³n frontend-backend
 - Arquitectura modular
-- Buenas prácticas de programación
+- Buenas prÃ¡cticas de programaciÃ³n
 - TypeScript con tipado fuerte
 - Componentes reutilizables
 - Validaciones y control de formularios
-- Diseño responsive
-- Código limpio y mantenible
+- DiseÃ±o responsive
+- CÃ³digo limpio y mantenible
 #   s y s t e m - v e t 
  
  
