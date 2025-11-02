@@ -1,7 +1,5 @@
 ﻿# Sistema de Gestion Veterinaria VetiVet 🐾# Sistema de GestiÃ³n Veterinaria VetiVet ðŸ¾
 
-
-
 Sistema completo de gestion para clinica veterinaria con arquitectura moderna de tres capas:Sistema completo de gestiÃ³n para clÃ­nica veterinaria con arquitectura moderna de tres capas:
 
 - **API Backend** (Laravel 12 + MySQL)- **API Backend** (Laravel 12 + MySQL)
@@ -9,7 +7,6 @@ Sistema completo de gestion para clinica veterinaria con arquitectura moderna de
 - **Panel Administrativo** (Angular 18 - Gestion Interna)- **Panel Administrativo** (Angular 20 - GestiÃ³n Interna)
 
 - **Portal Web para Clientes** (Angular 18 - Autogestion)- **Portal Web para Clientes** (Angular 20 - AutogestiÃ³n)
-
 
 
 ## 📚 Documentacion Adicional## ðŸ“š DocumentaciÃ³n Adicional
@@ -1228,4 +1225,5 @@ Este proyecto es de cÃ³digo abierto y estÃ¡ disponible para fines educativos
  
  #   v e t e r i n a r i a 
  
+
  
