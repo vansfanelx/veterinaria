@@ -1,478 +1,952 @@
-# Sistema de Gestión Veterinaria VetiVet 🐾
+# Sistema de Gestion Veterinaria VetiVet 🐾# Sistema de Gestión Veterinaria VetiVet 🐾
 
-<<<<<<< HEAD
-Sistema completo de gestion para clinica veterinaria con arquitectura moderna de tres capas:Sistema completo de gestiÃ³n para clÃ­nica veterinaria con arquitectura moderna de tres capas:
 
-- **API Backend** (Laravel 12 + MySQL)- **API Backend** (Laravel 12 + MySQL)
 
-- **Panel Administrativo** (Angular 18 - Gestion Interna)- **Panel Administrativo** (Angular 20 - GestiÃ³n Interna)
+Sistema completo de gestion para clinica veterinaria con arquitectura moderna de tres capas:<<<<<<< HEAD
 
-- **Portal Web para Clientes** (Angular 18 - Autogestion)- **Portal Web para Clientes** (Angular 20 - AutogestiÃ³n)
+- **API Backend** (Laravel 12 + MySQL)Sistema completo de gestion para clinica veterinaria con arquitectura moderna de tres capas:Sistema completo de gestiÃ³n para clÃ­nica veterinaria con arquitectura moderna de tres capas:
 
+- **Panel Administrativo** (Angular 18 - Gestion Interna)
+
+- **Portal Web para Clientes** (Angular 18 - Autogestion)- **API Backend** (Laravel 12 + MySQL)- **API Backend** (Laravel 12 + MySQL)
+
+
+
+## 📚 Documentacion Adicional- **Panel Administrativo** (Angular 18 - Gestion Interna)- **Panel Administrativo** (Angular 20 - GestiÃ³n Interna)
+
+
+
+- **[Roles y Permisos](ROLES_Y_PERMISOS.md)** - Guia completa del sistema de control de acceso basado en roles- **Portal Web para Clientes** (Angular 18 - Autogestion)- **Portal Web para Clientes** (Angular 20 - AutogestiÃ³n)
+
+- **[Beneficios y Mejoras](BENEFICIOS_Y_MEJORAS.md)** - Como VetiVet mejora los procesos de la clinica veterinaria
+
+- **[Datos de Prueba](DATOS_DE_PRUEBA.md)** - Usuarios y datos precargados para testing
 
 ## 📚 Documentacion Adicional## ðŸ“š DocumentaciÃ³n Adicional
 
-
-
-- **[Roles y Permisos](ROLES_Y_PERMISOS.md)** - Guia completa del sistema de control de acceso basado en roles- **[Roles y Permisos](ROLES_Y_PERMISOS.md)** - GuÃ­a completa del sistema de control de acceso basado en roles
-
-- **[Beneficios y Mejoras](BENEFICIOS_Y_MEJORAS.md)** - Como VetiVet mejora los procesos de la clinica veterinaria- **[Beneficios y Mejoras](BENEFICIOS_Y_MEJORAS.md)** - CÃ³mo VetiVet mejora los procesos de la clÃ­nica veterinaria
-
-- **[Datos de Prueba](DATOS_DE_PRUEBA.md)** - Usuarios y datos precargados para testing- **[Datos de Prueba](DATOS_DE_PRUEBA.md)** - Usuarios y datos precargados para testing
+## 🌟 Caracteristicas Principales
 
 
 
-## 🌟 Caracteristicas Principales## ðŸŒŸ CaracterÃ­sticas Principales
+### 🔐 Sistema de Autenticacion y Roles
+
+- Sistema completo de roles (Admin, Veterinario, Cliente)- **[Roles y Permisos](ROLES_Y_PERMISOS.md)** - Guia completa del sistema de control de acceso basado en roles- **[Roles y Permisos](ROLES_Y_PERMISOS.md)** - GuÃ­a completa del sistema de control de acceso basado en roles
+
+- Control de acceso basado en roles (RBAC)
+
+- Login con validacion de rol requerido- **[Beneficios y Mejoras](BENEFICIOS_Y_MEJORAS.md)** - Como VetiVet mejora los procesos de la clinica veterinaria- **[Beneficios y Mejoras](BENEFICIOS_Y_MEJORAS.md)** - CÃ³mo VetiVet mejora los procesos de la clÃ­nica veterinaria
+
+- Registro de usuarios con verificacion de email
+
+- Recuperacion de contraseña- **[Datos de Prueba](DATOS_DE_PRUEBA.md)** - Usuarios y datos precargados para testing- **[Datos de Prueba](DATOS_DE_PRUEBA.md)** - Usuarios y datos precargados para testing
+
+- Guards de autenticacion en backend y frontend
+
+- CAPTCHA personalizado para registro
 
 
 
-### 🔐 Sistema de Autenticacion y Roles### ðŸ” Sistema de AutenticaciÃ³n y Roles
+### 💼 Backend API (Laravel 12)## 🌟 Caracteristicas Principales## ðŸŒŸ CaracterÃ­sticas Principales
 
-- Sistema completo de roles (Admin, Veterinario, Cliente)- Sistema completo de roles (Admin, Veterinario, Cliente)
 
-- Control de acceso basado en roles (RBAC)- Control de acceso basado en roles (RBAC)
 
-- Login con validacion de rol requerido- Login con validaciÃ³n de rol requerido
+#### Autenticacion y Seguridad
 
-- Registro de usuarios con verificacion de email- Registro de usuarios con verificaciÃ³n de email
+- ✅ Sistema de autenticacion con Laravel Sanctum
 
-- Recuperacion de contraseña- RecuperaciÃ³n de contraseÃ±a
+- ✅ Verificacion de email con notificaciones personalizadas### 🔐 Sistema de Autenticacion y Roles### ðŸ” Sistema de AutenticaciÃ³n y Roles
 
-- Guards de autenticacion en backend y frontend- Guards de autenticaciÃ³n en backend y frontend
+- ✅ Recuperacion de contraseña
 
-- CAPTCHA personalizado para registro- CAPTCHA personalizado para registro
-=======
-Sistema completo de gestión para clínica veterinaria con arquitectura moderna de tres capas:
-- **API Backend** (Laravel 12 + MySQL)
-- **Panel Administrativo** (Angular 20 - Gestión Interna)
-- **Portal Web para Clientes** (Angular 20 - Autogestión)
+- ✅ CAPTCHA propio para prevenir bots- Sistema completo de roles (Admin, Veterinario, Cliente)- Sistema completo de roles (Admin, Veterinario, Cliente)
+
+- ✅ Middleware de autenticacion y verificacion de email
+
+- ✅ Gestion de roles (admin, veterinarian, user)- Control de acceso basado en roles (RBAC)- Control de acceso basado en roles (RBAC)
+
+
+
+#### Gestion de Datos- Login con validacion de rol requerido- Login con validaciÃ³n de rol requerido
+
+- ✅ CRUD completo de usuarios con roles
+
+- ✅ Gestion de mascotas con propietarios- Registro de usuarios con verificacion de email- Registro de usuarios con verificaciÃ³n de email
+
+- ✅ Sistema de citas con veterinarios asignados
+
+- ✅ Historial medico detallado- Recuperacion de contraseña- RecuperaciÃ³n de contraseÃ±a
+
+- ✅ Calendario de disponibilidad
+
+- ✅ Filtros por estado, fecha y usuario- Guards de autenticacion en backend y frontend- Guards de autenticaciÃ³n en backend y frontend
+
+
+
+#### Caracteristicas Tecnicas- CAPTCHA personalizado para registro- CAPTCHA personalizado para registro
+
+- ✅ API RESTful con relaciones Eloquent=======
+
+- ✅ Validaciones exhaustivas de datosSistema completo de gestión para clínica veterinaria con arquitectura moderna de tres capas:
+
+- ✅ CORS configurado para desarrollo- **API Backend** (Laravel 12 + MySQL)
+
+- ✅ Base de datos MySQL- **Panel Administrativo** (Angular 20 - Gestión Interna)
+
+- ✅ Migraciones y seeders- **Portal Web para Clientes** (Angular 20 - Autogestión)
+
+- ✅ Emails HTML personalizados
 
 ## 📚 Documentación Adicional
 
-- **[Roles y Permisos](ROLES_Y_PERMISOS.md)** - Guía completa del sistema de control de acceso basado en roles
-- **[Beneficios y Mejoras](BENEFICIOS_Y_MEJORAS.md)** - Cómo VetiVet mejora los procesos de la clínica veterinaria
-- **[Datos de Prueba](DATOS_DE_PRUEBA.md)** - Usuarios y datos precargados para testing
-
-## 🌟 Características Principales
->>>>>>> ab1d725 (final)
-
-### 🔐 Sistema de Autenticación y Roles
-- Sistema completo de roles (Admin, Veterinario, Cliente)
-- Control de acceso basado en roles (RBAC)
-- Login con validación de rol requerido
-- Registro de usuarios con verificación de email
-- Recuperación de contraseña
-- Guards de autenticación en backend y frontend
-- CAPTCHA personalizado para registro
-- **Ver detalles en [ROLES_Y_PERMISOS.md](ROLES_Y_PERMISOS.md)**
-
-### 💼 Backend API (Laravel 12)
-
-#### Autenticación y Seguridad
-- ✅ Sistema de autenticación con Laravel Sanctum
-- ✅ Verificación de email con notificaciones personalizadas
-- ✅ Recuperación de contraseña
-- ✅ CAPTCHA propio para prevenir bots
-- ✅ Middleware de autenticación y verificación de email
-- ✅ Gestión de roles (admin, veterinarian, user)
-
-#### Gestión de Datos
-- ✅ CRUD completo de usuarios con roles
-- ✅ Gestión de mascotas con propietarios
-- ✅ Sistema de citas con veterinarios asignados
-- ✅ Historial médico detallado
-- ✅ Calendario de disponibilidad
-- ✅ Filtros por estado, fecha y usuario
-
-#### Características Técnicas
-- ✅ API RESTful con relaciones Eloquent
-- ✅ Validaciones exhaustivas de datos
-- ✅ CORS configurado para desarrollo
-- ✅ Base de datos MySQL
-- ✅ Migraciones y seeders
-- ✅ Emails HTML personalizados
-
 ### 🎨 Panel Administrativo (Angular 18)
 
-#### Gestión de Usuarios
-- ✅ CRUD completo de usuarios
-- ✅ Búsqueda por nombre, email, teléfono
-- ✅ Filtrado por rol
-- ✅ Gestión de permisos
+- **[Roles y Permisos](ROLES_Y_PERMISOS.md)** - Guía completa del sistema de control de acceso basado en roles
+
+#### Gestion de Usuarios- **[Beneficios y Mejoras](BENEFICIOS_Y_MEJORAS.md)** - Cómo VetiVet mejora los procesos de la clínica veterinaria
+
+- ✅ CRUD completo de usuarios- **[Datos de Prueba](DATOS_DE_PRUEBA.md)** - Usuarios y datos precargados para testing
+
+- ✅ Busqueda por nombre, email, telefono
+
+- ✅ Filtrado por rol## 🌟 Características Principales
+
+- ✅ Gestion de permisos>>>>>>> ab1d725 (final)
+
 - ✅ Cambio de contraseñas
-- ✅ Activación/desactivación de cuentas
 
-#### Gestión de Mascotas
-- ✅ Registro completo con foto
-- ✅ Historial médico integrado
-- ✅ Búsqueda y filtros avanzados
-- ✅ Vista de detalles completa
-- ✅ Edición y eliminación
+- ✅ Activacion/desactivacion de cuentas### 🔐 Sistema de Autenticación y Roles
 
-#### Gestión de Citas
-- ✅ Calendario mensual interactivo
-- ✅ Asignación de veterinarios
-- ✅ Control de estados (pendiente, confirmada, completada, cancelada)
-- ✅ Filtros por fecha y estado
-- ✅ Vista de disponibilidad
+- Sistema completo de roles (Admin, Veterinario, Cliente)
 
-#### Historial Médico
-- ✅ Registro de consultas
-- ✅ Diagnósticos y tratamientos
-- ✅ Prescripciones médicas
-- ✅ Notas del veterinario
-- ✅ Historial completo por mascota
+#### Gestion de Mascotas- Control de acceso basado en roles (RBAC)
 
-#### Características Técnicas
-- ✅ Componentes standalone
-- ✅ Signals API para estado reactivo
-- ✅ Reactive Forms con validaciones
-- ✅ Interceptores HTTP
-- ✅ Guards de autenticación
-- ✅ Diseño responsive
+- ✅ Registro completo con foto- Login con validación de rol requerido
 
-### 🌐 Portal Web para Clientes (Angular 18)
+- ✅ Historial medico integrado- Registro de usuarios con verificación de email
 
-#### Funcionalidades de Usuario
-- ✅ Registro y login de clientes
-- ✅ Verificación de email
+- ✅ Busqueda y filtros avanzados- Recuperación de contraseña
+
+- ✅ Vista de detalles completa- Guards de autenticación en backend y frontend
+
+- ✅ Edicion y eliminacion- CAPTCHA personalizado para registro
+
+- **Ver detalles en [ROLES_Y_PERMISOS.md](ROLES_Y_PERMISOS.md)**
+
+#### Gestion de Citas
+
+- ✅ Calendario mensual interactivo### 💼 Backend API (Laravel 12)
+
+- ✅ Asignacion de veterinarios
+
+- ✅ Control de estados (pendiente, confirmada, completada, cancelada)#### Autenticación y Seguridad
+
+- ✅ Filtros por fecha y estado- ✅ Sistema de autenticación con Laravel Sanctum
+
+- ✅ Vista de disponibilidad- ✅ Verificación de email con notificaciones personalizadas
+
 - ✅ Recuperación de contraseña
+
+#### Historial Medico- ✅ CAPTCHA propio para prevenir bots
+
+- ✅ Registro de consultas- ✅ Middleware de autenticación y verificación de email
+
+- ✅ Diagnosticos y tratamientos- ✅ Gestión de roles (admin, veterinarian, user)
+
+- ✅ Prescripciones medicas
+
+- ✅ Notas del veterinario#### Gestión de Datos
+
+- ✅ Historial completo por mascota- ✅ CRUD completo de usuarios con roles
+
+- ✅ Gestión de mascotas con propietarios
+
+#### Caracteristicas Tecnicas- ✅ Sistema de citas con veterinarios asignados
+
+- ✅ Componentes standalone- ✅ Historial médico detallado
+
+- ✅ Signals API para estado reactivo- ✅ Calendario de disponibilidad
+
+- ✅ Reactive Forms con validaciones- ✅ Filtros por estado, fecha y usuario
+
+- ✅ Interceptores HTTP
+
+- ✅ Guards de autenticacion#### Características Técnicas
+
+- ✅ Diseño responsive- ✅ API RESTful con relaciones Eloquent
+
+- ✅ Validaciones exhaustivas de datos
+
+### 🌐 Portal Web para Clientes (Angular 18)- ✅ CORS configurado para desarrollo
+
+- ✅ Base de datos MySQL
+
+#### Funcionalidades de Usuario- ✅ Migraciones y seeders
+
+- ✅ Registro y login de clientes- ✅ Emails HTML personalizados
+
+- ✅ Verificacion de email
+
+- ✅ Recuperacion de contraseña### 🎨 Panel Administrativo (Angular 18)
+
 - ✅ Perfil editable
-- ✅ Cambio de contraseña
 
-#### Gestión de Mascotas
+- ✅ Cambio de contraseña#### Gestión de Usuarios
+
+- ✅ CRUD completo de usuarios
+
+#### Gestion de Mascotas- ✅ Búsqueda por nombre, email, teléfono
+
+- ✅ Registro de mascotas propias- ✅ Filtrado por rol
+
+- ✅ Vista de mascotas registradas- ✅ Gestión de permisos
+
+- ✅ Edicion de informacion de mascotas- ✅ Cambio de contraseñas
+
+- ✅ Acceso al historial medico- ✅ Activación/desactivación de cuentas
+
+
+
+#### Sistema de Citas#### Gestión de Mascotas
+
+- ✅ Solicitud de citas online- ✅ Registro completo con foto
+
+- ✅ Seleccion de mascota y veterinario- ✅ Historial médico integrado
+
+- ✅ Vista de citas programadas- ✅ Búsqueda y filtros avanzados
+
+- ✅ Cancelacion de citas- ✅ Vista de detalles completa
+
+- ✅ Historial de citas- ✅ Edición y eliminación
+
+
+
+#### Caracteristicas Tecnicas#### Gestión de Citas
+
+- ✅ Interfaz diferente del panel admin- ✅ Calendario mensual interactivo
+
+- ✅ Diseño enfocado en clientes- ✅ Asignación de veterinarios
+
+- ✅ Navegacion simplificada- ✅ Control de estados (pendiente, confirmada, completada, cancelada)
+
+- ✅ Responsive design- ✅ Filtros por fecha y estado
+
+- ✅ Validaciones de usuario- ✅ Vista de disponibilidad
+
+
+
+## 🚀 Tecnologias Utilizadas#### Historial Médico
+
+- ✅ Registro de consultas
+
+### Backend- ✅ Diagnósticos y tratamientos
+
+- **Laravel 12** - Framework PHP moderno- ✅ Prescripciones médicas
+
+- **MySQL** - Base de datos relacional- ✅ Notas del veterinario
+
+- **Laravel Sanctum** - Autenticacion API- ✅ Historial completo por mascota
+
+- **Eloquent ORM** - Mapeo objeto-relacional
+
+- **Laravel Mail** - Sistema de notificaciones#### Características Técnicas
+
+- ✅ Componentes standalone
+
+### Frontend- ✅ Signals API para estado reactivo
+
+- **Angular 18** - Framework TypeScript- ✅ Reactive Forms con validaciones
+
+- **TypeScript** - Lenguaje tipado fuerte- ✅ Interceptores HTTP
+
+- **RxJS** - Programacion reactiva- ✅ Guards de autenticación
+
+- **Angular Signals** - Estado reactivo- ✅ Diseño responsive
+
+- **Bootstrap 5** - Framework CSS
+
+- **Angular Material** - Componentes UI### 🌐 Portal Web para Clientes (Angular 18)
+
+
+
+### Herramientas de Desarrollo#### Funcionalidades de Usuario
+
+- **Vite** - Build tool rapido- ✅ Registro y login de clientes
+
+- **PHPUnit** - Testing backend- ✅ Verificación de email
+
+- **Jasmine/Karma** - Testing frontend- ✅ Recuperación de contraseña
+
+- **Git** - Control de versiones- ✅ Perfil editable
+
+- **VS Code** - Editor de codigo- ✅ Cambio de contraseña
+
+
+
+## 🛠️ Instalacion y Configuracion#### Gestión de Mascotas
+
 - ✅ Registro de mascotas propias
-- ✅ Vista de mascotas registradas
-- ✅ Historial médico de sus mascotas
-- ✅ Actualización de datos
 
-#### Sistema de Citas
-- ✅ Calendario interactivo para agendar
+### Prerrequisitos- ✅ Vista de mascotas registradas
+
+- **Node.js** (v18 o superior)- ✅ Historial médico de sus mascotas
+
+- **PHP** (v8.2 o superior)- ✅ Actualización de datos
+
+- **Composer** (Gestor de dependencias PHP)
+
+- **MySQL** (v8.0 o superior)#### Sistema de Citas
+
+- **Git** (Control de versiones)- ✅ Calendario interactivo para agendar
+
 - ✅ Selección de fecha y hora disponible
-- ✅ Selección de veterinario
-- ✅ Selección o registro de mascota
-- ✅ Motivo de consulta
-- ✅ Observaciones adicionales
 
-#### Mis Citas
+### 1. Clonar el Repositorio- ✅ Selección de veterinario
+
+- ✅ Selección o registro de mascota
+
+```bash- ✅ Motivo de consulta
+
+git clone https://github.com/vansfanelx/veterinaria.git- ✅ Observaciones adicionales
+
+cd veterinaria
+
+```#### Mis Citas
+
 - ✅ Vista de todas las citas
-- ✅ Filtro por estado (Todas, Próximas, Pasadas)
+
+### 2. Backend (Laravel API)- ✅ Filtro por estado (Todas, Próximas, Pasadas)
+
 - ✅ Detalles de cada cita
-- ✅ Cancelación de citas (con restricciones)
-- ✅ Estados visuales por color
+
+```bash- ✅ Cancelación de citas (con restricciones)
+
+# Navegar al directorio del API- ✅ Estados visuales por color
+
+cd api
 
 #### Características de UI/UX
-- ✅ Diseño moderno con gradientes
-- ✅ Navegación intuitiva
+
+# Instalar dependencias de PHP- ✅ Diseño moderno con gradientes
+
+composer install- ✅ Navegación intuitiva
+
 - ✅ Notificaciones toast
-- ✅ Modales de confirmación
-- ✅ Loader states
+
+# Copiar archivo de configuracion- ✅ Modales de confirmación
+
+copy .env.example .env- ✅ Loader states
+
 - ✅ Responsive design
-- ✅ Animaciones suaves
+
+# Generar key de aplicacion- ✅ Animaciones suaves
+
+php artisan key:generate
 
 ## 🛠️ Stack Tecnológico
 
-### Backend
-- **Framework**: Laravel 12
-- **PHP**: 8.3+
+# Configurar base de datos en .env
+
+# DB_DATABASE=veterinaria_db### Backend
+
+# DB_USERNAME=tu_usuario- **Framework**: Laravel 12
+
+# DB_PASSWORD=tu_password- **PHP**: 8.3+
+
 - **Base de Datos**: MySQL
-- **Autenticación**: Laravel Sanctum
-- **Email**: Laravel Mail con templates personalizados
+
+# Ejecutar migraciones y seeders- **Autenticación**: Laravel Sanctum
+
+php artisan migrate --seed- **Email**: Laravel Mail con templates personalizados
+
 - **Validación**: Form Requests
 
-### Frontend (Admin & Web)
-- **Framework**: Angular 20
+# Iniciar servidor de desarrollo
+
+php artisan serve --port=8000### Frontend (Admin & Web)
+
+```- **Framework**: Angular 20
+
 - **Lenguaje**: TypeScript 5.x
-- **Estado**: Signals API
+
+### 3. Frontend Administrativo (Angular)- **Estado**: Signals API
+
 - **Formularios**: Reactive Forms
-- **HTTP**: HttpClient con RxJS
-- **Routing**: Angular Router
-- **Estilos**: SCSS con variables CSS
+
+```bash- **HTTP**: HttpClient con RxJS
+
+# Abrir nueva terminal y navegar al directorio admin- **Routing**: Angular Router
+
+cd admin- **Estilos**: SCSS con variables CSS
+
 - **Arquitectura**: Standalone Components
 
-## 📁 Estructura del Proyecto
+# Instalar dependencias de Node.js
 
-```
-systema-veterinaria/
+npm install## 📁 Estructura del Proyecto
+
+
+
+# Iniciar servidor de desarrollo```
+
+npm run devsystema-veterinaria/
+
 ├── api/                              # Backend Laravel
-│   ├── app/
-│   │   ├── Http/
+
+# Acceso: http://localhost:55286│   ├── app/
+
+```│   │   ├── Http/
+
 │   │   │   ├── Controllers/API/
-│   │   │   │   ├── AuthController.php       # Autenticación
+
+### 4. Frontend Web Clientes (Angular)│   │   │   │   ├── AuthController.php       # Autenticación
+
 │   │   │   │   ├── WebController.php        # Endpoints web
-│   │   │   │   ├── PetController.php        # Mascotas
-│   │   │   │   ├── AppointmentController.php # Citas
-│   │   │   │   ├── MedicalHistoryController.php
+
+```bash│   │   │   │   ├── PetController.php        # Mascotas
+
+# Abrir otra terminal y navegar al directorio web│   │   │   │   ├── AppointmentController.php # Citas
+
+cd web│   │   │   │   ├── MedicalHistoryController.php
+
 │   │   │   │   ├── UserController.php       # Usuarios
-│   │   │   │   └── CaptchaController.php    # CAPTCHA
-│   │   ├── Models/
+
+# Instalar dependencias de Node.js│   │   │   │   └── CaptchaController.php    # CAPTCHA
+
+npm install│   │   ├── Models/
+
 │   │   │   ├── User.php
-│   │   │   ├── Pet.php
-│   │   │   ├── Appointment.php
+
+# Iniciar servidor de desarrollo│   │   │   ├── Pet.php
+
+npm run dev│   │   │   ├── Appointment.php
+
 │   │   │   └── MedicalHistory.php
-│   │   └── Notifications/
-│   │       └── VerifyEmailNotification.php  # Email verificación
+
+# Acceso: http://localhost:8003│   │   └── Notifications/
+
+```│   │       └── VerifyEmailNotification.php  # Email verificación
+
 │   ├── database/
-│   │   ├── migrations/
+
+## 🔑 Credenciales de Prueba│   │   ├── migrations/
+
 │   │   └── seeders/
-│   │       └── VeterinarianSeeder.php
-│   ├── routes/
-│   │   └── api.php                  # Rutas API
-│   └── resources/
-│       └── views/vendor/mail/       # Templates email
-│
+
+### 👨‍💼 Administrador Principal│   │       └── VeterinarianSeeder.php
+
+```│   ├── routes/
+
+Email: admin@vetivet.com│   │   └── api.php                  # Rutas API
+
+Password: Admin123│   └── resources/
+
+Panel: http://localhost:55286│       └── views/vendor/mail/       # Templates email
+
+```│
+
 ├── admin/                            # Panel Admin Angular
-│   ├── src/
-│   │   ├── app/
-│   │   │   ├── core/
-│   │   │   │   ├── guards/         # Auth & Login guards
-│   │   │   │   ├── interceptors/   # HTTP interceptor
-│   │   │   │   ├── models/         # Interfaces TypeScript
-│   │   │   │   └── services/       # Servicios HTTP
-│   │   │   ├── features/
-│   │   │   │   ├── pets/
+
+### 👨‍⚕️ Veterinarios (4 disponibles)│   ├── src/
+
+```│   │   ├── app/
+
+Email: carlos.mendoza@vetivet.com│   │   │   ├── core/
+
+Email: ana.martinez@vetivet.com│   │   │   │   ├── guards/         # Auth & Login guards
+
+Email: luis.ramirez@vetivet.com│   │   │   │   ├── interceptors/   # HTTP interceptor
+
+Email: maria.garcia@vetivet.com│   │   │   │   ├── models/         # Interfaces TypeScript
+
+Password: Vet123│   │   │   │   └── services/       # Servicios HTTP
+
+Panel: http://localhost:55286│   │   │   ├── features/
+
+```│   │   │   │   ├── pets/
+
 │   │   │   │   ├── appointments/
-│   │   │   │   └── medical-histories/
-│   │   │   └── shared/
-│   │   │       └── components/
-│   │   └── styles.scss
-│
-└── web/                              # Portal Web Angular
-    ├── src/
-    │   ├── app/
+
+### 👤 Clientes (3 disponibles)│   │   │   │   └── medical-histories/
+
+```│   │   │   └── shared/
+
+Email: juan.perez@example.com│   │   │       └── components/
+
+Email: maria.gonzalez@example.com│   │   └── styles.scss
+
+Email: pedro.sanchez@example.com│
+
+Password: User123└── web/                              # Portal Web Angular
+
+Panel: http://localhost:8003    ├── src/
+
+```    │   ├── app/
+
     │   │   ├── core/
-    │   │   │   ├── guards/
+
+## 📋 Funcionalidades por Rol    │   │   │   ├── guards/
+
     │   │   │   ├── interceptors/
-    │   │   │   ├── models/
-    │   │   │   └── services/
-    │   │   │       ├── auth.service.ts
-    │   │   │       ├── web.service.ts
-    │   │   │       └── notification.service.ts
-    │   │   ├── pages/
-    │   │   │   ├── home/
+
+### 👨‍💼 Administrador    │   │   │   ├── models/
+
+- ✅ Gestion completa de usuarios (crear, editar, eliminar)    │   │   │   └── services/
+
+- ✅ Gestion de mascotas y propietarios    │   │   │       ├── auth.service.ts
+
+- ✅ Gestion de citas y horarios    │   │   │       ├── web.service.ts
+
+- ✅ Gestion de historiales medicos    │   │   │       └── notification.service.ts
+
+- ✅ Acceso a reportes y estadisticas    │   │   ├── pages/
+
+- ✅ Configuracion del sistema    │   │   │   ├── home/
+
     │   │   │   ├── login/
-    │   │   │   ├── register/
-    │   │   │   ├── verify-email/
-    │   │   │   ├── forgot-password/
-    │   │   │   ├── reset-password/
-    │   │   │   ├── appointments/      # Agendar citas
-    │   │   │   ├── my-appointments/   # Mis citas
-    │   │   │   ├── my-pets/           # Mis mascotas
+
+### 👨‍⚕️ Veterinario    │   │   │   ├── register/
+
+- ✅ Gestion de sus citas asignadas    │   │   │   ├── verify-email/
+
+- ✅ Acceso a historiales medicos completos    │   │   │   ├── forgot-password/
+
+- ✅ Registro de consultas y tratamientos    │   │   │   ├── reset-password/
+
+- ✅ Gestion de mascotas    │   │   │   ├── appointments/      # Agendar citas
+
+- ✅ Calendario personal de citas    │   │   │   ├── my-appointments/   # Mis citas
+
+- ❌ NO puede gestionar usuarios    │   │   │   ├── my-pets/           # Mis mascotas
+
     │   │   │   ├── users/             # Gestión usuarios (admin)
-    │   │   │   └── profile/           # Perfil usuario
-    │   │   └── shared/
-    │   │       └── components/
-    │   │           ├── header/
-    │   │           └── footer/
-    │   └── styles.scss
-```
 
-## 🚀 Instalación y Ejecución
+### 👤 Cliente    │   │   │   └── profile/           # Perfil usuario
 
-### Requisitos Previos
-- PHP 8.3 o superior
-- Composer
-- MySQL 8.0+
-- Node.js 18+ y npm
-- Git
+- ✅ Registro y gestion de sus mascotas    │   │   └── shared/
 
-### 1. Clonar Repositorio
-```bash
-git clone <repository-url>
-cd systema-veterinaria
-```
+- ✅ Solicitud de citas online    │   │       └── components/
 
-### 2. Backend API (Laravel)
+- ✅ Consulta de historiales medicos de sus mascotas    │   │           ├── header/
 
-```bash
-cd api
+- ✅ Gestion de perfil personal    │   │           └── footer/
 
-# Instalar dependencias
-composer install
+- ✅ Ver estado de citas programadas    │   └── styles.scss
 
-# Configurar archivo .env
+- ❌ NO puede acceder al panel administrativo```
+
+
+
+## 🏗️ Arquitectura del Sistema## 🚀 Instalación y Ejecución
+
+
+
+```### Requisitos Previos
+
+┌─────────────────────┐    ┌─────────────────────┐    ┌─────────────────────┐- PHP 8.3 o superior
+
+│    Admin Panel      │    │    Client Web       │    │    Mobile App       │- Composer
+
+│   (Angular 18)      │    │   (Angular 18)      │    │    (Futuro)         │- MySQL 8.0+
+
+│  Port: 55286        │    │  Port: 8003         │    │                     │- Node.js 18+ y npm
+
+└─────────────────────┘    └─────────────────────┘    └─────────────────────┘- Git
+
+         │                           │                           │
+
+         └───────────────────────────┼───────────────────────────┘### 1. Clonar Repositorio
+
+                                     │```bash
+
+                        ┌─────────────────────┐git clone <repository-url>
+
+                        │    Laravel API      │cd systema-veterinaria
+
+                        │   (Backend Core)    │```
+
+                        │   Port: 8000        │
+
+                        └─────────────────────┘### 2. Backend API (Laravel)
+
+                                     │
+
+                        ┌─────────────────────┐```bash
+
+                        │     MySQL DB        │cd api
+
+                        │   (Data Storage)    │
+
+                        └─────────────────────┘# Instalar dependencias
+
+```composer install
+
+
+
+## 🔒 Seguridad Implementada# Configurar archivo .env
+
 cp .env.example .env
-# Editar .env con credenciales de base de datos MySQL
 
-# Generar key de aplicación
-php artisan key:generate
+### Autenticacion# Editar .env con credenciales de base de datos MySQL
+
+- **Laravel Sanctum** - Tokens de acceso seguros
+
+- **Verificacion de email** obligatoria para activar cuenta# Generar key de aplicación
+
+- **Recuperacion de contraseña** con tokens temporalesphp artisan key:generate
+
+- **CAPTCHA personalizado** anti-bots en registro
 
 # Ejecutar migraciones
-php artisan migrate
 
-# Ejecutar seeders (crear veterinarios)
-php artisan db:seed --class=VeterinarianSeeder
+### Control de Accesophp artisan migrate
+
+- **RBAC (Role-Based Access Control)** - Control basado en roles
+
+- **Middleware de roles** en todas las rutas protegidas# Ejecutar seeders (crear veterinarios)
+
+- **Guards de autenticacion** en frontend y backendphp artisan db:seed --class=VeterinarianSeeder
+
+- **Validacion de permisos** en cada operacion
 
 # Iniciar servidor de desarrollo
-php artisan serve
-# Servidor: http://localhost:8000
-```
 
-### 3. Panel Administrativo (Angular)
+### Proteccion de Datosphp artisan serve
+
+- **Encriptacion bcrypt** para contraseñas# Servidor: http://localhost:8000
+
+- **Sanitizacion de datos** de entrada```
+
+- **CORS configurado** correctamente
+
+- **Validaciones exhaustivas** en formularios### 3. Panel Administrativo (Angular)
+
+- **SQL Injection** prevenido con Eloquent ORM
 
 ```bash
-cd admin
 
-# Instalar dependencias
+## 📊 Base de Datoscd admin
+
+
+
+### Tablas Principales# Instalar dependencias
+
 npm install
 
-# Desarrollo
-ng serve
+#### `users` - Usuarios del Sistema
+
+- id, name, email, password, role, phone, address# Desarrollo
+
+- email_verified_at, created_at, updated_atng serve
+
 # Aplicación: http://localhost:4200
 
-# Producción
-ng build --configuration production
+#### `pets` - Mascotas Registradas
+
+- id, user_id, name, species, breed, age, weight# Producción
+
+- photo_url, created_at, updated_atng build --configuration production
+
 # Archivos generados en: admin/dist/
-```
 
-### 4. Portal Web (Angular)
+#### `appointments` - Citas Medicas```
 
-```bash
-cd web
+- id, pet_id, user_id, veterinarian_id, appointment_date
+
+- status, notes, created_at, updated_at### 4. Portal Web (Angular)
+
+
+
+#### `medical_histories` - Historiales Medicos```bash
+
+- id, pet_id, veterinarian_id, visit_date, diagnosiscd web
+
+- treatment, prescription, notes, created_at, updated_at
 
 # Instalar dependencias
-npm install
 
-# Desarrollo
-ng serve
-# Aplicación: http://localhost:4200
+### Relaciones de Base de Datosnpm install
+
+- **Usuario → Mascotas** (1:N) - Un usuario puede tener varias mascotas
+
+- **Mascota → Citas** (1:N) - Una mascota puede tener varias citas# Desarrollo
+
+- **Mascota → Historia Medica** (1:N) - Una mascota tiene historial completong serve
+
+- **Usuario (Veterinario) → Citas** (1:N) - Un vet atiende varias citas# Aplicación: http://localhost:4200
+
+- **Usuario (Veterinario) → Historiales** (1:N) - Un vet crea varios historiales
 
 # Producción
-ng build --configuration production
+
+## 🎯 Beneficios del Sistemang build --configuration production
+
 # Archivos generados en: web/dist/
-```
 
-## 🌐 Configuración de Entornos
+### Para la Clinica Veterinaria```
 
-### Variables de Entorno
+- **Reduccion del 80%** en tiempo de busqueda de informacion
+
+- **Eliminacion del 100%** del uso de papel para historiales## 🌐 Configuración de Entornos
+
+- **Control automatizado** de citas y disponibilidad 24/7
+
+- **Mejora en organizacion** y eficiencia operacional### Variables de Entorno
+
+- **Reportes automaticos** de actividad y rendimiento
 
 **Desarrollo (`environment.ts`):**
-```typescript
-export const environment = {
-  production: false,
-  apiUrl: 'http://localhost:8000/api'
-};
+
+### Para los Veterinarios```typescript
+
+- **Acceso inmediato** al historial completo de cada mascotaexport const environment = {
+
+- **Agenda personal organizada** con filtros y alertas  production: false,
+
+- **Registro rapido** de diagnosticos y tratamientos  apiUrl: 'http://localhost:8000/api'
+
+- **Menos tiempo en papeleo**, mas tiempo para atencion medica};
+
+- **Comunicacion eficiente** con propietarios```
+
+
+
+### Para los Clientes**Producción (`environment.prod.ts`):**
+
+- **Autoservicio completo** para gestion de citas 24/7```typescript
+
+- **Acceso total** al historial medico de sus mascotasexport const environment = {
+
+- **Notificaciones automaticas** de citas y recordatorios  production: true,
+
+- **Comodidad de gestion** desde cualquier dispositivo  apiUrl: 'https://api.vetivet.com/api'
+
+- **Transparencia total** en el cuidado de sus mascotas};
+
 ```
 
-**Producción (`environment.prod.ts`):**
-```typescript
-export const environment = {
-  production: true,
-  apiUrl: 'https://api.vetivet.com/api'
-};
-```
+## 🚀 Caracteristicas Tecnicas Destacadas
 
 ### Builds de Producción
 
-**Panel Admin:**
-```bash
-cd admin
-ng build --configuration production
-```
+### Implementacion Angular Avanzada
 
-**Portal Web:**
-```bash
+- **Componentes Standalone** - Arquitectura modular moderna**Panel Admin:**
+
+- **Angular Signals** - Estado reactivo y eficiente```bash
+
+- **Reactive Forms** - Validaciones robustas y dinamicascd admin
+
+- **Route Guards** - Proteccion de rutas por rolesng build --configuration production
+
+- **HTTP Interceptors** - Manejo centralizado de peticiones```
+
+- **Custom Pipes** - Formateo especializado de datos
+
+- **Custom Directives** - Funcionalidades reutilizables**Portal Web:**
+
+- **Lazy Loading** - Carga optimizada de modulos```bash
+
 cd web
-ng build --configuration production
-```
 
-Los archivos compilados estarán en las carpetas:
-- `admin/dist/admin-app/browser/`
-- `web/dist/web-app/browser/`
+### Programacion con TypeScriptng build --configuration production
+
+- **Interfaces tipadas** - Contratos de datos seguros```
+
+- **Clases con herencia** - Reutilizacion de codigo OOP
+
+- **Genericos avanzados** - Codigo flexible y reutilizableLos archivos compilados estarán en las carpetas:
+
+- **Decoradores personalizados** - Metadatos y funcionalidad- `admin/dist/admin-app/browser/`
+
+- **Enums descriptivos** - Constantes organizadas- `web/dist/web-app/browser/`
+
+- **Type Guards** - Validacion de tipos en runtime
 
 ### Despliegue en Producción
 
-1. **Configurar URL de API en producción:**
-   - Editar `environment.prod.ts` en ambos proyectos
-   - Establecer `apiUrl` con la URL real del servidor API
+### Elementos Angular Especializados
 
-2. **Compilar aplicaciones:**
-   ```bash
-   # Admin
+- **Formularios reactivos** con validaciones personalizadas1. **Configurar URL de API en producción:**
+
+- **Sistema de notificaciones** toast integrado   - Editar `environment.prod.ts` en ambos proyectos
+
+- **Manejo centralizado de errores** con interceptores   - Establecer `apiUrl` con la URL real del servidor API
+
+- **Loading states** para mejor experiencia de usuario
+
+- **Responsive design** optimizado para todos los dispositivos2. **Compilar aplicaciones:**
+
+- **Animaciones CSS** para transiciones suaves   ```bash
+
+- **PWA Ready** - Preparado para aplicacion web progresiva   # Admin
+
    cd admin
-   ng build --configuration production
+
+## 📈 Metricas de Rendimiento   ng build --configuration production
+
    
-   # Web
-   cd web
-   ng build --configuration production
-   ```
+
+### Tiempos de Carga   # Web
+
+- **Inicio de aplicacion**: < 2 segundos   cd web
+
+- **Navegacion entre rutas**: < 500ms   ng build --configuration production
+
+- **Carga de listas**: < 1 segundo   ```
+
+- **Busquedas**: Resultados en tiempo real
 
 3. **Subir archivos al servidor:**
-   - Copiar contenido de `dist/*/browser/` al servidor web
-   - Configurar servidor para servir `index.html` en todas las rutas (SPA)
 
-4. **Configurar Laravel API:**
-   ```bash
+### Optimizaciones   - Copiar contenido de `dist/*/browser/` al servidor web
+
+- **Bundle splitting** para carga eficiente   - Configurar servidor para servir `index.html` en todas las rutas (SPA)
+
+- **Tree shaking** para eliminar codigo no usado
+
+- **Compression** de assets estaticos4. **Configurar Laravel API:**
+
+- **Caching estrategico** de datos frecuentes   ```bash
+
    # En servidor de producción
-   cd api
-   composer install --optimize-autoloader --no-dev
-   php artisan config:cache
-   php artisan route:cache
-   php artisan view:cache
-   ```
 
-5. **Variables de entorno Laravel (.env):**
-   ```env
+## 🔮 Roadmap Futuro   cd api
+
+   composer install --optimize-autoloader --no-dev
+
+### Version 2.0 (Planificado)   php artisan config:cache
+
+- 📱 **Aplicacion movil nativa** (iOS/Android)   php artisan route:cache
+
+- 💬 **Chat en tiempo real** veterinario-cliente   php artisan view:cache
+
+- 📊 **Dashboard de analytics** avanzado   ```
+
+- 🤖 **Integracion con IA** para diagnosticos asistidos
+
+- 💳 **Sistema de pagos** integrado5. **Variables de entorno Laravel (.env):**
+
+- 📧 **SMS notifications** ademas de emails   ```env
+
    APP_ENV=production
-   APP_DEBUG=false
-   APP_URL=https://api.vetivet.com
-   
-   DB_CONNECTION=mysql
-   DB_HOST=127.0.0.1
+
+### Integraciones Futuras   APP_DEBUG=false
+
+- **Sistemas de laboratorio** para resultados automaticos   APP_URL=https://api.vetivet.com
+
+- **Camaras de seguridad** para monitoreo de instalaciones   
+
+- **Sistemas de inventario** para medicamentos y suministros   DB_CONNECTION=mysql
+
+- **APIs de terceros** para servicios veterinarios especializados   DB_HOST=127.0.0.1
+
    DB_PORT=3306
-   DB_DATABASE=vetivet_db
+
+## 🤝 Contribucion al Proyecto   DB_DATABASE=vetivet_db
+
    DB_USERNAME=tu_usuario
-   DB_PASSWORD=tu_password
-   
-   MAIL_MAILER=smtp
-   MAIL_HOST=smtp.gmail.com
-   MAIL_PORT=587
-   MAIL_USERNAME=tu_email@gmail.com
+
+### Como Contribuir   DB_PASSWORD=tu_password
+
+1. **Fork** del repositorio   
+
+2. **Crear rama feature** (`git checkout -b feature/AmazingFeature`)   MAIL_MAILER=smtp
+
+3. **Commit cambios** (`git commit -m 'Add some AmazingFeature'`)   MAIL_HOST=smtp.gmail.com
+
+4. **Push a la rama** (`git push origin feature/AmazingFeature`)   MAIL_PORT=587
+
+5. **Abrir Pull Request** con descripcion detallada   MAIL_USERNAME=tu_email@gmail.com
+
    MAIL_PASSWORD=tu_password_app
-   MAIL_ENCRYPTION=tls
-   MAIL_FROM_ADDRESS=noreply@vetivet.com
-   MAIL_FROM_NAME=VetiVet
-   ```
+
+### Estandares de Codigo   MAIL_ENCRYPTION=tls
+
+- **ESLint** y **Prettier** para formato consistente   MAIL_FROM_ADDRESS=noreply@vetivet.com
+
+- **Conventional Commits** para mensajes descriptivos   MAIL_FROM_NAME=VetiVet
+
+- **Unit tests** obligatorios para nuevas funcionalidades   ```
+
+- **Documentacion** actualizada para cambios importantes
 
 ## 📡 API Endpoints
 
+## 📄 Licencia y Legal
+
 ### Autenticación Pública
-```
+
+Este proyecto esta desarrollado bajo la **Licencia MIT**, permitiendo uso comercial y modificacion libre.```
+
 POST   /api/register              - Registrar usuario
-POST   /api/login                 - Iniciar sesión
-POST   /api/logout                - Cerrar sesión
-POST   /api/forgot-password       - Solicitar reset password
-POST   /api/reset-password        - Resetear password
+
+### Derechos de AutorPOST   /api/login                 - Iniciar sesión
+
+- **Codigo fuente**: Libre para uso y modificacionPOST   /api/logout                - Cerrar sesión
+
+- **Documentacion**: Creative Commons Attribution 4.0POST   /api/forgot-password       - Solicitar reset password
+
+- **Recursos graficos**: Derechos reservados al autorPOST   /api/reset-password        - Resetear password
+
 GET    /api/verify-email/{id}/{hash} - Verificar email
-POST   /api/resend-verification-email - Reenviar verificación
+
+## 👨‍💻 Informacion del DesarrolladorPOST   /api/resend-verification-email - Reenviar verificación
+
 GET    /api/captcha/generate      - Generar CAPTCHA
-POST   /api/captcha/validate      - Validar CAPTCHA
-```
 
-### Endpoints Web (Públicos y Autenticados)
-```
+### Autor PrincipalPOST   /api/captcha/validate      - Validar CAPTCHA
+
+- **Nombre**: [Tu Nombre Completo]```
+
+- **GitHub**: [vansfanelx](https://github.com/vansfanelx)
+
+- **Email**: [tu-email@example.com]### Endpoints Web (Públicos y Autenticados)
+
+- **LinkedIn**: [Tu perfil de LinkedIn]```
+
 GET    /api/web/veterinarians     - Listar veterinarios
-GET    /api/web/available-slots   - Horarios disponibles
-GET    /api/web/my-pets           - Mis mascotas (auth)
-POST   /api/web/appointments      - Crear cita (auth)
-GET    /api/web/my-appointments   - Mis citas (auth)
-DELETE /api/web/appointments/{id} - Cancelar cita (auth)
+
+### Agradecimientos EspecialesGET    /api/web/available-slots   - Horarios disponibles
+
+- **Laravel Team** - Por el excelente framework backendGET    /api/web/my-pets           - Mis mascotas (auth)
+
+- **Angular Team** - Por las herramientas de desarrollo frontendPOST   /api/web/appointments      - Crear cita (auth)
+
+- **Comunidad Open Source** - Por las librerias y recursos utilizadosGET    /api/web/my-appointments   - Mis citas (auth)
+
+- **Veterinarios consultores** - Por la validacion de flujos de trabajoDELETE /api/web/appointments/{id} - Cancelar cita (auth)
+
 GET    /api/web/pets/{id}/medical-history - Historial mascota (auth)
+
+---```
+
+
+
+## 🌟 Apoya el Proyecto### CRUD Usuarios (Admin)
+
 ```
 
-### CRUD Usuarios (Admin)
-```
-GET    /api/users                 - Listar usuarios
-POST   /api/users                 - Crear usuario
-GET    /api/users/{id}            - Ver usuario
-PUT    /api/users/{id}            - Actualizar usuario
-DELETE /api/users/{id}            - Eliminar usuario
+Si este proyecto te resulta util, considera:GET    /api/users                 - Listar usuarios
+
+- ⭐ **Darle una estrella** en GitHubPOST   /api/users                 - Crear usuario
+
+- 🐛 **Reportar bugs** encontradosGET    /api/users/{id}            - Ver usuario
+
+- 💡 **Sugerir mejoras** y nuevas funcionalidadesPUT    /api/users/{id}            - Actualizar usuario
+
+- 🔄 **Compartir** con otros desarrolladoresDELETE /api/users/{id}            - Eliminar usuario
+
 PUT    /api/users/{id}/password   - Cambiar contraseña
+
+---```
+
+
+
+**Desarrollado con ❤️ para revolucionar la gestion veterinaria digital**### CRUD Mascotas
+
 ```
 
-### CRUD Mascotas
-```
-GET    /api/pets                  - Listar mascotas
+> "La tecnologia al servicio del cuidado animal - Mejorando la vida de las mascotas y sus familias"GET    /api/pets                  - Listar mascotas
 POST   /api/pets                  - Crear mascota
 GET    /api/pets/{id}             - Ver mascota
 PUT    /api/pets/{id}             - Actualizar mascota
