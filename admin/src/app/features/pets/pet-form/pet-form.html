@@ -1,0 +1,165 @@
+<div class="pet-form-container">
+  <div class="header">
+    <h1>{{ isEditMode ? 'Editar Mascota' : 'Nueva Mascota' }}</h1>
+    <a routerLink="/pets" class="btn btn-secondary">Volver</a>
+  </div>
+
+  @if (error) {
+    <div class="alert alert-error">{{ error }}</div>
+  }
+
+  <form [formGroup]="petForm" (ngSubmit)="onSubmit()" class="form">
+    <div class="form-section">
+      <h3 class="section-title">📋 Información Básica</h3>
+      
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Nombre</label>
+          <input 
+            type="text" 
+            id="name" 
+            formControlName="name" 
+            class="form-control"
+            placeholder="Ej: Max, Luna, Rocky..."
+          >
+          @if (petForm.get('name')?.invalid && petForm.get('name')?.touched) {
+            <div class="error-message">
+              @if (petForm.get('name')?.errors?.['required']) {
+                El nombre es requerido
+              }
+              @if (petForm.get('name')?.errors?.['minlength']) {
+                El nombre debe tener al menos 2 caracteres
+              }
+              @if (petForm.get('name')?.errors?.['maxlength']) {
+                El nombre no puede exceder 100 caracteres
+              }
+            </div>
+          }
+        </div>
+
+        <div class="form-group">
+          <label for="species">Especie</label>
+          <select id="species" formControlName="species" class="form-control">
+            <option value="">Seleccionar especie...</option>
+            <option value="Perro">🐕 Perro</option>
+            <option value="Gato">🐈 Gato</option>
+            <option value="Ave">🦜 Ave</option>
+            <option value="Conejo">🐰 Conejo</option>
+            <option value="Hamster">🐹 Hamster</option>
+            <option value="Reptil">🦎 Reptil</option>
+            <option value="Otro">🐾 Otro</option>
+          </select>
+          @if (petForm.get('species')?.invalid && petForm.get('species')?.touched) {
+            <div class="error-message">
+              La especie es requerida
+            </div>
+          }
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="breed">Raza</label>
+          <input 
+            type="text" 
+            id="breed" 
+            formControlName="breed" 
+            class="form-control"
+            placeholder="Ej: Golden Retriever, Siamés..."
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="birth_date">Fecha de Nacimiento</label>
+          <input 
+            type="date" 
+            id="birth_date" 
+            formControlName="birth_date" 
+            class="form-control"
+          >
+        </div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <h3 class="section-title">🎨 Características Físicas</h3>
+      
+      <div class="form-row">
+        <div class="form-group">
+          <label for="gender">Género</label>
+          <select id="gender" formControlName="gender" class="form-control">
+            <option value="">Seleccionar género...</option>
+            <option value="male">♂ Macho</option>
+            <option value="female">♀ Hembra</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="color">Color</label>
+          <input 
+            type="text" 
+            id="color" 
+            formControlName="color" 
+            class="form-control"
+            placeholder="Ej: Negro, Blanco, Café..."
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="weight">Peso (kg)</label>
+          <input 
+            type="number" 
+            id="weight" 
+            formControlName="weight" 
+            class="form-control"
+            placeholder="0.00"
+            step="0.01"
+            min="0"
+          >
+          @if (petForm.get('weight')?.invalid && petForm.get('weight')?.touched) {
+            <div class="error-message">
+              @if (petForm.get('weight')?.errors?.['min']) {
+                El peso debe ser mayor o igual a 0
+              }
+              @if (petForm.get('weight')?.errors?.['max']) {
+                El peso no puede exceder 500 kg
+              }
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <h3 class="section-title">📝 Notas Adicionales</h3>
+      
+      <div class="form-group">
+        <label for="notes">Observaciones</label>
+        <textarea 
+          id="notes" 
+          formControlName="notes" 
+          class="form-control"
+          rows="4"
+          placeholder="Información adicional sobre la mascota (comportamiento, alergias, preferencias, etc.)"
+        ></textarea>
+        <div class="char-counter">
+          {{ petForm.get('notes')?.value?.length || 0 }} / 1000 caracteres
+        </div>
+        @if (petForm.get('notes')?.invalid && petForm.get('notes')?.touched) {
+          <div class="error-message">
+            @if (petForm.get('notes')?.errors?.['maxlength']) {
+              Las notas no pueden exceder 1000 caracteres
+            }
+          </div>
+        }
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" [disabled]="petForm.invalid || loading" class="btn btn-primary">
+        {{ loading ? 'Guardando...' : (isEditMode ? 'Actualizar' : 'Guardar') }}
+      </button>
+      <a routerLink="/pets" class="btn btn-secondary">Cancelar</a>
+    </div>
+  </form>
+</div>

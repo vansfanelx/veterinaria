@@ -1,0 +1,196 @@
+<div class="modern-list-page">
+  <div class="page-header-modern">
+    <div class="header-content">
+      <div class="title-section">
+        <div class="icon-wrapper pets-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M4.5 9.5m-2.5 0a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0-5 0M19.5 9.5m-2.5 0a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0M9 9.5m-2.5 0a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0M15 9.5m-2.5 0a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0M12 16a3 3 0 0 1 3 3a3 3 0 0 1 -3 3a3 3 0 0 1 -3 -3a3 3 0 0 1 3 -3"/>
+          </svg>
+        </div>
+        <div>
+          <h1>Gestión de Mascotas</h1>
+          <p class="subtitle">{{ filteredPets.length }} mascota{{ filteredPets.length !== 1 ? 's' : '' }} registrada{{ filteredPets.length !== 1 ? 's' : '' }}</p>
+        </div>
+      </div>
+      <a routerLink="/pets/new" class="btn-add-modern">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+        </svg>
+        Nueva Mascota
+      </a>
+    </div>
+  </div>
+
+  <div class="search-filters-modern">
+    <div class="search-box-modern">
+      <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+      </svg>
+      <input 
+        type="text" 
+        class="search-input-modern" 
+        placeholder="Buscar por nombre, especie, raza o dueño..." 
+        [(ngModel)]="searchTerm"
+        (ngModelChange)="filterPets()"
+      />
+      @if (searchTerm) {
+        <button class="clear-btn-modern" (click)="searchTerm = ''; filterPets()" title="Limpiar búsqueda">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+          </svg>
+        </button>
+      }
+    </div>
+  </div>
+
+  @if (loading) {
+    <div class="loading-modern">
+      <div class="spinner-large"></div>
+      <p>Cargando mascotas...</p>
+    </div>
+  }
+  
+  @if (error) {
+    <div class="alert-modern alert-error">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+      </svg>
+      {{ error }}
+    </div>
+  }
+
+  @if (!loading && pets.length === 0) {
+    <div class="empty-state-modern">
+      <div class="empty-icon">
+        🐾
+      </div>
+      <h3>No hay mascotas registradas</h3>
+      <p>Comienza agregando la primera mascota al sistema</p>
+      <a routerLink="/pets/new" class="btn-add-modern">Registrar primera mascota</a>
+    </div>
+  }
+
+  @if (!loading && filteredPets.length === 0 && pets.length > 0) {
+    <div class="empty-state-modern">
+      <div class="empty-icon">
+        🔍
+      </div>
+      <h3>No se encontraron resultados</h3>
+      <p>No hay mascotas que coincidan con "{{ searchTerm }}"</p>
+      <button class="btn-secondary-modern" (click)="searchTerm = ''; filterPets()">Limpiar búsqueda</button>
+    </div>
+  }
+
+  @if (!loading && filteredPets.length > 0) {
+    <div class="cards-grid">
+      @for (pet of filteredPets; track pet.id) {
+        <div class="card-modern pet-card">
+          <div class="card-header-pet">
+            <div class="pet-avatar-large">
+              {{ pet.species === 'Perro' ? '🐕' : pet.species === 'Gato' ? '🐈' : pet.species === 'Ave' ? '🦆' : pet.species === 'Conejo' ? '🐰' : '🐾' }}
+            </div>
+            <div class="pet-header-info">
+              <h3>{{ pet.name }}</h3>
+              <div class="pet-tags">
+                <span class="tag tag-species">{{ pet.species }}</span>
+                @if (pet.breed) {
+                  <span class="tag tag-breed">{{ pet.breed }}</span>
+                }
+              </div>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <div class="info-row">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+              </svg>
+              <div>
+                <span class="label">Dueño</span>
+                <strong>{{ pet.owner?.name || 'Sin asignar' }}</strong>
+              </div>
+            </div>
+
+            @if (pet.gender) {
+              <div class="info-row">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                </svg>
+                <div>
+                  <span class="label">Género</span>
+                  <strong>{{ pet.gender === 'male' ? 'Macho' : 'Hembra' }}</strong>
+                </div>
+              </div>
+            }
+
+            @if (pet.weight) {
+              <div class="info-row">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
+                </svg>
+                <div>
+                  <span class="label">Peso</span>
+                  <strong>{{ pet.weight }} kg</strong>
+                </div>
+              </div>
+            }
+
+            @if (pet.birth_date) {
+              <div class="info-row">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/>
+                </svg>
+                <div>
+                  <span class="label">Fecha de Nacimiento</span>
+                  <strong>{{ pet.birth_date | date:'dd/MM/yyyy' }}</strong>
+                </div>
+              </div>
+            }
+
+            @if (pet.notes) {
+              <div class="notes-section">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/>
+                </svg>
+                <p class="notes-text">{{ pet.notes }}</p>
+              </div>
+            }
+          </div>
+
+          <div class="card-actions">
+            <a [routerLink]="['/pets', pet.id]" class="btn-icon-modern btn-info" title="Ver detalles">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+              </svg>
+              Ver
+            </a>
+            <a [routerLink]="['/pets', pet.id, 'edit']" class="btn-icon-modern btn-warning" title="Editar">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+              </svg>
+              Editar
+            </a>
+            <button (click)="openDeleteModal(pet)" class="btn-icon-modern btn-danger" title="Eliminar">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/>
+              </svg>
+              Eliminar
+            </button>
+          </div>
+        </div>
+      }
+    </div>
+  }
+</div>
+
+<!-- Modal de confirmación de eliminación -->
+<app-confirm-modal
+  [isOpen]="showDeleteModal"
+  [title]="'Confirmar eliminación'"
+  [message]="'¿Está seguro de eliminar la mascota ' + (petToDelete?.name || '') + '? Esta acción no se puede deshacer.'"
+  [confirmText]="'Eliminar'"
+  [cancelText]="'Cancelar'"
+  [type]="'danger'"
+  (confirm)="confirmDelete()"
+  (cancel)="closeDeleteModal()">
+</app-confirm-modal>

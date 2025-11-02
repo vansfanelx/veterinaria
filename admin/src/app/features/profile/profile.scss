@@ -1,0 +1,382 @@
+.profile-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.loading {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #6b7280;
+  font-size: 1.125rem;
+}
+
+.profile-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 16px;
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.2);
+}
+
+.profile-avatar {
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  svg {
+    width: 60px;
+    height: 60px;
+    color: white;
+  }
+}
+
+.profile-info {
+  flex: 1;
+
+  h1 {
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 0.75rem;
+  }
+}
+
+.role-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1.25rem;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+
+  &.admin {
+    background: rgba(239, 68, 68, 0.9);
+    color: white;
+  }
+
+  &.veterinarian {
+    background: rgba(23, 162, 184, 0.9);
+    color: white;
+  }
+
+  &.user {
+    background: rgba(16, 185, 129, 0.9);
+    color: white;
+  }
+}
+
+.tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  background: white;
+  border-radius: 12px;
+  padding: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.tab-button {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  border: none;
+  background: transparent;
+  color: #6b7280;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  &:hover {
+    background: #f3f4f6;
+    color: #374151;
+  }
+
+  &.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+
+    &:hover {
+      background: linear-gradient(135deg, #5568d3 0%, #6a408d 100%);
+    }
+  }
+}
+
+.tab-content {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.profile-form {
+  .form-section {
+    margin-bottom: 2rem;
+
+    h2 {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1.5rem;
+      color: #1f2937;
+      margin: 0 0 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid #e5e7eb;
+
+      svg {
+        width: 24px;
+        height: 24px;
+        color: #667eea;
+      }
+    }
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+
+    label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      color: #374151;
+      margin-bottom: 0.5rem;
+      font-size: 0.875rem;
+
+      svg {
+        width: 18px;
+        height: 18px;
+        color: #667eea;
+      }
+    }
+
+    input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 2px solid #e5e7eb;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+
+      &:focus {
+        outline: none;
+        border-color: #667eea;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+      }
+
+      &.error {
+        border-color: #ef4444;
+
+        &:focus {
+          box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+        }
+      }
+    }
+  }
+
+  .error-message {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    color: #ef4444;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+
+    svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+  }
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 1.5rem;
+  border-top: 2px solid #e5e7eb;
+
+  button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    &:hover:not(:disabled) {
+      background: linear-gradient(135deg, #5568d3 0%, #6a408d 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-container {
+    padding: 1rem;
+  }
+
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+
+    .profile-info h1 {
+      font-size: 1.5rem;
+    }
+  }
+
+  .profile-avatar {
+    width: 80px;
+    height: 80px;
+
+    svg {
+      width: 48px;
+      height: 48px;
+    }
+  }
+
+  .tabs {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .tab-button {
+    padding: 0.875rem 1rem;
+    font-size: 0.9375rem;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  .tab-content {
+    padding: 1.5rem;
+  }
+
+  .profile-form {
+    .form-row {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+
+    .form-section h2 {
+      font-size: 1.25rem;
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  .form-actions {
+    button {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-header {
+    padding: 1.5rem;
+
+    .profile-info h1 {
+      font-size: 1.25rem;
+    }
+  }
+
+  .profile-avatar {
+    width: 70px;
+    height: 70px;
+
+    svg {
+      width: 42px;
+      height: 42px;
+    }
+  }
+
+  .role-badge {
+    padding: 0.4rem 1rem;
+    font-size: 0.75rem;
+  }
+
+  .tab-content {
+    padding: 1rem;
+  }
+
+  .profile-form {
+    .form-section {
+      margin-bottom: 1.5rem;
+
+      h2 {
+        font-size: 1.125rem;
+        margin-bottom: 1rem;
+      }
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+
+      input {
+        padding: 0.625rem 0.875rem;
+      }
+    }
+  }
+
+  .form-actions {
+    padding-top: 1rem;
+
+    button {
+      padding: 0.75rem 1.5rem;
+      font-size: 0.9375rem;
+    }
+  }
+}

@@ -1,0 +1,317 @@
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  position: relative;
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    h1 {
+      margin: 0;
+      font-size: 1.75rem;
+    }
+  }
+
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1001;
+
+    span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background: white;
+      border-radius: 3px;
+      transition: all 0.3s ease;
+    }
+
+    &.active {
+      span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+      span:nth-child(2) {
+        opacity: 0;
+      }
+      span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+    }
+  }
+
+  .nav-menu {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      color: rgba(255, 255, 255, 0.9);
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 14px;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+
+      svg {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+      }
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.15);
+        color: white;
+      }
+
+      &.active {
+        background: rgba(255, 255, 255, 0.25);
+        color: white;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .user-menu {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    .user-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: white;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    .btn-logout {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.2);
+        border-color: rgba(255, 255, 255, 0.4);
+        transform: translateY(-1px);
+      }
+    }
+
+    .btn-profile {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      padding: 8px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      text-decoration: none;
+
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.2);
+        border-color: rgba(255, 255, 255, 0.4);
+        transform: translateY(-1px);
+      }
+    }
+  }
+}
+
+// Responsive design - Tablets
+@media (max-width: 1024px) {
+  .header-content {
+    .nav-menu {
+      gap: 4px;
+
+      .nav-link {
+        padding: 8px 12px;
+        font-size: 13px;
+
+        svg {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+
+    .user-menu {
+      .user-name {
+        font-size: 13px;
+        padding: 6px 12px;
+      }
+
+      .btn-logout {
+        font-size: 13px;
+        padding: 6px 12px;
+      }
+    }
+  }
+}
+
+// Responsive design - Mobile
+@media (max-width: 768px) {
+  .header-content {
+    flex-wrap: wrap;
+
+    .header-left {
+      width: 100%;
+      justify-content: space-between;
+
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+
+    .menu-toggle {
+      display: flex;
+    }
+
+    .nav-menu {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 280px;
+      height: 100vh;
+      background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+      flex-direction: column;
+      gap: 0;
+      padding: 80px 0 20px;
+      transition: left 0.3s ease;
+      z-index: 1000;
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+      overflow-y: auto;
+
+      &.open {
+        left: 0;
+      }
+
+      .nav-link {
+        width: 100%;
+        padding: 16px 24px;
+        border-radius: 0;
+        justify-content: flex-start;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.2);
+          padding-left: 28px;
+        }
+
+        &.active {
+          background: rgba(255, 255, 255, 0.3);
+          border-left: 4px solid white;
+        }
+      }
+    }
+
+    .user-menu {
+      width: 100%;
+      justify-content: space-between;
+      margin-top: 12px;
+      flex-wrap: wrap;
+      gap: 8px;
+
+      .user-name {
+        flex: 1;
+        min-width: 150px;
+        justify-content: center;
+      }
+
+      .btn-logout {
+        flex: 0 0 auto;
+      }
+    }
+  }
+
+  // Overlay para cerrar el menú
+  .nav-menu.open::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 280px;
+    width: calc(100vw - 280px);
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+  }
+}
+
+// Responsive design - Small Mobile
+@media (max-width: 480px) {
+  .header-content {
+    .header-left h1 {
+      font-size: 1.25rem;
+    }
+
+    .user-menu {
+      .user-name {
+        font-size: 12px;
+        padding: 6px 10px;
+
+        svg {
+          width: 16px;
+          height: 16px;
+        }
+      }
+
+      .btn-logout {
+        font-size: 12px;
+        padding: 6px 10px;
+
+        svg {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,247 @@
+<div class="profile-container">
+  @if (loading()) {
+    <div class="loading">Cargando perfil...</div>
+  }
+
+  @if (!loading() && currentUser()) {
+    <div class="profile-header">
+      <div class="profile-avatar">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+        </svg>
+      </div>
+      <div class="profile-info">
+        <h1>{{ currentUser()?.name }}</h1>
+        <span class="role-badge" [class]="getRoleBadgeClass()">{{ getRoleText() }}</span>
+      </div>
+    </div>
+
+    <div class="tabs">
+      <button 
+        class="tab-button" 
+        [class.active]="activeTab() === 'info'"
+        (click)="activeTab.set('info')">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+        </svg>
+        Información Personal
+      </button>
+      <button 
+        class="tab-button" 
+        [class.active]="activeTab() === 'password'"
+        (click)="activeTab.set('password')">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM9 8V6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9z"/>
+        </svg>
+        Cambiar Contraseña
+      </button>
+    </div>
+
+    <div class="tab-content">
+      @if (activeTab() === 'info') {
+        <form [formGroup]="profileForm" (ngSubmit)="updateProfile()" class="profile-form">
+          <div class="form-section">
+            <h2>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z"/>
+              </svg>
+              Datos Personales
+            </h2>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z"/>
+                  </svg>
+                  Nombre Completo *
+                </label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  formControlName="name"
+                  class="form-control"
+                  [class.error]="isFieldInvalid('name', 'profile')"
+                  placeholder="Tu nombre completo"
+                >
+                @if (isFieldInvalid('name', 'profile')) {
+                  <span class="error-message">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+                    </svg>
+                    {{ getErrorMessage('name', 'profile') }}
+                  </span>
+                }
+              </div>
+
+              <div class="form-group">
+                <label for="email">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                  </svg>
+                  Email *
+                </label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  formControlName="email"
+                  class="form-control"
+                  [class.error]="isFieldInvalid('email', 'profile')"
+                  placeholder="tu@email.com"
+                >
+                @if (isFieldInvalid('email', 'profile')) {
+                  <span class="error-message">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+                    </svg>
+                    {{ getErrorMessage('email', 'profile') }}
+                  </span>
+                }
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                  </svg>
+                  Teléfono
+                </label>
+                <input 
+                  type="tel" 
+                  id="phone" 
+                  formControlName="phone"
+                  class="form-control"
+                  placeholder="Ej: 9XXXXXXXX"
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="address">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                  </svg>
+                  Dirección
+                </label>
+                <input 
+                  type="text" 
+                  id="address" 
+                  formControlName="address"
+                  class="form-control"
+                  placeholder="Tu dirección"
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary" [disabled]="loading() || profileForm.invalid">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+              </svg>
+              {{ loading() ? 'Guardando...' : 'Guardar Cambios' }}
+            </button>
+          </div>
+        </form>
+      }
+
+      @if (activeTab() === 'password') {
+        <form [formGroup]="passwordForm" (ngSubmit)="updatePassword()" class="profile-form">
+          <div class="form-section">
+            <h2>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
+              </svg>
+              Actualizar Contraseña
+            </h2>
+
+            <div class="form-group">
+              <label for="current_password">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
+                </svg>
+                Contraseña Actual *
+              </label>
+              <input 
+                type="password" 
+                id="current_password" 
+                formControlName="current_password"
+                class="form-control"
+                [class.error]="isFieldInvalid('current_password', 'password')"
+                placeholder="Tu contraseña actual"
+              >
+              @if (isFieldInvalid('current_password', 'password')) {
+                <span class="error-message">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+                  </svg>
+                  {{ getErrorMessage('current_password', 'password') }}
+                </span>
+              }
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="password">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6z"/>
+                  </svg>
+                  Nueva Contraseña *
+                </label>
+                <input 
+                  type="password" 
+                  id="password" 
+                  formControlName="password"
+                  class="form-control"
+                  [class.error]="isFieldInvalid('password', 'password')"
+                  placeholder="Mínimo 8 caracteres"
+                >
+                @if (isFieldInvalid('password', 'password')) {
+                  <span class="error-message">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+                    </svg>
+                    {{ getErrorMessage('password', 'password') }}
+                  </span>
+                }
+              </div>
+
+              <div class="form-group">
+                <label for="password_confirmation">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6z"/>
+                  </svg>
+                  Confirmar Nueva Contraseña *
+                </label>
+                <input 
+                  type="password" 
+                  id="password_confirmation" 
+                  formControlName="password_confirmation"
+                  class="form-control"
+                  [class.error]="isFieldInvalid('password_confirmation', 'password')"
+                  placeholder="Repetir nueva contraseña"
+                >
+                @if (isFieldInvalid('password_confirmation', 'password')) {
+                  <span class="error-message">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+                    </svg>
+                    {{ getErrorMessage('password_confirmation', 'password') }}
+                  </span>
+                }
+              </div>
+            </div>
+          </div>          <div class="form-actions">
+            <button type="submit" class="btn btn-primary" [disabled]="loading() || passwordForm.invalid">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+              </svg>
+              {{ loading() ? 'Actualizando...' : 'Cambiar Contraseña' }}
+            </button>
+          </div>
+        </form>
+      }
+    </div>
+  }
+</div>

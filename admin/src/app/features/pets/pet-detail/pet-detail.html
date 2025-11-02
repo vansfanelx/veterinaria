@@ -1,0 +1,220 @@
+<div class="pet-detail-container">
+  @if (loading) {
+    <div class="loading-overlay">
+      <div class="spinner"></div>
+      <p>Cargando información...</p>
+    </div>
+  }
+
+  @if (error) {
+    <div class="alert alert-error">
+      <span class="alert-icon">⚠️</span>
+      <span>{{ error }}</span>
+    </div>
+  }
+
+  @if (pet && !loading) {
+    <!-- Header con información principal -->
+    <div class="pet-header">
+      <div class="pet-avatar">
+        <span class="avatar-icon">{{ pet.species === 'Perro' ? '🐕' : pet.species === 'Gato' ? '🐈' : '🐾' }}</span>
+      </div>
+      <div class="pet-info">
+        <h1 class="pet-name">{{ pet.name }}</h1>
+        <div class="pet-meta">
+          <span class="badge badge-species">{{ pet.species }}</span>
+          @if (pet.breed) {
+            <span class="badge badge-breed">{{ pet.breed }}</span>
+          }
+          @if (pet.gender) {
+            <span class="badge badge-gender">{{ pet.gender === 'male' ? '♂ Macho' : '♀ Hembra' }}</span>
+          }
+        </div>
+      </div>
+      <div class="actions">
+        <a [routerLink]="['/pets', pet.id, 'edit']" class="btn btn-primary" title="Editar mascota">
+          <span class="btn-icon">✏️</span>
+          <span>Editar</span>
+        </a>
+        <button (click)="deletePet()" class="btn btn-danger" title="Eliminar mascota">
+          <span class="btn-icon">🗑️</span>
+          <span>Eliminar</span>
+        </button>
+        <a routerLink="/pets" class="btn btn-secondary" title="Volver al listado">
+          <span class="btn-icon">←</span>
+          <span>Volver</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="pet-content">
+      <!-- Información General en Cards -->
+      <div class="info-cards">
+        <div class="info-card">
+          <div class="card-icon">📋</div>
+          <div class="card-content">
+            <h3>Información General</h3>
+            <div class="info-grid">
+              <div class="info-item">
+                <span class="info-label">🏷️ Especie</span>
+                <span class="info-value">{{ pet.species }}</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">🧬 Raza</span>
+                <span class="info-value">{{ pet.breed || 'No especificada' }}</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">🎂 Fecha de Nacimiento</span>
+                <span class="info-value">{{ pet.birth_date ? (pet.birth_date | date:'dd/MM/yyyy') : 'No especificada' }}</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">🎨 Color</span>
+                <span class="info-value">{{ pet.color || 'No especificado' }}</span>
+              </div>
+              @if (pet.weight) {
+                <div class="info-item">
+                  <span class="info-label">⚖️ Peso</span>
+                  <span class="info-value">{{ pet.weight }} kg</span>
+                </div>
+              }
+              <div class="info-item">
+                <span class="info-label">👤 Propietario</span>
+                <span class="info-value">{{ pet.owner?.name || 'No asignado' }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        @if (pet.notes) {
+          <div class="info-card">
+            <div class="card-icon">📝</div>
+            <div class="card-content">
+              <h3>Notas</h3>
+              <p class="notes-content">{{ pet.notes }}</p>
+            </div>
+          </div>
+        }
+      </div>
+
+      <!-- Sección de Citas -->
+      <div class="section-card">
+        <div class="section-header">
+          <h2>
+            <span class="section-icon">📅</span>
+            Citas
+            <span class="section-count">{{ appointments.length }}</span>
+          </h2>
+          <a [routerLink]="['/appointments/new']" [queryParams]="{pet_id: pet.id}" class="btn btn-sm btn-success">
+            <span class="btn-icon">➕</span>
+            Nueva Cita
+          </a>
+        </div>
+        
+        @if (appointments.length === 0) {
+          <div class="empty-state">
+            <span class="empty-icon">📅</span>
+            <p>No hay citas registradas</p>
+            <a [routerLink]="['/appointments/new']" [queryParams]="{pet_id: pet.id}" class="btn btn-primary">Agendar Primera Cita</a>
+          </div>
+        }
+        
+        @if (appointments.length > 0) {
+          <div class="appointments-list">
+            @for (appointment of appointments; track appointment.id) {
+              <div class="appointment-item">
+                <div class="appointment-date">
+                  <span class="date-day">{{ appointment.date | date:'dd' }}</span>
+                  <span class="date-month">{{ appointment.date | date:'MMM' }}</span>
+                  <span class="date-time">{{ appointment.time }}</span>
+                </div>
+                <div class="appointment-info">
+                  <h4>{{ appointment.reason }}</h4>
+                  <p class="appointment-notes">{{ appointment.notes || 'Sin notas adicionales' }}</p>
+                </div>
+                <div class="appointment-status">
+                  <span [class]="'status-badge status-' + appointment.status">
+                    {{ getStatusText(appointment.status) }}
+                  </span>
+                </div>
+                <div class="appointment-actions">
+                  <a [routerLink]="['/appointments', appointment.id]" class="btn btn-sm btn-info" title="Ver detalles">
+                    👁️ Ver
+                  </a>
+                </div>
+              </div>
+            }
+          </div>
+        }
+      </div>
+
+      <!-- Sección de Historial Médico -->
+      <div class="section-card">
+        <div class="section-header">
+          <h2>
+            <span class="section-icon">🏥</span>
+            Historial Médico
+            <span class="section-count">{{ medicalHistories.length }}</span>
+          </h2>
+          <a [routerLink]="['/medical-histories/new']" [queryParams]="{pet_id: pet.id}" class="btn btn-sm btn-success">
+            <span class="btn-icon">➕</span>
+            Nuevo Registro
+          </a>
+        </div>
+        
+        @if (medicalHistories.length === 0) {
+          <div class="empty-state">
+            <span class="empty-icon">🏥</span>
+            <p>No hay historiales médicos registrados</p>
+            <a [routerLink]="['/medical-histories/new']" [queryParams]="{pet_id: pet.id}" class="btn btn-primary">Crear Primer Registro</a>
+          </div>
+        }
+        
+        @if (medicalHistories.length > 0) {
+          <div class="medical-timeline">
+            @for (history of medicalHistories; track history.id) {
+              <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <div class="timeline-header">
+                    <h4>{{ history.visit_date | date:'dd/MM/yyyy' }}</h4>
+                    @if (history.weight || history.temperature) {
+                      <div class="vitals">
+                        @if (history.weight) {
+                          <span class="vital-sign">⚖️ {{ history.weight }} kg</span>
+                        }
+                        @if (history.temperature) {
+                          <span class="vital-sign">🌡️ {{ history.temperature }}°C</span>
+                        }
+                      </div>
+                    }
+                  </div>
+                  <div class="timeline-body">
+                    <div class="medical-info">
+                      <strong>🔍 Diagnóstico:</strong>
+                      <p>{{ history.diagnosis }}</p>
+                    </div>
+                    <div class="medical-info">
+                      <strong>💊 Tratamiento:</strong>
+                      <p>{{ history.treatment }}</p>
+                    </div>
+                    @if (history.prescriptions) {
+                      <div class="medical-info">
+                        <strong>📝 Prescripciones:</strong>
+                        <p>{{ history.prescriptions }}</p>
+                      </div>
+                    }
+                  </div>
+                  <div class="timeline-footer">
+                    <a [routerLink]="['/medical-histories', history.id]" class="btn btn-sm btn-info">
+                      👁️ Ver Detalles Completos
+                    </a>
+                  </div>
+                </div>
+              </div>
+            }
+          </div>
+        }
+      </div>
+    </div>
+  }
+</div>

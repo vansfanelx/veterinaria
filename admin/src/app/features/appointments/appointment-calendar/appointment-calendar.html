@@ -1,0 +1,262 @@
+<div class="modern-list-page">
+  <!-- Header -->
+  <div class="page-header-modern">
+    <div class="header-content">
+      <div class="title-section">
+        <div class="icon-wrapper appointments-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+        </div>
+        <div>
+          <h1>Agendar Nueva Cita</h1>
+          <p class="subtitle">Selecciona fecha y horario, luego completa la información</p>
+        </div>
+      </div>
+      <a routerLink="/appointments" class="btn-secondary-modern">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width: 20px; height: 20px;">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        Volver a Lista
+      </a>
+    </div>
+  </div>
+
+  <div class="calendar-content">
+    <!-- Calendar & Time Slots Section -->
+    <div class="calendar-section">
+      <div class="calendar-container">
+        <div class="calendar-header">
+          <button class="btn-nav" (click)="previousMonth()">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <h3>{{ months[currentDate.getMonth()] }} {{ currentDate.getFullYear() }}</h3>
+          <button class="btn-nav" (click)="nextMonth()">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="calendar-grid">
+          @for (day of weekDays; track day) {
+            <div class="weekday">{{ day }}</div>
+          }
+          @for (date of calendarDays; track date) {
+            <button 
+              class="calendar-day"
+              [class.other-month]="date.getMonth() !== currentDate.getMonth()"
+              [class.today]="isToday(date)"
+              [class.selected]="isSelected(date)"
+              [class.available]="isDateAvailable(date)"
+              [class.unavailable]="!isDateAvailable(date)"
+              [disabled]="!isDateAvailable(date)"
+              (click)="selectDate(date)"
+            >
+              {{ date.getDate() }}
+            </button>
+          }
+        </div>
+      </div>
+
+      @if (selectedDate) {
+        <div class="time-slots-section">
+          <h4>Horarios Disponibles</h4>
+          @if (isLoading) {
+            <div class="loading-slots">
+              <div class="spinner"></div>
+              <p>Cargando horarios...</p>
+            </div>
+          } @else if (availableSlots().length === 0) {
+            <p class="no-slots">No hay horarios disponibles para esta fecha</p>
+          } @else {
+            <div class="slots-grid">
+              @for (slot of availableSlots(); track slot.time) {
+                <button 
+                  class="time-slot"
+                  [class.available]="slot.available"
+                  [class.selected]="appointmentForm.get('time')?.value === slot.time"
+                  [disabled]="!slot.available"
+                  (click)="selectTime(slot)"
+                >
+                  {{ slot.time }}
+                </button>
+              }
+            </div>
+          }
+        </div>
+      }
+    </div>
+
+    <!-- Form Section -->
+    <div class="form-section">
+      <form [formGroup]="appointmentForm" (ngSubmit)="onSubmit()">
+        <div class="form-section-header">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <h3>Fecha y Horario</h3>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="date">Fecha de la Cita *</label>
+            <input 
+              type="date" 
+              id="date" 
+              formControlName="date"
+              class="form-control"
+              readonly
+            />
+            @if (appointmentForm.get('date')?.invalid && appointmentForm.get('date')?.touched) {
+              <span class="error">Selecciona una fecha en el calendario</span>
+            }
+          </div>
+
+          <div class="form-group">
+            <label for="time">Hora *</label>
+            <input 
+              type="text" 
+              id="time" 
+              formControlName="time"
+              class="form-control"
+              readonly
+              placeholder="--:--"
+            />
+            @if (appointmentForm.get('time')?.invalid && appointmentForm.get('time')?.touched) {
+              <span class="error">Selecciona un horario disponible</span>
+            }
+          </div>
+        </div>
+
+        <div class="form-section-header">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+          </svg>
+          <h3>Información de la Cita</h3>
+        </div>
+
+        <div class="form-group">
+          <label for="veterinarian">Veterinario *</label>
+          <select id="veterinarian" formControlName="veterinarian_id" class="form-control">
+            <option value="">Selecciona un veterinario</option>
+            @for (vet of veterinarians(); track vet.id) {
+              <option [value]="vet.id">{{ vet.name }}</option>
+            }
+          </select>
+          @if (appointmentForm.get('veterinarian_id')?.invalid && appointmentForm.get('veterinarian_id')?.touched) {
+            <span class="error">Selecciona un veterinario</span>
+          }
+        </div>
+
+        <div class="form-group">
+          <label for="pet">Mascota *</label>
+          <select 
+            id="pet" 
+            formControlName="pet_id" 
+            (change)="onPetChange($any($event.target).value)"
+            class="form-control"
+          >
+            <option value="">Selecciona una mascota</option>
+            @for (pet of pets(); track pet.id) {
+              <option [value]="pet.id">{{ pet.name }} ({{ pet.species }}) - Dueño: {{ pet.user?.name }}</option>
+            }
+          </select>
+          @if (appointmentForm.get('pet_id')?.invalid && appointmentForm.get('pet_id')?.touched) {
+            <span class="error">Selecciona una mascota</span>
+          }
+        </div>
+
+        <div class="form-group">
+          <label for="client">Cliente *</label>
+          <select id="client" formControlName="user_id" class="form-control">
+            <option value="">Selecciona un cliente</option>
+            @for (client of clients(); track client.id) {
+              <option [value]="client.id">{{ client.name }} - {{ client.email }}</option>
+            }
+          </select>
+          @if (appointmentForm.get('user_id')?.invalid && appointmentForm.get('user_id')?.touched) {
+            <span class="error">Selecciona un cliente</span>
+          }
+        </div>
+
+        <div class="form-group">
+          <label for="reason">Motivo de la Consulta *</label>
+          <textarea 
+            id="reason" 
+            formControlName="reason"
+            rows="4"
+            class="form-control"
+            placeholder="Describe el motivo de la consulta..."
+          ></textarea>
+          @if (appointmentForm.get('reason')?.invalid && appointmentForm.get('reason')?.touched) {
+            <span class="error">El motivo es requerido (mínimo 10 caracteres)</span>
+          }
+        </div>
+
+        <div class="form-group">
+          <label for="notes">Notas Adicionales</label>
+          <textarea 
+            id="notes" 
+            formControlName="notes"
+            rows="3"
+            class="form-control"
+            placeholder="Información adicional relevante..."
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="status">Estado Inicial *</label>
+          <select id="status" formControlName="status" class="form-control">
+            <option value="pending">Pendiente</option>
+            <option value="confirmed">Confirmada</option>
+            <option value="completed">Completada</option>
+            <option value="cancelled">Cancelada</option>
+          </select>
+        </div>
+
+        <div class="form-summary">
+          <h4>Resumen de la Cita</h4>
+          <div class="summary-item">
+            <span>Fecha:</span>
+            <strong>{{ selectedDate ? (selectedDate | date: 'dd/MM/yyyy') : 'No seleccionada' }}</strong>
+          </div>
+          <div class="summary-item">
+            <span>Hora:</span>
+            <strong>{{ appointmentForm.get('time')?.value || 'No seleccionada' }}</strong>
+          </div>
+          <div class="summary-item">
+            <span>Veterinario:</span>
+            <strong>{{ getSelectedVeterinarianName() }}</strong>
+          </div>
+          <div class="summary-item">
+            <span>Mascota:</span>
+            <strong>{{ getSelectedPetName() }}</strong>
+          </div>
+          <div class="summary-item">
+            <span>Cliente:</span>
+            <strong>{{ getSelectedClientName() }}</strong>
+          </div>
+        </div>
+
+        <button 
+          type="submit" 
+          class="btn-submit"
+          [disabled]="appointmentForm.invalid || isSubmitting"
+        >
+          @if (isSubmitting) {
+            <div class="spinner-small"></div>
+            Creando cita...
+          } @else {
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            Crear Cita
+          }
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
