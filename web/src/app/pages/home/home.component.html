@@ -1,0 +1,219 @@
+<div class="home">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title">
+          Cuida la salud de tu mascota con
+          <span class="highlight">VetiVet</span>
+        </h1>
+        <p class="hero-description">
+          Sistema integral de atención veterinaria. Agenda citas en línea, consulta el historial médico
+          de tus mascotas y mantén su salud al día con nuestros veterinarios especializados.
+        </p>
+        <div class="hero-actions">
+          @if (authService.isAuthenticated()) {
+            <a routerLink="/appointments" class="btn btn-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              Agendar Cita
+            </a>
+            <a routerLink="/my-pets" class="btn btn-secondary">
+              Mis Mascotas
+            </a>
+          } @else {
+            <a routerLink="/register" class="btn btn-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <line x1="19" y1="8" x2="19" y2="14"></line>
+                <line x1="22" y1="11" x2="16" y2="11"></line>
+              </svg>
+              Crear Cuenta
+            </a>
+            <a routerLink="/login" class="btn btn-secondary">
+              Iniciar Sesión
+            </a>
+          }
+        </div>
+      </div>
+      <div class="hero-image">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" class="vet-illustration">
+          <!-- Pet illustration -->
+          <circle cx="200" cy="200" r="160" fill="#ff6b35" opacity="0.1"/>
+          <circle cx="200" cy="200" r="120" fill="#ff6b35" opacity="0.15"/>
+          
+          <!-- Dog face -->
+          <ellipse cx="200" cy="220" rx="80" ry="85" fill="#f7931e"/>
+          
+          <!-- Ears -->
+          <ellipse cx="150" cy="180" rx="25" ry="45" fill="#ff6b35"/>
+          <ellipse cx="250" cy="180" rx="25" ry="45" fill="#ff6b35"/>
+          
+          <!-- Eyes -->
+          <circle cx="180" cy="210" r="8" fill="#1f2937"/>
+          <circle cx="220" cy="210" r="8" fill="#1f2937"/>
+          <circle cx="182" cy="208" r="3" fill="white"/>
+          <circle cx="222" cy="208" r="3" fill="white"/>
+          
+          <!-- Nose -->
+          <ellipse cx="200" cy="235" rx="12" ry="10" fill="#1f2937"/>
+          
+          <!-- Mouth -->
+          <path d="M 200 235 Q 185 250 175 245" stroke="#1f2937" stroke-width="3" fill="none"/>
+          <path d="M 200 235 Q 215 250 225 245" stroke="#1f2937" stroke-width="3" fill="none"/>
+          
+          <!-- Stethoscope -->
+          <circle cx="280" cy="300" r="15" fill="#667eea"/>
+          <path d="M 280 285 Q 250 250 200 260" stroke="#667eea" stroke-width="5" fill="none"/>
+          <circle cx="200" cy="260" r="8" fill="#667eea"/>
+          
+          <!-- Heart -->
+          <path d="M 320 120 Q 320 100 305 100 Q 290 100 290 120 Q 290 100 275 100 Q 260 100 260 120 Q 260 145 290 165 Q 320 145 320 120 Z" fill="#ef4444" opacity="0.8"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div class="container">
+      <h2 class="section-title">¿Por qué elegir VetiVet?</h2>
+      <p class="section-description">
+        Ofrecemos un sistema moderno y eficiente para el cuidado integral de tus mascotas
+      </p>
+      <div class="features-grid">
+        @for (feature of features; track feature.title) {
+          <div class="feature-card">
+            <div class="feature-icon">
+              @switch (feature.icon) {
+                @case ('calendar') {
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                }
+                @case ('heart') {
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                  </svg>
+                }
+                @case ('clipboard') {
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                    <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                  </svg>
+                }
+                @case ('clock') {
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                }
+              }
+            </div>
+            <h3>{{ feature.title }}</h3>
+            <p>{{ feature.description }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services">
+    <div class="container">
+      <h2 class="section-title">Nuestros Servicios</h2>
+      <p class="section-description">
+        Atención veterinaria integral para el bienestar de tu mascota
+      </p>
+      <div class="services-grid">
+        @for (service of services; track service.name) {
+          <div class="service-card">
+            <div class="service-icon">
+              @switch (service.icon) {
+                @case ('stethoscope') {
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"></path>
+                    <path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"></path>
+                    <circle cx="20" cy="10" r="2"></circle>
+                  </svg>
+                }
+                @case ('syringe') {
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m18 2 4 4"></path>
+                    <path d="m17 7 3-3"></path>
+                    <path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"></path>
+                    <path d="m9 11 4 4"></path>
+                    <path d="m5 19-3 3"></path>
+                    <path d="m14 4 6 6"></path>
+                  </svg>
+                }
+                @case ('scissors') {
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="6" cy="6" r="3"></circle>
+                    <circle cx="6" cy="18" r="3"></circle>
+                    <line x1="20" y1="4" x2="8.12" y2="15.88"></line>
+                    <line x1="14.47" y1="14.48" x2="20" y2="20"></line>
+                    <line x1="8.12" y1="8.12" x2="12" y2="12"></line>
+                  </svg>
+                }
+                @case ('flask') {
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"></path>
+                    <path d="M8.5 2h7"></path>
+                    <path d="M7 16h10"></path>
+                  </svg>
+                }
+                @case ('ambulance') {
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M10 10H6"></path>
+                    <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"></path>
+                    <path d="M19 18h2a1 1 0 0 0 1-1v-3.28a1 1 0 0 0-.684-.948l-1.923-.641a1 1 0 0 1-.578-.579l-1.5-4.5A1 1 0 0 0 16.382 7H14"></path>
+                    <circle cx="8" cy="19" r="2"></circle>
+                    <circle cx="16" cy="19" r="2"></circle>
+                  </svg>
+                }
+              }
+            </div>
+            <h3>{{ service.name }}</h3>
+            <p>{{ service.description }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="container">
+      <div class="cta-content">
+        <h2>¿Listo para cuidar a tu mascota?</h2>
+        <p>Regístrate ahora y agenda tu primera consulta veterinaria en línea</p>
+        @if (!authService.isAuthenticated()) {
+          <a routerLink="/register" class="btn btn-cta">
+            Agendar Cita Ahora
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        } @else {
+          <a routerLink="/appointments" class="btn btn-cta">
+            Agendar Cita Ahora
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        }
+      </div>
+    </div>
+  </section>
+</div>

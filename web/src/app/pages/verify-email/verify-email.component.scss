@@ -1,0 +1,300 @@
+.verify-email-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.verify-container {
+  width: 100%;
+  max-width: 600px;
+}
+
+.verify-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  padding: 3rem 2.5rem;
+  text-align: center;
+  animation: slideUp 0.5s ease-out;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #1f2937;
+    margin: 1.5rem 0 1rem;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #6b7280;
+    margin: 0 0 1.5rem;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.icon-circle {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  color: white;
+
+  svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  &.success {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    animation: scaleIn 0.5s ease-out;
+  }
+
+  &.error {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    animation: shake 0.5s ease-out;
+  }
+
+  &.verifying {
+    background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+
+    .spinner-large {
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+    }
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-10px);
+  }
+  75% {
+    transform: translateX(10px);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.instructions {
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  text-align: left;
+
+  h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0 0 1rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      font-size: 0.9375rem;
+      color: #6b7280;
+      padding: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+
+      &::before {
+        content: '•';
+        position: absolute;
+        left: 0;
+        color: #ff6b35;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+.btn-resend,
+.btn-secondary {
+  padding: 0.875rem 1.75rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  border: none;
+
+  svg:not(.spinner) {
+    width: 20px;
+    height: 20px;
+  }
+
+  .spinner {
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+  }
+
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+}
+
+.btn-resend {
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+  color: white;
+  margin-bottom: 1rem;
+
+  &:hover:not(:disabled) {
+    box-shadow: 0 8px 16px rgba(255, 107, 53, 0.3);
+  }
+}
+
+.btn-secondary {
+  background: white;
+  color: #667eea;
+  border: 2px solid #667eea;
+
+  &:hover {
+    background: #667eea;
+    color: white;
+  }
+}
+
+.back-link {
+  display: inline-block;
+  color: #667eea;
+  text-decoration: none;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: #ff6b35;
+  }
+}
+
+.redirect-message {
+  font-style: italic;
+  color: #10b981;
+  font-size: 0.9375rem;
+  margin-top: 1rem;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .verify-card {
+    padding: 2.5rem 2rem;
+
+    h1 {
+      font-size: 1.75rem;
+    }
+  }
+
+  .icon-circle {
+    width: 70px;
+    height: 70px;
+
+    svg,
+    .spinner-large {
+      width: 36px;
+      height: 36px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .verify-card {
+    padding: 2rem 1.5rem;
+
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 0.9375rem;
+    }
+  }
+
+  .icon-circle {
+    width: 64px;
+    height: 64px;
+
+    svg,
+    .spinner-large {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  .instructions {
+    padding: 1.25rem;
+
+    h3 {
+      font-size: 0.9375rem;
+    }
+
+    ul li {
+      font-size: 0.875rem;
+    }
+  }
+
+  .btn-resend,
+  .btn-secondary {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9375rem;
+  }
+}

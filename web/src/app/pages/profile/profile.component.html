@@ -1,0 +1,266 @@
+<div class="profile-page">
+  <div class="container">
+    <div class="page-header">
+      <h1>Mi Perfil</h1>
+      <p>Gestiona tu información personal y configuración</p>
+    </div>
+
+    @if (user) {
+      <div class="profile-grid">
+        <!-- Card de Información Personal -->
+        <div class="profile-card">
+          <div class="card-header">
+            <div class="header-content">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+              </svg>
+              <h2>Información Personal</h2>
+            </div>
+            @if (!isEditingProfile) {
+              <button class="btn-edit" (click)="toggleEditProfile()">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+                </svg>
+                Editar
+              </button>
+            }
+          </div>
+
+          <div class="card-body">
+            @if (!isEditingProfile) {
+              <div class="info-group">
+                <label>Nombre completo</label>
+                <p>{{ user.name }}</p>
+              </div>
+
+              <div class="info-group">
+                <label>Correo electrónico</label>
+                <p>{{ user.email }}</p>
+                @if (user.email_verified_at) {
+                  <span class="verified-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+                    </svg>
+                    Verificado
+                  </span>
+                }
+              </div>
+
+              <div class="info-group">
+                <label>Teléfono</label>
+                <p>{{ user.phone || 'No especificado' }}</p>
+              </div>
+
+              <div class="info-group">
+                <label>Dirección</label>
+                <p>{{ user.address || 'No especificada' }}</p>
+              </div>
+
+              <div class="info-group">
+                <label>Rol</label>
+                <span class="badge" [class]="getRoleBadgeClass()">{{ getRoleLabel() }}</span>
+              </div>
+
+              <div class="info-group">
+                <label>Miembro desde</label>
+                <p>{{ user.created_at | date: 'dd/MM/yyyy' }}</p>
+              </div>
+            } @else {
+              <form [formGroup]="profileForm" (ngSubmit)="onProfileSubmit()">
+                <div class="form-group">
+                  <label for="name">Nombre completo *</label>
+                  <input type="text" id="name" formControlName="name" placeholder="Juan Pérez">
+                  @if (getProfileError('name')) {
+                    <span class="error-message">{{ getProfileError('name') }}</span>
+                  }
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Correo electrónico *</label>
+                  <input type="email" id="email" formControlName="email" placeholder="correo@ejemplo.com">
+                  @if (getProfileError('email')) {
+                    <span class="error-message">{{ getProfileError('email') }}</span>
+                  }
+                </div>
+
+                <div class="form-group">
+                  <label for="phone">Teléfono</label>
+                  <input type="tel" id="phone" formControlName="phone" placeholder="987654321" maxlength="9">
+                  @if (getProfileError('phone')) {
+                    <span class="error-message">{{ getProfileError('phone') }}</span>
+                  }
+                </div>
+
+                <div class="form-group">
+                  <label for="address">Dirección</label>
+                  <input type="text" id="address" formControlName="address" placeholder="Calle Principal #123">
+                </div>
+
+                <div class="form-actions">
+                  <button type="button" class="btn-secondary" (click)="toggleEditProfile()" [disabled]="isLoadingProfile">
+                    Cancelar
+                  </button>
+                  <button type="submit" class="btn-primary" [disabled]="isLoadingProfile">
+                    @if (isLoadingProfile) {
+                      <div class="spinner-small"></div>
+                      Guardando...
+                    } @else {
+                      Guardar Cambios
+                    }
+                  </button>
+                </div>
+              </form>
+            }
+          </div>
+        </div>
+
+        <!-- Card de Cambiar Contraseña -->
+        <div class="profile-card">
+          <div class="card-header">
+            <div class="header-content">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM9 8V6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9z"/>
+              </svg>
+              <h2>Seguridad</h2>
+            </div>
+            @if (!isEditingPassword) {
+              <button class="btn-edit" (click)="toggleEditPassword()">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+                </svg>
+                Cambiar Contraseña
+              </button>
+            }
+          </div>
+
+          <div class="card-body">
+            @if (!isEditingPassword) {
+              <div class="security-info">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+                </svg>
+                <div>
+                  <h3>Contraseña Segura</h3>
+                  <p>Tu contraseña fue actualizada por última vez hace 30 días</p>
+                  <p class="recommendation">Recomendamos cambiar tu contraseña cada 3 meses</p>
+                </div>
+              </div>
+            } @else {
+              <form [formGroup]="passwordForm" (ngSubmit)="onPasswordSubmit()">
+                <div class="form-group">
+                  <label for="current_password">Contraseña actual *</label>
+                  <div class="password-input">
+                    <input 
+                      [type]="showPassword ? 'text' : 'password'" 
+                      id="current_password" 
+                      formControlName="current_password" 
+                      placeholder="••••••••"
+                    >
+                    <button type="button" class="toggle-password" (click)="togglePasswordVisibility('current')">
+                      @if (showPassword) {
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46C3.08 8.3 1.78 10.02 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.53-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.53.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/>
+                        </svg>
+                      } @else {
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                        </svg>
+                      }
+                    </button>
+                  </div>
+                  @if (getPasswordError('current_password')) {
+                    <span class="error-message">{{ getPasswordError('current_password') }}</span>
+                  }
+                </div>
+
+                <div class="form-group">
+                  <label for="password">Nueva contraseña *</label>
+                  <div class="password-input">
+                    <input 
+                      [type]="showNewPassword ? 'text' : 'password'" 
+                      id="password" 
+                      formControlName="password" 
+                      placeholder="••••••••"
+                    >
+                    <button type="button" class="toggle-password" (click)="togglePasswordVisibility('new')">
+                      @if (showNewPassword) {
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46C3.08 8.3 1.78 10.02 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.53-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.53.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/>
+                        </svg>
+                      } @else {
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                        </svg>
+                      }
+                    </button>
+                  </div>
+                  @if (getPasswordError('password')) {
+                    <span class="error-message">{{ getPasswordError('password') }}</span>
+                  }
+                </div>
+
+                <div class="form-group">
+                  <label for="password_confirmation">Confirmar nueva contraseña *</label>
+                  <div class="password-input">
+                    <input 
+                      [type]="showConfirmPassword ? 'text' : 'password'" 
+                      id="password_confirmation" 
+                      formControlName="password_confirmation" 
+                      placeholder="••••••••"
+                    >
+                    <button type="button" class="toggle-password" (click)="togglePasswordVisibility('confirm')">
+                      @if (showConfirmPassword) {
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46C3.08 8.3 1.78 10.02 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.53-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.53.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/>
+                        </svg>
+                      } @else {
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                        </svg>
+                      }
+                    </button>
+                  </div>
+                  @if (getPasswordError('password_confirmation')) {
+                    <span class="error-message">{{ getPasswordError('password_confirmation') }}</span>
+                  }
+                </div>
+
+                <div class="password-requirements">
+                  <h4>Requisitos de contraseña:</h4>
+                  <ul>
+                    <li [class.valid]="passwordForm.get('password')?.value?.length >= 6">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                      </svg>
+                      Mínimo 6 caracteres
+                    </li>
+                    <li [class.valid]="passwordForm.get('password')?.value === passwordForm.get('password_confirmation')?.value && passwordForm.get('password')?.value">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                      </svg>
+                      Las contraseñas coinciden
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="form-actions">
+                  <button type="button" class="btn-secondary" (click)="toggleEditPassword()" [disabled]="isLoadingPassword">
+                    Cancelar
+                  </button>
+                  <button type="submit" class="btn-primary" [disabled]="isLoadingPassword">
+                    @if (isLoadingPassword) {
+                      <div class="spinner-small"></div>
+                      Guardando...
+                    } @else {
+                      Cambiar Contraseña
+                    }
+                  </button>
+                </div>
+              </form>
+            }
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>

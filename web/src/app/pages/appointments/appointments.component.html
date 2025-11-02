@@ -1,0 +1,208 @@
+<div class="appointments-page">
+  <div class="container">
+    <div class="page-header">
+      <h1>Agendar Cita</h1>
+      <p>Selecciona fecha, horario y completa la información de tu mascota</p>
+    </div>
+
+    <div class="appointment-content">
+      <!-- Calendar Section -->
+      <div class="calendar-section">
+        <div class="calendar-header">
+          <button class="btn-nav" (click)="previousMonth()">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+            </svg>
+          </button>
+          <h3>{{ months[currentDate.getMonth()] }} {{ currentDate.getFullYear() }}</h3>
+          <button class="btn-nav" (click)="nextMonth()">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="calendar-grid">
+          @for (day of weekDays; track day) {
+            <div class="weekday">{{ day }}</div>
+          }
+          @for (date of calendarDays; track date) {
+            <button 
+              class="calendar-day"
+              [class.other-month]="date.getMonth() !== currentDate.getMonth()"
+              [class.today]="isToday(date)"
+              [class.selected]="isSelected(date)"
+              [class.available]="isDateAvailable(date)"
+              [class.unavailable]="!isDateAvailable(date)"
+              [disabled]="!isDateAvailable(date)"
+              (click)="selectDate(date)"
+            >
+              {{ date.getDate() }}
+            </button>
+          }
+        </div>
+
+        @if (selectedDate) {
+          <div class="time-slots">
+            <h4>Horarios Disponibles</h4>
+            @if (isLoading) {
+              <div class="loading-slots">
+                <div class="spinner"></div>
+                <p>Cargando horarios...</p>
+              </div>
+            } @else if (availableSlots().length === 0) {
+              <p class="no-slots">No hay horarios disponibles para esta fecha</p>
+            } @else {
+              <div class="slots-grid">
+                @for (slot of availableSlots(); track slot.time) {
+                  <button 
+                    class="time-slot"
+                    [class.available]="slot.available"
+                    [class.selected]="appointmentForm.get('time')?.value === slot.time"
+                    [disabled]="!slot.available"
+                    (click)="selectTime(slot)"
+                  >
+                    {{ slot.time }}
+                  </button>
+                }
+              </div>
+            }
+          </div>
+        }
+      </div>
+
+      <!-- Form Section -->
+      <div class="form-section">
+        <form [formGroup]="appointmentForm" (ngSubmit)="onSubmit()">
+          <h3>Información de la Cita</h3>
+
+          <div class="form-group">
+            <label for="veterinarian">Veterinario</label>
+            <select id="veterinarian" formControlName="veterinarian_id">
+              <option value="">Selecciona un veterinario</option>
+              @for (vet of veterinarians(); track vet.id) {
+                <option [value]="vet.id">{{ vet.name }} - {{ vet.specialty }}</option>
+              }
+            </select>
+            @if (appointmentForm.get('veterinarian_id')?.invalid && appointmentForm.get('veterinarian_id')?.touched) {
+              <span class="error">Selecciona un veterinario</span>
+            }
+          </div>
+
+          <h3>Información de la Mascota</h3>
+
+          <div class="form-group">
+            <label for="pet_select">Seleccionar Mascota</label>
+            <select id="pet_select" formControlName="pet_id" (change)="onPetChange($any($event.target).value)">
+              <option value="">Selecciona una mascota</option>
+              @for (pet of userPets(); track pet.id) {
+                <option [value]="pet.id">{{ pet.name }} - {{ pet.species }}</option>
+              }
+              <option value="new">+ Registrar Nueva Mascota</option>
+            </select>
+            @if (appointmentForm.get('pet_id')?.invalid && appointmentForm.get('pet_id')?.touched && !showNewPetForm) {
+              <span class="error">Selecciona una mascota</span>
+            }
+          </div>
+
+          @if (showNewPetForm || !appointmentForm.get('pet_id')?.value) {
+            <div class="form-row">
+              <div class="form-group">
+                <label for="pet_name">Nombre de la Mascota</label>
+                <input 
+                  type="text" 
+                  id="pet_name" 
+                  formControlName="pet_name"
+                  placeholder="Nombre de tu mascota"
+                />
+                @if (appointmentForm.get('pet_name')?.invalid && appointmentForm.get('pet_name')?.touched) {
+                  <span class="error">Ingresa el nombre de la mascota (mínimo 2 caracteres)</span>
+                }
+              </div>
+
+              <div class="form-group">
+                <label for="pet_species">Especie</label>
+                <select id="pet_species" formControlName="pet_species">
+                  <option value="">Selecciona especie</option>
+                  <option value="Perro">Perro</option>
+                  <option value="Gato">Gato</option>
+                  <option value="Ave">Ave</option>
+                  <option value="Conejo">Conejo</option>
+                  <option value="Otro">Otro</option>
+                </select>
+                @if (appointmentForm.get('pet_species')?.invalid && appointmentForm.get('pet_species')?.touched) {
+                  <span class="error">Selecciona la especie</span>
+                }
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="pet_breed">Raza (Opcional)</label>
+              <input 
+                type="text" 
+                id="pet_breed" 
+                formControlName="pet_breed"
+                placeholder="Raza de la mascota"
+              />
+            </div>
+          }
+
+          <div class="form-group">
+            <label for="reason">Motivo de la Consulta</label>
+            <textarea 
+              id="reason" 
+              formControlName="reason"
+              rows="4"
+              placeholder="Describe el motivo de la consulta..."
+            ></textarea>
+            @if (appointmentForm.get('reason')?.invalid && appointmentForm.get('reason')?.touched) {
+              <span class="error">El motivo es requerido (mínimo 10 caracteres)</span>
+            }
+          </div>
+
+          <div class="form-group">
+            <label for="observations">Observaciones Adicionales (Opcional)</label>
+            <textarea 
+              id="observations" 
+              formControlName="observations"
+              rows="3"
+              placeholder="Información adicional que consideres relevante..."
+            ></textarea>
+          </div>
+
+          <div class="form-summary">
+            <h4>Resumen de la Cita</h4>
+            <div class="summary-item">
+              <span>Fecha:</span>
+              <strong>{{ selectedDate ? (selectedDate | date: 'dd/MM/yyyy') : 'No seleccionada' }}</strong>
+            </div>
+            <div class="summary-item">
+              <span>Hora:</span>
+              <strong>{{ appointmentForm.get('time')?.value || 'No seleccionada' }}</strong>
+            </div>
+            <div class="summary-item">
+              <span>Veterinario:</span>
+              <strong>{{ getSelectedVeterinarianName() }}</strong>
+            </div>
+          </div>
+
+          <button 
+            type="submit" 
+            class="btn-submit"
+            [disabled]="appointmentForm.invalid || isSubmitting"
+          >
+            @if (isSubmitting) {
+              <div class="spinner-small"></div>
+              Procesando...
+            } @else {
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+              </svg>
+              Confirmar Cita
+            }
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

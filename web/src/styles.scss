@@ -1,0 +1,80 @@
+/* Reset y estilos globales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #1f2937;
+  line-height: 1.6;
+  background: #ffffff;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+/* Variables de colores */
+:root {
+  --primary-orange: #ff6b35;
+  --secondary-orange: #f7931e;
+  --primary-purple: #667eea;
+  --secondary-purple: #764ba2;
+  --success-green: #10b981;
+  --error-red: #ef4444;
+  --text-dark: #1f2937;
+  --text-gray: #6b7280;
+  --text-muted: #6b7280;
+  --bg-light: #f9fafb;
+  --border-light: #e5e7eb;
+  --primary: #667eea;
+  --secondary: #764ba2;
+  --gray-light: #f3f4f6;
+  --gray-medium: #e5e7eb;
+}
+
+/* Utility classes */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

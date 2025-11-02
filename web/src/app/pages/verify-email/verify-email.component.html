@@ -1,0 +1,101 @@
+<div class="verify-email-page">
+  <div class="verify-container">
+    <div class="verify-card">
+      @if (verificationStatus === 'pending' && !isVerifying) {
+        <div class="status-pending">
+          <div class="icon-circle">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </div>
+          <h1>Verifica tu Correo</h1>
+          <p>Hemos enviado un correo de verificación a tu dirección de email. Por favor, revisa tu bandeja de entrada y haz clic en el enlace de verificación.</p>
+          
+          <div class="instructions">
+            <h3>¿No recibiste el correo?</h3>
+            <ul>
+              <li>Revisa tu carpeta de spam o correo no deseado</li>
+              <li>Verifica que el correo sea el correcto</li>
+              <li>Espera unos minutos, puede tardar un poco</li>
+            </ul>
+          </div>
+
+          <button class="btn-resend" (click)="resendVerification()" [disabled]="isResending">
+            @if (isResending) {
+              <svg class="spinner" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+              Enviando...
+            } @else {
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="23 4 23 10 17 10"></polyline>
+                <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+              </svg>
+              Reenviar Correo
+            }
+          </button>
+
+          <a routerLink="/login" class="back-link">Volver al inicio de sesión</a>
+        </div>
+      }
+
+      @if (isVerifying) {
+        <div class="status-verifying">
+          <div class="icon-circle verifying">
+            <svg class="spinner-large" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+          </div>
+          <h1>Verificando...</h1>
+          <p>Estamos verificando tu correo electrónico, por favor espera.</p>
+        </div>
+      }
+
+      @if (verificationStatus === 'success') {
+        <div class="status-success">
+          <div class="icon-circle success">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+          </div>
+          <h1>¡Correo Verificado!</h1>
+          <p>Tu correo electrónico ha sido verificado exitosamente. Ahora puedes iniciar sesión y agendar citas para tus mascotas.</p>
+          <p class="redirect-message">Redirigiendo al inicio de sesión...</p>
+        </div>
+      }
+
+      @if (verificationStatus === 'error') {
+        <div class="status-error">
+          <div class="icon-circle error">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="15" y1="9" x2="9" y2="15"></line>
+              <line x1="9" y1="9" x2="15" y2="15"></line>
+            </svg>
+          </div>
+          <h1>Error de Verificación</h1>
+          <p>No pudimos verificar tu correo electrónico. El enlace puede haber expirado o ya fue utilizado.</p>
+          
+          <div class="actions">
+            <button class="btn-resend" (click)="resendVerification()" [disabled]="isResending">
+              @if (isResending) {
+                <svg class="spinner" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Enviando...
+              } @else {
+                Solicitar Nuevo Enlace
+              }
+            </button>
+            <a routerLink="/register" class="btn-secondary">Crear Nueva Cuenta</a>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>
