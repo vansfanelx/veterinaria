@@ -8,6 +8,8 @@ Sistema completo de gestión para clínica veterinaria con arquitectura moderna 
 ## 📚 Documentación Adicional
 
 - **[Roles y Permisos](ROLES_Y_PERMISOS.md)** - Guía completa del sistema de control de acceso basado en roles
+- **[Beneficios y Mejoras](BENEFICIOS_Y_MEJORAS.md)** - Cómo VetiVet mejora los procesos de la clínica veterinaria
+- **[Datos de Prueba](DATOS_DE_PRUEBA.md)** - Usuarios y datos precargados para testing
 
 ## 🌟 Características Principales
 
@@ -973,10 +975,16 @@ Este proyecto es de código abierto y está disponible para fines educativos.
 #   s y s t e m - v e t 
  
  
-#   v e t e r i n a r i a  
- #   v e t e r i n a r i a  
- #   v e t e r i n a r i a  
- #   v e t e r i n a r i a  
- #   v e t e r i n a r i a  
- #   v e t e r i n a r i a  
+#   v e t e r i n a r i a 
+ 
+ #   v e t e r i n a r i a 
+ 
+ #   v e t e r i n a r i a 
+ 
+ #   v e t e r i n a r i a 
+ 
+ #   v e t e r i n a r i a 
+ 
+ #   v e t e r i n a r i a 
+ 
  
